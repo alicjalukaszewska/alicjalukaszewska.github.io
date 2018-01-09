@@ -4,10 +4,192 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Alicja Łukaszewska - Front-End Developer</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	
+	<header>
+		<div class="container">
+			<h1><a href="index.html">Alicja Łukaszewska</a></h1>
+			<p>Front-End Developer</p>
+			<nav id="menu">
+				<ul>
+					<li><a href="#">Start</a></li>
+					<li><a href="#">O mnie</a></li>
+					<li><a href="#">Technologie</a></li>
+					<li><a href="#">Realizacje</a></li>
+					<li class="special">Kontakt<a href="#"></a></li>
+				</ul>
+			</nav>
+		</div>
+		<a href="#" class="projects">Zobacz projekty</a>
+	</header>
+	<article[role=main] id="omnie">
+		<figure>
+			<img src="" alt="Zdjęcie Alicji Łukaszewskiej">
+		</figure>
+		<h2>O mnie</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cupiditate magnam consectetur veniam! Ratione placeat repellat magni laudantium quibusdam vero laboriosam ut omnis tempore, suscipit aut, quae consequatur sunt incidunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium neque labore voluptatem cumque animi temporibus consequatur, odit id molestias eveniet recusandae, amet alias officia quaerat tempore aliquid deleniti error voluptatibus!</p>
+		<footer>
+			<a href="">Pobierz CV</a>
+			<a href="">Skontaktuj się</a>
+		</footer>
+	</article>
+	<article id="technologie">
+		<h2>Technologie</h2>
+		<div class="container">
+			<section class="column">
+				<h3>Web Development</h3>
+				<ul>
+					<li>HTML5
+						<ul>
+							<li>PSD do HTML</li>
+						</ul>
+					</li>
+					<li>CSS3
+						<ul>
+							<li>SCSS</li>
+							<li>Bootstrap 3</li>
+							<li>Responsive Web Design</li>
+						</ul>
+					</li>
+					<li>JavaScript
+						<ul>
+							<li>ES6</li>
+							<li>jQuery</li>
+						</ul>
+					</li>
+					<li>Wordpress
+						<ul>
+							<li>tworzenie szablonów</li>
+							<li>dostosowywanie szablonów</li>
+							<li>zarządzanie stroną</li>
+						</ul>
+					</li>
+					<li>
+						Angular, React<span>- w trakcie nauki</span>
+					</li>
+				</ul>
+			</section>
+			<section class="column">
+				<h3>Web Design</h3>
+				<ul>
+					<li>Adobe Photoshop</li>
+					<li>CorelDraw</li>
+					<li>Adobe InDesign</li>
+					<li>UI & UX Design</li>
+				</ul>
+			</section>
+			<section class="column">
+				<h3>Inne</h3>
+				<ul>
+					<li>Git
+						<ul>
+							<li>GitHub</li>
+							<li>GitLab</li>
+						</ul>
+					</li>
+					<li>Gulp.js</li>
+					<li>PHP<span> - podstawy</span></li>
+					<li>MySQL<span> - podstawy</span></li>
+				</ul>
+			</section>
+		</div>
+	</article>
+	<article id="projects">
+		<h2>Realizacje</h2>
+		<section class="project">
+			<img src="" alt="">
+			<div class="description">
+				<h3></h3>
+				<p></p>
+				<a href="#">Live</a>
+				<a href="#">Kod</a>
+			</div>
+		</section>
+		<section class="project">
+			<img src="" alt="">
+			<div class="description">
+				<h3></h3>
+				<p></p>
+				<a href="#">Live</a>
+				<a href="#">Kod</a>
+			</div>
+		</section>
+		<section class="project">
+			<img src="" alt="">
+			<div class="description">
+				<h3></h3>
+				<p></p>
+				<a href="#">Live</a>
+				<a href="#">Kod</a>
+			</div>
+		</section>
+		<section class="project">
+			<img src="" alt="">
+			<div class="description">
+				<h3></h3>
+				<p></p>
+				<a href="#">Live</a>
+				<a href="#">Kod</a>
+			</div>
+		</section>
+		<section class="project">
+			<img src="" alt="">
+			<div class="description">
+				<h3></h3>
+				<p></p>
+				<a href="#">Live</a>
+				<a href="#">Kod</a>
+			</div>
+		</section>
+		<section class="project">
+			<img src="" alt="">
+			<div class="description">
+				<h3></h3>
+				<p></p>
+				<a href="#">Live</a>
+				<a href="#">Kod</a>
+			</div>
+		</section>
+	</article>
+	<article id="kontakt">
+		<section class="form">
+			<h2>Kontakt</h2>
+			<p class="lead">Jestem otwarta na propozycje współpracy!</p>
+			<p>Szukasz front-end developera lub masz do mnie pytanie?</p>
+			<p>Czekam na Twoją wiadomość:</p>
+			<a href="mailto:alicja.x.lukaszewska@gmail.com">alicja.x.lukaszewska@gmail.com</a>
+			<form action="" method="post">
+				<p>
+					<label for="name">imię:</label>
+					<input type="text" name="name" required>
+				</p>
+				<p>
+					<label for="email">email:</label>
+					<input type="email" name="email" required pattern="^(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}$">
+				</p>
+				<p>
+					<label for="message">treść</label>
+					<textarea name="message" id="" cols="30" rows="10" required></textarea>
+				</p>
+				<p>
+					<button name="submit" type="submit">Wyślij</button>
+				</p>
+			</form>
+		</section>
+		<section class="links">
+			<h2>Linki</h2>
+			<ul>
+				<li class="special">Pobierz CV</li>
+				<li>GitHub</li>
+				<li>LinkedIn</li>
+				<li>Facebook</li>
+			</ul>
+		</section>
+	</article>
+	<footer>
+		<p>Copyright &#169; by Alicja Łukaszewska 2018</p>
+	</footer>
 	<script src="js/code.js"></script>
 </body>
 </html>
