@@ -11,3 +11,139 @@
 	list-style: none;
 	text-decoration: none;
 }
+
+body {
+	/* background-color: $backgroundColor;*/
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+}
+
+h1 {
+	color: $backgroundColor;
+    font-family: 'Lora', serif;
+    font-size: 60px;
+	
+	a {
+		color:inherit;
+	}
+}
+
+h2 {
+	color: $mainColor;
+    font-family: 'Lora', serif;
+    font-size: 48px;
+}
+
+
+.fixed-menu {
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+
+	.container {
+		margin: 0 auto;	
+		height: 90px;
+		max-width: 1170px;	
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-pack: distribute;
+	    -webkit-box-pack: end;
+	        justify-content: flex-end;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+	        align-items: center;	
+
+	    nav ul{
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-inline-box;
+			display: -ms-inline-flexbox;
+			display: inline-flex;
+			li {
+				margin: 0 15px;
+
+				a {
+					color: $backgroundColor;
+					
+					&.special {
+						color: $accentColor;
+					}
+
+					&:hover, &:focus {
+						color: $linksColor;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+
+	&.scrolled {
+		background-color: rgba(0, 51, 102, 0.7);
+		-webkit-transition: background-color 0.3s; 
+		transition: background-color 0.3s;
+		a {
+			&:hover, &:focus {
+				color: $accentColor;
+				text-decoration: underline;
+				-webkit-transition: color 0.2s; 
+				transition: color 0.2s;
+			} 
+		}
+	}
+}
+
+header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 100vh;
+	background: {
+		color: $mainColor;
+		image: 
+			linear-gradient($gradientOverlay), 
+			url('../img/background.png'); 
+		position: center;
+		repeat: no-repeat;
+		size: cover;
+	}
+
+	.welcome {
+		width: 1170px;
+		p {
+			margin-left: 10px;
+			color: $accentColor;
+			font-size: 28px;
+			text-transform: uppercase;
+		}
+
+		& > a {
+			margin-left: 10px;
+			margin-top: 30px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			    -ms-flex-pack: center;
+			        justify-content: center;
+			-webkit-box-align: center;
+			    -ms-flex-align: center;
+			        align-items: center;
+			height: 60px;
+			width: 200px;
+			border: 3px solid $backgroundColor;
+			color: $backgroundColor;
+
+			&:hover, &:focus {
+				background-color: rgba(255, 255, 255, 0.2);
+			}
+		}
+	}
+}

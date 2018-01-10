@@ -1,11 +1,9 @@
-$low1024: "only screen and (max-width: 1024px)";
-$low400: "only screen and (max-width: 400px)";
 
-$text-color: #212121;
-$buttons-color: #FFEB3B;
-$buttons-color-hover: #FBC02D;
-$reviveBtn-color: #FF9800;
-$reviveBtn-color-hover: #F57C00;
+$defaultTextColor: #363636;
+$mainColor: #003366;
+$mediumColor: #457b9d;
+$linksColor: #a8dadc;
+$backgroundColor: #f1faee;
+$accentColor: #e63946;
 
-$range-color: #ffc107;
-$thumb-color: #00BCD4;
+$gradientOverlay: rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.4);
