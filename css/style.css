@@ -11,8 +11,9 @@
 
 body {
   /* background-color: $backgroundColor;*/
+  color: #363636;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 18px; }
+  font-size: 22px; }
 
 h1 {
   color: #f1faee;
@@ -22,18 +23,21 @@ h1 {
     color: inherit; }
 
 h2 {
+  padding: 85px 0 60px;
   color: #003366;
   font-family: 'Lora', serif;
   font-size: 48px; }
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto; }
 
 .fixed-menu {
   position: fixed;
   width: 100%;
   z-index: 99; }
   .fixed-menu .container {
-    margin: 0 auto;
     height: 90px;
-    max-width: 1170px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -109,3 +113,112 @@ header {
       color: #f1faee; }
       header .welcome > a:hover, header .welcome > a:focus {
         background-color: rgba(255, 255, 255, 0.2); }
+
+.about {
+  height: calc(100vh - 90px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-box;
+  display: flex; }
+  .about figure {
+    height: inherit;
+    width: 470px;
+    background-color: #003366; }
+  .about section {
+    margin: 0 10px 0 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .about section p {
+      margin-left: 130px; }
+    .about section footer {
+      -ms-flex-item-align: end;
+      align-self: flex-end; }
+      .about section footer a {
+        margin-top: 60px;
+        margin-left: 30px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 170px;
+        height: 60px;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        -webkit-transition: -webkit-transform 0.5s;
+        transition: -webkit-transform 0.5s;
+        transition: transform 0.5s;
+        transition: transform 0.5s, -webkit-transform 0.5s;
+        transition: transform 0.2s, -webkit-transform 0.2s; }
+        .about section footer a:hover, .about section footer a:focus {
+          -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+          -webkit-transition: -webkit-transform 0.5s;
+          transition: -webkit-transform 0.5s;
+          transition: transform 0.5s;
+          transition: transform 0.5s, -webkit-transform 0.5s;
+          transition: transform 0.2s, -webkit-transform 0.2s; }
+      .about section footer a:first-child {
+        background-color: #a8dadc;
+        color: #003366; }
+        .about section footer a:first-child:hover, .about section footer a:first-child:focus {
+          background-color: #003366;
+          color: #f1faee; }
+      .about section footer a:last-child {
+        background-color: #e63946;
+        color: #f1faee; }
+        .about section footer a:last-child:hover, .about section footer a:last-child:focus {
+          background-color: #7c010a;
+          color: #f1faee; }
+
+.skills {
+  padding-bottom: 60px;
+  /* height: calc(100vh - 90px);*/
+  background-image: linear-gradient(rgba(168, 218, 220, 0.45), rgba(168, 218, 220, 0.45)), url("../img/backgroundskills.png");
+  background-blend-mode: overlay;
+  background-color: #d0e7e8;
+  background-size: cover;
+  background-position: center center; }
+  .skills .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .skills .column h3 {
+    padding-bottom: 20px;
+    padding-left: 60px;
+    color: #003366;
+    font-size: 30px; }
+  .skills .column > ul {
+    margin-left: 100px; }
+  .skills .column > ul > li {
+    color: #003366;
+    font-weight: bold; }
+    .skills .column > ul > li:before {
+      content: '\2015';
+      color: #e63946;
+      font-size: 30px;
+      margin-right: 7px; }
+    .skills .column > ul > li span {
+      color: #363636;
+      font-weight: normal; }
+  .skills .column > ul > li > ul {
+    color: #363636;
+    font-weight: normal;
+    margin-left: 60px;
+    padding-bottom: 20px; }
+    .skills .column > ul > li > ul > li:before {
+      content: " - "; }

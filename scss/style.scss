@@ -14,8 +14,9 @@
 
 body {
 	/* background-color: $backgroundColor;*/
+	color: $defaultTextColor;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 h1 {
@@ -29,9 +30,15 @@ h1 {
 }
 
 h2 {
+	padding: 85px 0 60px;
 	color: $mainColor;
     font-family: 'Lora', serif;
     font-size: 48px;
+}
+
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
 }
 
 
@@ -41,9 +48,7 @@ h2 {
 	z-index: 99;
 
 	.container {
-		margin: 0 auto;	
 		height: 90px;
-		max-width: 1170px;	
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -143,6 +148,160 @@ header {
 
 			&:hover, &:focus {
 				background-color: rgba(255, 255, 255, 0.2);
+			}
+		}
+	}
+}
+
+.about {
+	height: calc(100vh - 90px);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: -webkit-box;
+	display: flex;
+
+	figure {
+		height: inherit;
+		width: 470px;
+		background-color: $mainColor;
+	}
+
+	section {
+		margin: 0 10px 0 30px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+
+		p {
+			margin-left: 130px;
+		}
+
+		footer {
+			-ms-flex-item-align: end;
+			    align-self: flex-end;
+
+			a {
+				margin-top: 60px;
+				margin-left: 30px;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-inline-box;
+				display: -ms-inline-flexbox;
+				display: inline-flex;
+				-webkit-box-align: center;
+				    -ms-flex-align: center;
+				        align-items: center;
+				-webkit-box-pack: center;
+				    -ms-flex-pack: center;
+				        justify-content: center;
+				width: 170px;
+				height: 60px;
+				font-size: 18px;
+				font-weight: bold;
+				text-transform: uppercase;
+				-webkit-transition: -webkit-transform 0.5s;
+				transition: -webkit-transform 0.5s;
+				transition: transform 0.5s;
+				transition: transform 0.5s, -webkit-transform 0.5s;
+				transition: transform 0.2s, -webkit-transform 0.2s;
+
+				&:hover, &:focus {
+					-webkit-transform: scale(1.05);
+					transform: scale(1.05);
+					-webkit-transition: -webkit-transform 0.5s;
+					transition: -webkit-transform 0.5s;
+					transition: transform 0.5s;
+					transition: transform 0.5s, -webkit-transform 0.5s;
+					transition: transform 0.2s, -webkit-transform 0.2s;
+				}
+			}
+
+			a:first-child {
+				background-color: $linksColor;
+				color: $mainColor;
+
+				&:hover, &:focus {
+					background-color: $mainColor;
+					color: $backgroundColor;
+				}
+			}
+
+			a:last-child {
+				background-color: $accentColor;
+				color: $backgroundColor;
+
+				&:hover, &:focus {
+					background-color: #7c010a;
+					color: $backgroundColor;
+				}
+			}
+		}
+	}
+}
+
+.skills {
+	padding-bottom: 60px;
+	/* height: calc(100vh - 90px);*/
+	background: {
+		image: 
+			linear-gradient(rgba(168, 218, 220, 0.45), rgba(168, 218, 220, 0.45)), 
+			url('../img/backgroundskills.png');
+		blend-mode: overlay; 
+		color: #d0e7e8;
+		size: cover;
+		position: center center;
+	}
+
+	.container {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+
+	.column {
+		h3 {
+			padding-bottom: 20px;
+			padding-left: 60px;
+			color: $mainColor;
+			font-size: 30px;
+		}
+
+		& > ul {
+			margin-left: 100px;
+		}
+
+		& > ul > li {
+			color: $mainColor;
+			font-weight: bold;
+
+			&:before {
+				content: '\2015';
+				color: $accentColor;
+				font-size: 30px;
+				margin-right: 7px;
+			}				
+
+			span {
+				color: $defaultTextColor;
+				font-weight: normal;
+			}
+		}
+		& > ul > li > ul {
+			color: $defaultTextColor;
+			font-weight: normal;
+			margin-left: 60px;
+			padding-bottom: 20px;
+
+			& > li {
+				&:before {
+					content: " - "
+				}
 			}
 		}
 	}
