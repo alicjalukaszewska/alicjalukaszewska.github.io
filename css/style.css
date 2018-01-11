@@ -13,7 +13,8 @@ body {
   /* background-color: $backgroundColor;*/
   color: #363636;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 22px; }
+  font-size: 22px;
+  line-height: 1.5; }
 
 h1 {
   color: #f1faee;
@@ -193,32 +194,89 @@ header {
   background-color: #d0e7e8;
   background-size: cover;
   background-position: center center; }
+  .skills h2 {
+    margin: 0 auto;
+    display: block;
+    max-width: 1170px; }
   .skills .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  .skills .column h3 {
-    padding-bottom: 20px;
-    padding-left: 60px;
-    color: #003366;
-    font-size: 30px; }
-  .skills .column > ul {
-    margin-left: 100px; }
-  .skills .column > ul > li {
-    color: #003366;
-    font-weight: bold; }
-    .skills .column > ul > li:before {
-      content: '\2015';
-      color: #e63946;
-      font-size: 30px;
-      margin-right: 7px; }
-    .skills .column > ul > li span {
+  .skills .column {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
+    .skills .column h3 {
+      padding-bottom: 20px;
+      padding-left: 60px;
+      color: #003366;
+      font-size: 30px; }
+    .skills .column > ul {
+      margin-left: 100px; }
+    .skills .column > ul > li {
+      color: #003366;
+      font-weight: bold; }
+      .skills .column > ul > li:before {
+        content: '\2015';
+        color: #e63946;
+        font-size: 30px;
+        margin-right: 7px; }
+      .skills .column > ul > li span {
+        color: #363636;
+        font-weight: normal; }
+    .skills .column > ul > li > ul {
       color: #363636;
-      font-weight: normal; }
-  .skills .column > ul > li > ul {
-    color: #363636;
-    font-weight: normal;
-    margin-left: 60px;
-    padding-bottom: 20px; }
-    .skills .column > ul > li > ul > li:before {
-      content: " - "; }
+      font-weight: normal;
+      margin-left: 60px;
+      padding-bottom: 20px; }
+      .skills .column > ul > li > ul > li:before {
+        content: " - "; }
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .contact h2 {
+    padding-bottom: 10px; }
+  .contact .lead {
+    font-size: 30px;
+    padding-bottom: 10px; }
+  .contact p {
+    font-size: 24px; }
+  .contact a {
+    color: #e63946;
+    font-weight: bold; }
+    .contact a:hover, .contact a:focus {
+      color: #7c010a;
+      text-decoration: underline; }
+  .contact form {
+    margin-top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .contact form p {
+      margin-bottom: 30px;
+      -ms-flex-item-align: end;
+      align-self: flex-end; }
+    .contact form label {
+      margin-top: 15px;
+      margin-right: 30px;
+      width: 70px;
+      text-align: right; }
+    .contact form input, .contact form textarea {
+      width: 500px;
+      background-color: #a8dadc; }
+    .contact form input {
+      height: 60px; }
+    .contact form button {
+      height: 60px;
+      width: 230px;
+      background-color: #e63946;
+      color: #f1faee; }
+      .contact form button:hover, .contact form button:focus {
+        background-color: #7c010a;
+        color: #f1faee; }
