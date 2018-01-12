@@ -161,7 +161,7 @@
 		</section>
 	</article>
 	<article class="contact container" id="kontakt">
-		<section class="form">
+		<section class="contact-form">
 			<h2>Kontakt</h2>
 			<p class="lead">Jestem otwarta na propozycje współpracy!</p>
 			<p>Szukasz front-end developera lub masz do mnie pytanie?</p>
@@ -177,8 +177,10 @@
 					<input type="email" name="email" required pattern="^(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}$">
 				</p>
 				<p>
-					<label for="message">treść</label>
-					<textarea name="message" id="" cols="30" rows="10" required></textarea>
+					<label for="message">
+						<span>treść</span>
+						<textarea name="message" id="" required></textarea>
+					</label>
 				</p>
 				<p>
 					<button name="submit" type="submit">Wyślij</button>
@@ -188,15 +190,15 @@
 		<section class="links">
 			<h2>Linki</h2>
 			<ul>
-				<li class="special">Pobierz CV</li>
-				<li>GitHub</li>
-				<li>LinkedIn</li>
-				<li>Facebook</li>
+				<li><a class="cv" href="/files/CV.pdf" download="CV - Alicja Łukaszewska.pdf">Pobierz CV</a></li>
+				<li><a class="github" target="_blank" href="https://github.com/alicjalukaszewska">GitHub</a></li>
+				<li><a class="linkedin" href="https://www.linkedin.com/in/alicja-%C5%82ukaszewska-3792b4121/" target="_blank">LinkedIn</a></li>
+				<li><a class="fb" href="https://www.facebook.com/alicja.xenya" target="_blank">Facebook</a></li>
 			</ul>
 		</section>
 	</article>
 	<footer>
-		<p>Copyright &#169; by Alicja Łukaszewska 2018</p>
+		Copyright <span class="special">&#169;</span> by Alicja Łukaszewska 2018
 	</footer>
 	<script src="js/code.js"></script>
 </body>

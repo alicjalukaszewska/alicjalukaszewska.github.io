@@ -318,19 +318,23 @@ header {
 }
 
 .contact {
+	padding-bottom: 60px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+
 	h2 {
+		padding-top: 30px;
 		padding-bottom: 10px;
 	}
 
 	.lead {
-		font-size: 30px;
+		font-size: 26px;
 		padding-bottom: 10px;
 	}
 	p {
-		font-size: 24px;
+		font-size: 22px;
+		padding-top: 5px;
 	}
 
 	a {
@@ -341,6 +345,10 @@ header {
 			color: $accentHover;
 			text-decoration: underline;
 		}
+	}
+
+	.contact-form {
+		padding-right: 100px;
 	}
 
 	form {
@@ -356,25 +364,35 @@ header {
 			margin-bottom: 30px;
 				-ms-flex-item-align: end;
 			    align-self: flex-end;
+			    font-size: 20px;
 		}
 
 		label {
-
 			margin-top: 15px;
-			margin-right: 30px;
 			width: 70px;
 			text-align: right;
-
+			
+			span {
+				margin-top: -5px;
+			}
 		}
 
-		input, textarea {		
+		input, textarea {
+			margin-left: 15px;
+			padding: 15px;
 			width: 500px;	
 			background-color: $linksColor;
+
 		}
 
 		input {
 			height: 60px;
+		}
 
+		textarea {
+			padding-top:5px;
+			vertical-align: top;
+			height: 180px;
 		}
 
 		button {
@@ -382,6 +400,9 @@ header {
 			width: 230px;
 			background-color: $accentColor;
 			color: $backgroundColor;
+			font-weight: bold;
+			text-transform: uppercase;
+			cursor: pointer;
 
 				&:hover, &:focus {
 				background-color: $accentHover;
@@ -389,6 +410,74 @@ header {
 			}
 		}
 	}
+}
+
+.links {
+	padding-left: 100px;
+	border-left: 6px solid $mainColor;
+
+	li {
+		margin: 30px 0;
+		
+		
+
+		a {
+			color: $mainColor;
+			font-size: 24px;
+			font-weight: normal;background-repeat: no-repeat;
+			background-size: contain;
+			padding-left: 60px;
 
 
+			&:hover, &:focus {
+				color: $mainColor;
+				text-decoration: underline;
+			}	
+
+			&.cv {
+				background-image: url(../img/icons/cv.svg);
+				color: $accentColor;
+				text-transform: uppercase;
+				text-decoration: underline;
+
+				&:hover, &:focus {
+					color: $accentHover;
+				}
+			}
+
+			&.github {
+				background-image: url(../img/icons/gh.svg);
+			}
+
+			&.linkedin {
+				background-image: url(../img/icons/li.svg);
+			}	
+
+			&.fb {
+				background-image: url(../img/icons/fb.svg);
+			}		
+		}
+	}
+}
+
+body > footer {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	height: 60px;
+	text-align: center;
+	font-size: 18px;
+	color: $backgroundColor;
+	background-color: $mainColor;
+
+	span {
+		padding: 0 5px;
+		color: $accentColor;
+	}
 }
