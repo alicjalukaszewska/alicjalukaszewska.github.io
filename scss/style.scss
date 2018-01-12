@@ -299,11 +299,13 @@ header {
 
 			span {
 				color: $defaultTextColor;
+				font-size: 18px;
 				font-weight: normal;
 			}
 		}
 		& > ul > li > ul {
 			color: $defaultTextColor;
+			font-size: 18px;
 			font-weight: normal;
 			margin-left: 60px;
 			padding-bottom: 20px;
@@ -382,7 +384,10 @@ header {
 			padding: 15px;
 			width: 500px;	
 			background-color: $linksColor;
-
+		
+			&:hover, &:focus {
+				outline: 1px solid $mainColor;
+			}
 		}
 
 		input {
@@ -404,7 +409,7 @@ header {
 			text-transform: uppercase;
 			cursor: pointer;
 
-				&:hover, &:focus {
+			&:hover, &:focus {
 				background-color: $accentHover;
 				color: $backgroundColor;
 			}
@@ -436,10 +441,10 @@ header {
 				background-image: url(../img/icons/cv.svg);
 				color: $accentColor;
 				text-transform: uppercase;
-				text-decoration: underline;
-
+				
 				&:hover, &:focus {
 					color: $accentHover;
+					text-decoration: underline;
 				}
 			}
 

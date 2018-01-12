@@ -223,9 +223,11 @@ header {
         margin-right: 7px; }
       .skills .column > ul > li span {
         color: #363636;
+        font-size: 18px;
         font-weight: normal; }
     .skills .column > ul > li > ul {
       color: #363636;
+      font-size: 18px;
       font-weight: normal;
       margin-left: 60px;
       padding-bottom: 20px; }
@@ -279,6 +281,8 @@ header {
       padding: 15px;
       width: 500px;
       background-color: #a8dadc; }
+      .contact form input:hover, .contact form input:focus, .contact form textarea:hover, .contact form textarea:focus {
+        outline: 1px solid #003366; }
     .contact form input {
       height: 60px; }
     .contact form textarea {
@@ -315,10 +319,10 @@ header {
       .links li a.cv {
         background-image: url(../img/icons/cv.svg);
         color: #e63946;
-        text-transform: uppercase;
-        text-decoration: underline; }
+        text-transform: uppercase; }
         .links li a.cv:hover, .links li a.cv:focus {
-          color: #7c010a; }
+          color: #7c010a;
+          text-decoration: underline; }
       .links li a.github {
         background-image: url(../img/icons/gh.svg); }
       .links li a.linkedin {
