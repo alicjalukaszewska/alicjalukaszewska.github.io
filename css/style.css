@@ -263,11 +263,16 @@ header {
   grid-template-columns: 1fr 1fr 1fr;
   -ms-grid-rows: auto auto auto;
   grid-template-rows: auto auto auto; }
-  .portfolio h2 {
-    text-align: center;
+  .portfolio .aboutProjects {
+    padding: 30px;
     -ms-grid-column: 1;
     grid-column-start: 1;
     grid-column-end: 3; }
+    .portfolio .aboutProjects h2 {
+      padding: 10px 0;
+      text-align: center; }
+    .portfolio .aboutProjects p {
+      font-size: 18px; }
   .portfolio .image-wrapper {
     position: relative;
     display: flex;
@@ -324,6 +329,20 @@ header {
   transition: all 1s;
   -webkit-transition: all 1s;
   display: none; }
+  .zoomed button {
+    padding: 20px;
+    width: 50px;
+    height: 80px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    color: #f1faee;
+    background-color: #003366; }
+    .zoomed button:hover, .zoomed button:focus {
+      background-color: #7c010a;
+      transition: all 0.2s;
+      -webkit-transition: all 0.2s; }
   .zoomed .zoomed-project {
     padding: 10px 0 30px;
     position: relative;
@@ -347,23 +366,35 @@ header {
       max-width: 840px; }
     .zoomed .zoomed-project button {
       position: absolute;
-      right: 0;
       top: 0;
       padding: 20px;
-      -ms-flex-item-align: end;
-      align-self: flex-end;
       width: 80px;
       height: 80px;
-      color: #f1faee;
-      background-color: #003366;
       font-size: 30px;
       cursor: pointer;
       transition: all 0.2s;
       -webkit-transition: all 0.2s; }
-      .zoomed .zoomed-project button:hover, .zoomed .zoomed-project button:focus {
-        background-color: #7c010a;
+      .zoomed .zoomed-project button.close {
+        -ms-flex-item-align: end;
+        align-self: flex-end;
+        color: #f1faee;
+        background-color: #003366; }
+        .zoomed .zoomed-project button.close:hover, .zoomed .zoomed-project button.close:focus {
+          background-color: #7c010a;
+          transition: all 0.2s;
+          -webkit-transition: all 0.2s; }
+      .zoomed .zoomed-project button.back {
+        display: none;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+        color: #f1faee;
+        background-color: #e63946;
         transition: all 0.2s;
         -webkit-transition: all 0.2s; }
+        .zoomed .zoomed-project button.back:hover, .zoomed .zoomed-project button.back:focus {
+          background-color: #003366;
+          transition: all 0.2s;
+          -webkit-transition: all 0.2s; }
     .zoomed .zoomed-project .details {
       margin-top: 10px;
       display: flex; }

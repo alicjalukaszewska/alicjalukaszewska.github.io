@@ -334,12 +334,23 @@ header {
 	    grid-template-columns: 1fr 1fr 1fr;
 	-ms-grid-rows: auto auto auto;
 	    grid-template-rows: auto auto auto;
-    h2 {
-		text-align: center;
+
+	.aboutProjects {
+		padding: 30px;
 		-ms-grid-column: 1;
-		    grid-column-start: 1;
-		grid-column-end: 3;
-    }
+		 grid-column-start: 1;
+		grid-column-end: 3;    
+
+		h2 {
+			padding: 10px 0;
+			text-align: center;
+	    }
+
+	    p {
+	    	font-size: 18px;
+	    }
+
+	}
 
 	.image-wrapper {
 		position: relative;
@@ -414,6 +425,24 @@ header {
     -webkit-transition: all 1s;
     display: none;
 
+    button {
+		padding: 20px;
+	    width: 50px;
+	    height: 80px;
+		font-size: 30px;
+		cursor: pointer;
+		transition: all 0.2s;
+	    -webkit-transition: all 0.2s;
+		color: $backgroundColor;
+		background-color: $mainColor;
+
+    	&:hover, &:focus {
+			background-color: $accentHover;
+			transition: all 0.2s;
+		    -webkit-transition: all 0.2s;
+		}
+    }
+
 	.zoomed-project {
 		padding: 10px 0 30px;
 		position: relative;
@@ -440,25 +469,42 @@ header {
 
 		button {
 			position: absolute;
-			right: 0;
 			top: 0;			
 			padding: 20px;
-			-ms-flex-item-align: end;
-			    align-self: flex-end;
-			    width: 80px;
-			    height: 80px;
-			color: $backgroundColor;
-			background-color: $mainColor;
+		    width: 80px;
+		    height: 80px;
 			font-size: 30px;
 			cursor: pointer;
 			transition: all 0.2s;
 		    -webkit-transition: all 0.2s;
 
-			&:hover, &:focus {
-				background-color: $accentHover;
-				transition: all 0.2s;
+		    &.close {			
+		    	-ms-flex-item-align: end;
+			    align-self: flex-end;
+				color: $backgroundColor;
+				background-color: $mainColor;
+		    	&:hover, &:focus {
+					background-color: $accentHover;
+					transition: all 0.2s;
+				    -webkit-transition: all 0.2s;
+				}
+		    }
+
+		    &.back {
+		    	display: none;
+		    	-ms-flex-item-align: start;
+			    align-self: flex-start;
+				color: $backgroundColor;
+				background-color: $accentColor;
+						transition: all 0.2s;
 			    -webkit-transition: all 0.2s;
-			}
+
+		    	&:hover, &:focus {
+					background-color: $mainColor;
+					transition: all 0.2s;
+				    -webkit-transition: all 0.2s;
+				}
+		    }
 		}
 
 		.details {
