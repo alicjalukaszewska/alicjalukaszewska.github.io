@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
     Math.round(end * (-Math.pow(2, -10 * elapsed/duration) + 1) + start);
 
   const getCoordinates = hash => {
-    const start = root.scrollTop - 90;
+    const menuHeight = document.querySelector('#menu').offsetHeight;
+    const start = root.scrollTop - menuHeight;
     const delta = (() => {
       if (hash.length < 2) return -start;
       const target = document.querySelector(hash);
@@ -48,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const complete = (hash, coordinates) => {
     history.pushState(null, null, hash);
     root.scrollTop = coordinates.get("start") + coordinates.get("delta");
-    console.log(root.scrollTop);
   };
 
   const attachHandler = (links, index) => {

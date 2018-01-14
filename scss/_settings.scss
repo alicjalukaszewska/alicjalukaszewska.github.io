@@ -24,3 +24,26 @@ $gradientOverlay: rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.4);
     white-space: nowrap; /* 1 */
 
 }
+
+@-webkit-keyframes drop {
+  0% {
+    top: 5px;
+  }
+  30% {
+    top: 10px;
+  }
+  100% {
+    top: 22px;
+  }
+}
+@keyframes drop {
+  0% {
+    top: 5px;
+  }
+  50% {
+    top: 10px;
+  }
+  100% {
+    top: 5px;
+  }
+}

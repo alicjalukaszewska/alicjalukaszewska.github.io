@@ -31,7 +31,7 @@ h1 {
 }
 
 h2 {
-	padding: 85px 0 60px;
+	padding: 60px 0 60px;
 	color: $mainColor;
     font-family: 'Lora', serif;
     font-size: 48px;
@@ -76,6 +76,11 @@ h2 {
 					
 					&.special {
 						color: $accentColor;
+
+						&:hover, &:focus {
+							color: $accentHover;
+							text-decoration: underline;
+						}
 					}
 
 					&:hover, &:focus {
@@ -105,6 +110,7 @@ h2 {
 }
 
 header {
+	position: relative;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -160,6 +166,59 @@ header {
 			}
 		}
 	}
+
+/* ---------------------------------------------- /*
+ * Mouse animate icon
+/* ---------------------------------------------- */
+	.mouse-icon {
+		position: absolute;
+		bottom: 0;
+		// left: 0;
+		// right: 0;
+		text-align: center;
+		margin-bottom: 80px;
+		border: 2px solid #000;
+		border-radius: 16px;
+		height: 40px;
+		width: 24px;
+		display: block;
+		border-color: $backgroundColor;
+		z-index: 10;
+		opacity: 0.7;
+		transform: scale(1.5);
+	}
+
+	.mouse-icon .wheel {
+		-webkit-animation-name: drop;
+		-webkit-animation-duration: 2s;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-delay: 0s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-play-state: running;
+		-webkit-animation-name: drop;
+		      animation-name: drop;
+		-webkit-animation-duration: 2s;
+		      animation-duration: 2s;
+		-webkit-animation-timing-function: linear;
+		      animation-timing-function: linear;
+		-webkit-animation-delay: 0s;
+		      animation-delay: 0s;
+		-webkit-animation-iteration-count: infinite;
+		      animation-iteration-count: infinite;
+		-webkit-animation-play-state: running;
+		      animation-play-state: running;
+	}
+	.mouse-icon .wheel {
+		position: relative;
+		border-radius: 10px;
+		background-color: $backgroundColor;
+		width: 3px;
+		height: 8px;
+		top: 4px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 }
 
 .about {
@@ -254,7 +313,7 @@ header {
 
 .skills {
 	padding-bottom: 60px;
-	/* height: calc(100vh - 90px);*/
+	height: calc(100vh - 90px);
 	background: {
 		image: 
 			linear-gradient(rgba(168, 218, 220, 0.45), rgba(168, 218, 220, 0.45)), 
@@ -266,6 +325,7 @@ header {
 	}
 
 	h2 {
+		padding: 40px 0;
 		margin: 0 auto;
 		display: block;
 		max-width: 1170px;
@@ -801,3 +861,4 @@ body > footer {
 		color: $accentColor;
 	}
 }
+
