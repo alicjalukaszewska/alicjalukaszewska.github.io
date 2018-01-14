@@ -352,10 +352,14 @@ header {
 
 	}
 
-	.image-wrapper {
+	.project {
 		position: relative;
 		display: flex;
 		overflow: hidden;
+
+		.image-wrapper {
+			display: flex;
+		}
 
 		&:after {
 			background: {
@@ -373,7 +377,7 @@ header {
 		    -webkit-transition: all 0.5s;
 		}
 
-		&:hover:after {	
+		&:hover:after, &:focus:after {	
 			background: {
 				color: rgba(0, 51, 102, 0.8);	
 				image: url('../img/icons/magnifier.svg');
@@ -385,7 +389,7 @@ header {
 		    -webkit-transition: all 0.5s;
 		}
 
-		&:nth-child(even):hover:after {
+		&:nth-child(even):hover:after, &:nth-child(even):focus:after {
 			background: {
 				color: rgba(230, 57, 70, 0.6);	
 				image: url('../img/icons/magnifier.svg');

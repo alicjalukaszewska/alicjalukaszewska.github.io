@@ -11,7 +11,6 @@
 <body>		
 <div class="zoomed" id="zoom">
 	<button class="prev" id="prev">&#10094;</button>
-	
 	<div class="zoomed-project">
 		<button class="close" id="close">&#10006;</button>
 		<button class="back" id="back">&#10094;</button>
@@ -24,17 +23,17 @@
 		<div class="container">
 			<nav id="menu">
 				<ul>
-					<li><a href="#">Start</a></li>
-					<li><a href="#">O mnie</a></li>
-					<li><a href="#">Technologie</a></li>
-					<li><a href="#">Realizacje</a></li>
-					<li><a class="special" href="#">Kontakt</a></li>
+					<li><a class="scroll" href="#start">Start</a></li>
+					<li><a class="scroll" href="#omnie">O mnie</a></li>
+					<li><a class="scroll" href="#technologie">Technologie</a></li>
+					<li><a class="scroll" href="#realizacje">Realizacje</a></li>
+					<li><a class="scroll special" href="#kontakt">Kontakt</a></li>
 				</ul>
 			</nav>
 		</div>
 	</nav>	
-	<header>
-		<div class="welcome">
+	<header id="start">
+		<div class="welcome" >
 			<h1><a href="index.html">Alicja Łukaszewska</a></h1>
 			<p>Front-End Developer</p>
 			<a href="#" class="projects">Zobacz projekty</a>
@@ -119,7 +118,7 @@
 			<h2>Realizacje</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A suscipit debitis ex ab nostrum, eaque ad fugiat consequuntur. Cum soluta mollitia, vel architecto aspernatur iste molestias saepe nihil nulla dicta! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi eveniet a inventore autem quibusdam reprehenderit ipsam odio eius iste architecto.</p>
 		</div>
-		<div class="project" id="project1">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project1">
 			<div class="image-wrapper">
 				<img src="/img/projects/brand.jpg" alt="">
 			</div>	
@@ -145,9 +144,9 @@
 					<a class="code" href="https://github.com/alicjalukaszewska/weeklywebdev24" target="_blank">Kod</a>
 				</div>
 			</div>	
-		</div>	
+		</button>	
 	
-		<div class="project" id="project2">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project2">
 			<div class="image-wrapper">
 				<img src="/img/projects/alarm.jpg" alt="">
 			</div>
@@ -173,8 +172,8 @@
 					<a class="code" href="https://github.com/alicjalukaszewska/simpleAlarm" target="_blank">Kod</a>
 				</div>
 			</div>
-		</div>	
-		<div class="project" id="project3">
+		</button>	
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project3">
 			<div class="image-wrapper">
 				<img src="/img/projects/potestas.jpg" alt="">
 			</div>		
@@ -200,10 +199,8 @@
 					<a class="code" href="https://github.com/alicjalukaszewska/PotestasCanti" target="_blank">Kod</a>
 				</div>
 			</div>
-		</div>	
-
-		
-		<div class="project" id="project4">
+		</button>	
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project4">
 			<div class="image-wrapper">
 				<img src="/img/projects/tamagotchi.jpg" alt="">
 			</div>
@@ -230,8 +227,8 @@
 					</div>
 				</div>
 			</div>			
-		</div>	
-		<div class="project" id="project5">
+		</button>	
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project5">
 			<div class="image-wrapper">
 				<img src="/img/projects/bykon.jpg" alt="">
 			</div>	
@@ -257,9 +254,9 @@
 					<a class="code" href="#" target="_blank">Kod</a>
 				</div>
 			</div>
-		</div>	
+		</button>	
 		
-		<div class="project" id="project6">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project6">
 			<div class="image-wrapper">
 				<img src="/img/projects/kosci.jpg" alt="">
 			</div>		
@@ -285,8 +282,8 @@
 					<a class="code" href="https://github.com/alicjalukaszewska/DiceGame" target="_blank">Kod</a>
 				</div>
 			</div>
-		</div>	
-		<div class="project" id="project7">
+		</button>	
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project7">
 			<div class="image-wrapper">
 				<img src="/img/projects/wet.jpg" alt="">
 			</div>
@@ -296,7 +293,7 @@
 						<h3>Strona Vet-Bicom</h3>
 						<dl class="date">
 							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd>Sierpień 2016 - Październik 2017</dd>
+							<dd>Sierpień 2016 - Październik 2016</dd>
 						</dl>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde est odio ea, aliquid voluptate adipisci, non nulla veniam nostrum veritatis sunt dolores temporibus perspiciatis! Unde explicabo doloremque quia iste dolor?</p>
 					</div>
@@ -312,7 +309,7 @@
 					<a class="code" href="#" target="_blank">Kod</a>
 				</div>
 			</div>
-		</div>
+		</button>
 	</article>
 	<article class="contact container" id="kontakt">
 		<section class="contact-form">
@@ -362,6 +359,7 @@
 	<footer>
 		Copyright <span class="special">&#169;</span> by Alicja Łukaszewska 2018
 	</footer>
+	<script src="js/scroll.js"></script>
 	<script src="js/code.js"></script>
 </body>
 </html>
