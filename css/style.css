@@ -260,23 +260,17 @@ header {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: auto 1fr 1fr;
-  grid-template-rows: auto 1fr 1fr; }
+  grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto auto;
+  grid-template-rows: auto auto auto; }
   .portfolio h2 {
     text-align: center;
     -ms-grid-column: 1;
     grid-column-start: 1;
     grid-column-end: 3; }
-  .portfolio h3 {
-    margin-top: 60px;
-    margin-bottom: 10px;
-    color: #003366;
-    font-size: 50px;
-    font-weight: 300;
-    /*light*/ }
   .portfolio .image-wrapper {
     position: relative;
+    display: flex;
     overflow: hidden; }
     .portfolio .image-wrapper:after {
       background-color: transparent;
@@ -298,7 +292,7 @@ header {
       background-size: 20%;
       transition: all 0.5s;
       -webkit-transition: all 0.5s; }
-    .portfolio .image-wrapper:nth-child(odd):hover:after {
+    .portfolio .image-wrapper:nth-child(even):hover:after {
       background-color: rgba(230, 57, 70, 0.6);
       background-image: url("../img/icons/magnifier.svg");
       background-repeat: no-repeat;
@@ -309,63 +303,11 @@ header {
     .portfolio .image-wrapper img {
       width: 100%;
       height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover; }
-  .portfolio .description {
-    position: relative;
-    font-size: 18px;
-    padding: 0 30px; }
-    .portfolio .description .date {
-      margin-bottom: 5px;
-      padding-left: 35px;
-      font-weight: 300;
-      /*italic*/
-      background-image: url("../img/icons/calendar.svg");
-      background-repeat: no-repeat; }
-  .portfolio .view {
-    position: absolute;
-    bottom: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-    .portfolio .view a {
-      margin-left: 70px;
-      margin-bottom: 30px;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      width: 130px;
-      height: 60px;
-      font-size: 30px;
-      text-transform: uppercase;
-      transition: all 0.3s;
-      -webkit-transition: all 0.3s; }
-      .portfolio .view a.live {
-        color: #003366;
-        border: 1px solid #003366; }
-        .portfolio .view a.live:hover, .portfolio .view a.live:focus {
-          background-color: #003366;
-          color: #f1faee;
-          transition: all 0.3s;
-          -webkit-transition: all 0.3s; }
-      .portfolio .view a.code {
-        color: #e63946;
-        border: 1px solid #e63946; }
-        .portfolio .view a.code:hover, .portfolio .view a.code:focus {
-          background-color: #e63946;
-          color: #f1faee;
-          transition: all 0.3s;
-          -webkit-transition: all 0.3s; }
+      -o-object-fit: contain;
+      object-fit: contain; }
 
 .zoomed {
   position: fixed;
-  /* padding: 2%;*/
   width: 100%;
   height: 100vh;
   background-color: rgba(69, 123, 157, 0.4);
@@ -383,6 +325,7 @@ header {
   -webkit-transition: all 1s;
   display: none; }
   .zoomed .zoomed-project {
+    padding: 10px 0 30px;
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -398,12 +341,10 @@ header {
     -ms-flex-pack: center;
     justify-content: center;
     background-color: #ffffff;
-    overflow: auto; }
+    height: 95%;
+    width: 900px; }
     .zoomed .zoomed-project img {
-      -webkit-box-sizing: content-box;
-      box-sizing: content-box;
-      padding: 30px;
-      height: 85vh; }
+      max-width: 840px; }
     .zoomed .zoomed-project button {
       position: absolute;
       right: 0;
@@ -423,6 +364,90 @@ header {
         background-color: #7c010a;
         transition: all 0.2s;
         -webkit-transition: all 0.2s; }
+    .zoomed .zoomed-project .details {
+      margin-top: 10px;
+      display: flex; }
+      .zoomed .zoomed-project .details .description {
+        margin: 0 auto;
+        flex: 3;
+        position: relative;
+        font-size: 18px;
+        padding: 0 30px; }
+        .zoomed .zoomed-project .details .description h3 {
+          margin-bottom: 5px;
+          color: #003366;
+          font-size: 36px;
+          font-weight: 300;
+          /*light*/ }
+        .zoomed .zoomed-project .details .description .date {
+          margin-bottom: 5px;
+          padding-left: 35px;
+          font-size: 16px;
+          font-weight: 300;
+          /*italic*/
+          background-image: url("../img/icons/calendar.svg");
+          background-repeat: no-repeat;
+          background-size: contain; }
+        .zoomed .zoomed-project .details .description p {
+          font-size: 16px;
+          white-space: break-word; }
+    .zoomed .zoomed-project ul {
+      padding: 0 30px;
+      margin-bottom: 30px;
+      flex: 1;
+      color: #003366;
+      font-weight: light;
+      font-size: 22px;
+      border-left: 3px solid #003366; }
+      .zoomed .zoomed-project ul li {
+        color: #363636;
+        font-weight: normal;
+        font-size: 16px; }
+        .zoomed .zoomed-project ul li:before {
+          content: '\2015';
+          color: #e63946;
+          font-size: 20px;
+          margin-right: 7px; }
+    .zoomed .zoomed-project .view {
+      padding-left: 60px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%; }
+      .zoomed .zoomed-project .view a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 100px;
+        height: 50px;
+        font-size: 24px;
+        text-transform: uppercase;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s; }
+        .zoomed .zoomed-project .view a.live {
+          color: #003366;
+          border: 1px solid #003366; }
+          .zoomed .zoomed-project .view a.live:hover, .zoomed .zoomed-project .view a.live:focus {
+            background-color: #003366;
+            color: #f1faee;
+            transition: all 0.3s;
+            -webkit-transition: all 0.3s; }
+        .zoomed .zoomed-project .view a.code {
+          margin-left: 30px;
+          color: #e63946;
+          border: 1px solid #e63946; }
+          .zoomed .zoomed-project .view a.code:hover, .zoomed .zoomed-project .view a.code:focus {
+            background-color: #e63946;
+            color: #f1faee;
+            transition: all 0.3s;
+            -webkit-transition: all 0.3s; }
 
 .contact {
   padding-bottom: 60px;

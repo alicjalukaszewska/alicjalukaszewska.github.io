@@ -15,25 +15,41 @@ window.addEventListener('scroll', changeMenu);
 
 /* show/hide zoomed project */
 
-const images = document.querySelectorAll('.image-wrapper');
+const projects = document.querySelectorAll('.project');
 const closeBtn = document.querySelector('#close');
-const zoom = document.querySelector('#zoom');
-const zoomWrapper = document.querySelector('.zoomed-project');
+const zoomWindow = document.querySelector('#zoom');
+const zoomedProject = document.querySelector('.zoomed-project');
+const zoomedContent = document.querySelector('.zoomed-project .content');
+const zoomedImage = zoomedProject.querySelector('img');
 
-function zoomed (e) {
-	const zoomedImg = zoom.querySelector('img');
-	zoomedImg.src = this.firstElementChild.src;
-	zoom.style.display = "flex";
+function zoomImage () {
+	zoomedContent.classList.toggle('visuallyhidden');
 }
 
-images.forEach(image => {
-	image.addEventListener('click', zoomed);
+function changeContent (e) {
+	//reset content
+	zoomedContent.innerHTML = "";
+	zoomedContent.classList.remove('visuallyhidden');
+	//change image
+	let image = this.querySelector('img').src;
+
+	zoomedImage.src = image;
+	
+	let content = this.querySelector('.content').innerHTML;
+	//set new content
+	zoomedContent.innerHTML = content;
+	//show window
+	zoomWindow.style.display = "flex";
+}
+
+zoomedImage.addEventListener('click', zoomImage);
+
+projects.forEach(project => {
+	project.addEventListener('click', changeContent);
 })
 
+
 closeBtn.addEventListener('click', () => zoom.style.display = "none");
-
-// zoomWrapper.addEventListener('mouseleave', () => zoom.style.display = "none");
-
-
+// window.addEventListener('click', () => zoom.style.display = "none");
 
 // }());
