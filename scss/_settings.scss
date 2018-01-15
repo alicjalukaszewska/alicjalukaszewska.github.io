@@ -29,11 +29,11 @@ $gradientOverlay: rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.4);
   0% {
     top: 5px;
   }
-  30% {
+  50% {
     top: 10px;
   }
   100% {
-    top: 22px;
+    top: 5px;
   }
 }
 @keyframes drop {

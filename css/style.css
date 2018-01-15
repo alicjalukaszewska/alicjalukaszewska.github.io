@@ -15,10 +15,10 @@
 @-webkit-keyframes drop {
   0% {
     top: 5px; }
-  30% {
+  50% {
     top: 10px; }
   100% {
-    top: 22px; } }
+    top: 5px; } }
 
 @keyframes drop {
   0% {
@@ -577,10 +577,9 @@ header {
     padding-top: 30px;
     padding-bottom: 10px; }
   .contact .lead {
-    font-size: 26px;
-    padding-bottom: 10px; }
+    font-size: 24px; }
   .contact p {
-    font-size: 22px;
+    font-size: 20px;
     padding-top: 5px; }
   .contact a {
     color: #e63946;
