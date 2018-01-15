@@ -1,13 +1,21 @@
 
 // (function (){
 
-/* change menu background on scroll */
-function changeMenu() {
+console.log('ready');
+
+/* add logo item to menu */
+
+function changeMenu () {
 	const menu = document.querySelector('.fixed-menu');
-	if (window.scrollY == 0){
-		menu.classList.remove('scrolled');
-	} else {
+	const logo = document.querySelector('#logo');
+	const welcomeTop = document.querySelector('.welcome').offsetTop;
+
+	if (window.scrollY >= welcomeTop) {
+		logo.classList.add('fixed');
 		menu.classList.add('scrolled');
+	} else  {
+		logo.classList.remove('fixed');
+		menu.classList.remove('scrolled');
 	}
 }
 

@@ -66,7 +66,7 @@ h2 {
 .fixed-menu {
   position: fixed;
   width: 100%;
-  z-index: 99; }
+  z-index: 10; }
   .fixed-menu .container {
     height: 90px;
     display: -webkit-box;
@@ -111,7 +111,6 @@ h2 {
       transition: color 0.2s; }
 
 header {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,18 +125,18 @@ header {
   background-image: linear-gradient(rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.4)), url("../img/background.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  /* ---------------------------------------------- /*
- * Mouse animate icon
-/* ---------------------------------------------- */ }
+  background-size: cover; }
   header .welcome {
-    width: 1170px; }
+    width: 1170px;
+    height: 250px;
+    z-index: 15; }
     header .welcome p {
       margin-left: 10px;
       color: #e63946;
       font-size: 28px;
       text-transform: uppercase; }
     header .welcome > a {
+      top: auto;
       margin-left: 10px;
       margin-top: 30px;
       display: -webkit-box;
@@ -159,6 +158,23 @@ header {
         background-color: rgba(255, 255, 255, 0.2);
         transition: all 0.3s;
         -webkit-transition: all 0.3s; }
+    header .welcome .fixed {
+      position: fixed;
+      top: 10px;
+      margin-top: 0;
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s; }
+      header .welcome .fixed h1 {
+        font-size: 34px;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s; }
+      header .welcome .fixed p {
+        margin: -5px 2px;
+        font-size: 16px;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s; }
+    header .welcome .fixed + .projects {
+      opacity: 0; }
   header .mouse-icon {
     position: absolute;
     bottom: 0;
@@ -172,7 +188,11 @@ header {
     border-color: #f1faee;
     z-index: 10;
     opacity: 0.7;
-    transform: scale(1.5); }
+    background: transparent;
+    transform: scale(1.5);
+    cursor: pointer; }
+    header .mouse-icon:hover, header .mouse-icon:focus {
+      background-color: rgba(255, 255, 255, 0.3); }
   header .mouse-icon .wheel {
     -webkit-animation-name: drop;
     -webkit-animation-duration: 2s;
