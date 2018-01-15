@@ -1,12 +1,10 @@
 
 // (function (){
 
-console.log('ready');
-
-/* add logo item to menu */
+/* add logo item and background to menu */
+const menu = document.querySelector('.fixed-menu');
 
 function changeMenu () {
-	const menu = document.querySelector('.fixed-menu');
 	const logo = document.querySelector('#logo');
 	const welcomeTop = document.querySelector('.welcome').offsetTop;
 
@@ -21,6 +19,43 @@ function changeMenu () {
 
 window.addEventListener('scroll', changeMenu);
 
+function debounce(func, wait = 5, immediate = true) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+const anchors = {
+	start: document.querySelector('#start').offsetTop - 100,
+	omnie: document.querySelector('#omnie').offsetTop - 100,
+	technologie: document.querySelector('#technologie').offsetTop - 100,
+	realizacje: document.querySelector('#realizacje').offsetTop - 100,
+	kontakt: document.querySelector('#kontakt').offsetTop - 100,
+}
+
+function changeActive () {
+	Object.entries( anchors ).forEach(([name, topValue]) => {
+		if(window.scrollY >= topValue) {
+			const menuList = menu.querySelectorAll('li');
+			menuList.forEach(li => li.classList.remove('active'));
+			let currentSection = menu.querySelector(`a[href='#${name}']`).parentNode;
+			console.log(currentSection);
+			currentSection.classList.add('active');
+		} 
+	})
+}
+
+
+window.addEventListener('scroll', debounce(changeActive));
 
 /* show/hide zoomed project */
 
