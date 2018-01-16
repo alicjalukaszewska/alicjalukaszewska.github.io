@@ -64,12 +64,13 @@ h2 {
   margin: 0 auto; }
 
 .line {
+  opacity: 0;
   margin-top: -2px;
   position: fixed;
   height: 8px;
   width: 20px;
   background-color: #e63946;
-  transition: all 0.5s;
+  transition: all 0.2s;
   z-index: 99; }
 
 .fixed-menu {
@@ -86,7 +87,8 @@ h2 {
     justify-content: flex-end;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    z-index: 20; }
     .fixed-menu .container nav {
       height: 100%; }
     .fixed-menu .container nav ul {
@@ -140,10 +142,18 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
+  header canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; }
+  header .alt {
+    position: absolute;
+    top: 0;
+    left: 0; }
   header .welcome {
     width: 1170px;
-    height: 250px;
-    z-index: 15; }
+    height: 250px; }
     header .welcome p {
       margin-left: 10px;
       color: #e63946;
@@ -177,7 +187,8 @@ header {
       top: 10px;
       margin-top: 0;
       transition: all 0.3s;
-      -webkit-transition: all 0.3s; }
+      -webkit-transition: all 0.3s;
+      z-index: 15; }
       header .welcome .fixed h1 {
         font-size: 34px;
         transition: all 0.3s;

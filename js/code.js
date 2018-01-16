@@ -1,5 +1,7 @@
-
 // (function (){
+
+/* initiate smooth-scroll plugin */
+const scroll = new SmoothScroll('a[href*="#"]');
 
 /* add logo item and background to menu */
 const menu = document.querySelector('.fixed-menu');
@@ -21,27 +23,12 @@ function changeMenu () {
 
 window.addEventListener('scroll', changeMenu);
 
-function debounce(func, wait = 5, immediate = true) {
-  var timeout;
-  return function() {
-    var context = this, args = arguments;
-    var later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
-}
 
 function changeLine () {
-	//get only links
-	if (!(this.hasAttribute('href'))) return;
 	const linksCoords = this.getBoundingClientRect();
 	line.style.width = `${linksCoords.width}px`;
 	line.style.transform = `translate(${linksCoords.left}px, ${linksCoords.top}px)`;
+	line.style.opacity = 1;
 }
 
 const anchors = {
@@ -49,7 +36,7 @@ const anchors = {
 	omnie: document.querySelector('#omnie').offsetTop - 300,
 	technologie: document.querySelector('#technologie').offsetTop - 300,
 	realizacje: document.querySelector('#realizacje').offsetTop - 300,
-	kontakt: document.querySelector('#kontakt').offsetTop - 300,
+	kontakt: document.querySelector('#kontakt').offsetTop + 200,
 }
 
 function changeActive () {
@@ -61,8 +48,9 @@ function changeActive () {
 	})
 }
 
-links.forEach(link => link.addEventListener('mouseover', changeLine));
-window.addEventListener('scroll', debounce(changeActive));
+links.forEach(link => link.addEventListener('click', changeLine));
+window.addEventListener('scroll', changeActive);
+
 
 /* show/hide zoomed project */
 
@@ -80,7 +68,7 @@ const backBtn = document.querySelector('#back');
 const nextBtn = document.querySelector('#next');
 const prevBtn = document.querySelector('#prev');
 
-function hideZoom () {
+function hideZoomImage () {
 	backBtn.style.display = "none";
 	zoomedContent.classList.remove('visuallyhidden');
 	zoomedImage.addEventListener('click', zoomImage);
@@ -90,13 +78,13 @@ function zoomImage () {
 	backBtn.style.display = "block";
 	zoomedContent.classList.add('visuallyhidden');
 	zoomedImage.removeEventListener('click', zoomImage);
-	zoomedImage.addEventListener('click', hideZoom);
+	zoomedImage.addEventListener('click', hideZoomImage);
 }
 
 function changeContent () {
 	//reset content
 	zoomedContent.innerHTML = "";
-	hideZoom();
+	hideZoomImage();
 	//change image
 	let image = this.querySelector('img').src;
 	zoomedImage.src = image;
@@ -134,10 +122,14 @@ projects.forEach(project => {
 })
 
 zoomedImage.addEventListener('click', zoomImage);
-backBtn.addEventListener('click', hideZoom);
+backBtn.addEventListener('click', hideZoomImage);
 closeBtn.addEventListener('click', () => zoom.style.display = "none");
+zoomWindow.addEventListener('click', function(e) {
+	if (e.target == this) {
+ 		zoom.style.display = "none";
+	}
+})
 nextBtn.addEventListener('click', () => changeProjectByArrow('right'));
 prevBtn.addEventListener('click', () => changeProjectByArrow('left'));
-
 
 // }());
