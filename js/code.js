@@ -3,6 +3,8 @@
 
 /* add logo item and background to menu */
 const menu = document.querySelector('.fixed-menu');
+const links = menu.querySelectorAll('a');
+const line = document.querySelector('.line');
 
 function changeMenu () {
 	const logo = document.querySelector('#logo');
@@ -34,27 +36,32 @@ function debounce(func, wait = 5, immediate = true) {
   };
 }
 
+function changeLine () {
+	//get only links
+	if (!(this.hasAttribute('href'))) return;
+	const linksCoords = this.getBoundingClientRect();
+	line.style.width = `${linksCoords.width}px`;
+	line.style.transform = `translate(${linksCoords.left}px, ${linksCoords.top}px)`;
+}
+
 const anchors = {
-	start: document.querySelector('#start').offsetTop - 100,
-	omnie: document.querySelector('#omnie').offsetTop - 100,
-	technologie: document.querySelector('#technologie').offsetTop - 100,
-	realizacje: document.querySelector('#realizacje').offsetTop - 100,
-	kontakt: document.querySelector('#kontakt').offsetTop - 100,
+	start: document.querySelector('#start').offsetTop - 300,
+	omnie: document.querySelector('#omnie').offsetTop - 300,
+	technologie: document.querySelector('#technologie').offsetTop - 300,
+	realizacje: document.querySelector('#realizacje').offsetTop - 300,
+	kontakt: document.querySelector('#kontakt').offsetTop - 300,
 }
 
 function changeActive () {
 	Object.entries( anchors ).forEach(([name, topValue]) => {
 		if(window.scrollY >= topValue) {
-			const menuList = menu.querySelectorAll('li');
-			menuList.forEach(li => li.classList.remove('active'));
-			let currentSection = menu.querySelector(`a[href='#${name}']`).parentNode;
-			console.log(currentSection);
-			currentSection.classList.add('active');
+			let currentSection = menu.querySelector(`a[href='#${name}']`);
+			changeLine.call(currentSection);
 		} 
 	})
 }
 
-
+links.forEach(link => link.addEventListener('mouseover', changeLine));
 window.addEventListener('scroll', debounce(changeActive));
 
 /* show/hide zoomed project */
@@ -131,10 +138,6 @@ backBtn.addEventListener('click', hideZoom);
 closeBtn.addEventListener('click', () => zoom.style.display = "none");
 nextBtn.addEventListener('click', () => changeProjectByArrow('right'));
 prevBtn.addEventListener('click', () => changeProjectByArrow('left'));
-
-
-/* Scroll to article */
-
 
 
 // }());
