@@ -39,14 +39,8 @@
 		customEasing: null,
 
 		// Callback API
-		before: function () {
-			window.removeEventListener('scroll', changeActive);
-
-		},
-		after: function () {
-			window.addEventListener('scroll', changeActive);
-
-		}
+		before: function () {},
+		after: function () {}
 	};
 
 

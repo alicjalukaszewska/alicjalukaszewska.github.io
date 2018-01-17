@@ -16,7 +16,7 @@ body {
 	/* background-color: $backgroundColor;*/
 	color: $defaultTextColor;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.5;
 }
 
@@ -31,7 +31,7 @@ h1 {
 }
 
 h2 {
-	padding: 60px 0 60px;
+	padding: 3.2rem 0;
 	color: $mainColor;
     font-family: 'Lora', serif;
     font-size: 48px;
@@ -320,8 +320,8 @@ header {
 			    align-self: flex-end;
 
 			a {
-				margin-top: 60px;
-				margin-left: 30px;
+				margin: 3.5rem 0 3.5rem 2rem;
+				margin-left: 2rem;
 				display: -webkit-box;
 				display: -ms-flexbox;
 				display: -webkit-inline-box;
@@ -370,8 +370,7 @@ header {
 }
 
 .skills {
-	padding-bottom: 60px;
-	height: calc(100vh - 90px);
+	padding-bottom: 3.2rem;
 	background: {
 		image: 
 			linear-gradient(rgba(168, 218, 220, 0.45), rgba(168, 218, 220, 0.45)), 
@@ -383,7 +382,7 @@ header {
 	}
 
 	h2 {
-		padding: 40px 0;
+		padding: 1.5rem 0;
 		margin: 0 auto;
 		display: block;
 		max-width: 1170px;
@@ -400,10 +399,10 @@ header {
 		    -ms-flex: 1;
 		        flex: 1;
 		h3 {
-			padding-bottom: 20px;
+			padding-bottom: 10px;
 			padding-left: 60px;
 			color: $mainColor;
-			font-size: 30px;
+			font-size: 1.8rem;
 		}
 
 		& > ul {

@@ -1,7 +1,14 @@
 // (function (){
 
 /* initiate smooth-scroll plugin */
-const scroll = new SmoothScroll('a[href*="#"]');
+const scroll = new SmoothScroll( 'a[href*="#"]', { 
+	before: function() { 
+		window.removeEventListener('scroll', changeActive);
+	}, 
+	after: function() { 
+				window.addEventListener('scroll', changeActive);
+	} 
+});
 
 /* add logo item and background to menu */
 const menu = document.querySelector('.fixed-menu');
@@ -32,11 +39,11 @@ function changeLine () {
 }
 
 const anchors = {
-	start: document.querySelector('#start').offsetTop - 300,
-	omnie: document.querySelector('#omnie').offsetTop - 300,
-	technologie: document.querySelector('#technologie').offsetTop - 300,
-	realizacje: document.querySelector('#realizacje').offsetTop - 300,
-	kontakt: document.querySelector('#kontakt').offsetTop + 200,
+	start: document.querySelector('#start').offsetTop,
+	omnie: document.querySelector('#omnie').offsetTop - 250,
+	technologie: document.querySelector('#technologie').offsetTop - 250,
+	realizacje: document.querySelector('#realizacje').offsetTop - 250,
+	kontakt: document.querySelector('#kontakt').offsetTop - 250,
 }
 
 function changeActive () {
