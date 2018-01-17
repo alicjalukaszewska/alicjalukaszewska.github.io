@@ -30,7 +30,7 @@ function changeMenu () {
 
 window.addEventListener('scroll', changeMenu);
 
-
+/* move line above active link and change its width */
 function changeLine () {
 	const linksCoords = this.getBoundingClientRect();
 	line.style.width = `${linksCoords.width}px`;
@@ -58,6 +58,14 @@ function changeActive () {
 links.forEach(link => link.addEventListener('click', changeLine));
 window.addEventListener('scroll', changeActive);
 
+
+/* dropdown menu */
+
+const dropdownBtn = document.querySelector('#nav-icon');
+const dropdown = document.querySelector('.dropdown');
+
+dropdownBtn.addEventListener('click', () => dropdown.classList.toggle('dropped'));
+dropdownBtn.addEventListener('click', () => dropdownBtn.classList.toggle('open'));
 
 /* show/hide zoomed project */
 

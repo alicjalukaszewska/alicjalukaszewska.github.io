@@ -72,57 +72,191 @@ h2 {
 	        align-items: center;	
 	    z-index: 20;
 
-	    nav {
-	    	height: 100%;
-	    }
-
-	    nav ul{
-	    	height: inherit;
+	    .mobile-menu {
+			width: 100%;
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex;
-			-webkit-box-align: center;
-			    -ms-flex-align: center;
-			        align-items: center;
+			-webkit-box-pack: space-beetween;
+			    -ms-flex-pack: space-beetween;
+			        justify-content: space-between;
+			       -webkit-box-align: center;
+			           -ms-flex-align: center;
+			               align-items: center;
+
+			.mobile-logo {
+				top: 10px;			
+				margin-top: 0;
+				transition: all 0.3s;
+		    	-webkit-transition: all 0.3s;
+		    	z-index: 15;
+
+		    	a {
+		    		color: inherit;
+		    	}
 
 
-			li {
-				margin: 8px 15px 0;
-				height: 100%;
-		    		
-				a {
-					display: -webkit-box;
-					display: -ms-flexbox;
-					display: flex;
-					-webkit-box-align: center;
-					    -ms-flex-align: center;
-					        align-items: center;
-					width: 100%;
-					height: 100%;
-					color: $backgroundColor;
+				h1 {
+					font-size: 34px;
 					transition: all 0.3s;
-		    		-webkit-transition: all 0.3s;
+			    	-webkit-transition: all 0.3s;
+				}
+				p {
+					margin: -5px 2px;
+					font-size: 16px;
+					color: $accentColor;
+					text-transform: uppercase;
+					transition: all 0.3s;
+			    	-webkit-transition: all 0.3s;
+				}
+			}
 
+			/* Dropdown button */
 
-					
-					&.special {
-						color: $accentColor;
+			.toggler {
+				width: 60px;
+				height: 45px;
+				position: relative;
+				-webkit-transform: rotate(0deg);
+				transform: scale(0.8) rotate(0deg);
+				-webkit-transition: .5s ease-in-out;
+				transition: .5s ease-in-out;
+				background: transparent;
+				cursor: pointer;
 
-						&:hover, &:focus {
-							color: $accentHover;
-							text-decoration: underline;
-						}
+				&:hover > *, &:focus > * {
+						background-color: $accentHover;
+				}
+
+				span {
+					display: block;
+					position: absolute;
+					height: 5px;
+					width: 100%;
+					background-color: $accentColor;
+					border-radius: 9px;
+					opacity: 1;
+					left: 0;
+					-webkit-transform: rotate(0deg);
+					transform: rotate(0deg);
+					-webkit-transition: .25s ease-in-out;
+					transition: .25s ease-in-out;
+
+					&:nth-child(1) {
+						top: 0px;
 					}
 
-					&:hover, &:focus {
-						color: $linksColor;
-						text-decoration: underline;
-						transition: all 0.3s;
-		    			-webkit-transition: all 0.3s;
+					&:nth-child(2), &:nth-child(3){
+						top: 18px;
+					}
+					&:nth-child(4) {
+						top: 36px;
+					}
+				}
+
+				&.open span{
+					&:nth-child(1) {
+						top: 18px;
+						width: 0%;
+						left: 50%;
+					}
+
+					&:nth-child(2) {
+						-webkit-transform: rotate(45deg);
+						transform: rotate(45deg);
+					}
+
+					&:nth-child(3) {
+						-webkit-transform: rotate(-45deg);
+						transform: rotate(-45deg);
+					}
+
+					&:nth-child(4) {
+					  top: 18px;
+					  width: 0%;
+					  left: 50%;
 					}
 				}
 			}
-		}
+	    }
+
+	    nav {
+	    	height: 100%;
+
+		    & ul{
+		    	height: inherit;
+				-webkit-box-align: center;
+				    -ms-flex-align: center;
+				        align-items: center;
+
+				li {
+					margin: 8px 15px 0;
+					display: inline-block;
+					height: 100%;
+			    		
+					a {
+						display: -webkit-box;
+						display: -ms-flexbox;
+						display: flex;
+						-webkit-box-align: center;
+						    -ms-flex-align: center;
+						        align-items: center;
+						width: 100%;
+						height: 100%;
+						color: $backgroundColor;
+						transition: all 0.3s;
+			    		-webkit-transition: all 0.3s;
+
+
+						
+						&.special {
+							color: $accentColor;
+
+							&:hover, &:focus {
+								color: $accentHover;
+								text-decoration: underline;
+							}
+						}
+
+						&:hover, &:focus {
+							color: $linksColor;
+							text-decoration: underline;
+							transition: all 0.3s;
+			    			-webkit-transition: all 0.3s;
+						}
+					}
+				}
+			}
+
+
+	    	&.dropped {
+	    		width: 30%;
+	    		height: inherit;
+	    		position: fixed;
+	    		display: block;
+	    		margin-top: 90px;
+	    		z-index: 50;
+	    		
+
+	    		ul {
+					width: 100%;
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+					    -ms-flex-direction: column;
+					        flex-direction: column;
+	    		}
+
+	    		li {
+	    			padding: 30px;
+	    			text-transform: uppercase;
+	    		}
+	    	}
+	    }
+
+
 	}
 
 	&.scrolled {

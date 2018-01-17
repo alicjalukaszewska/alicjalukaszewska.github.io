@@ -8,7 +8,9 @@
 	<link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>		
+<body>	
+
+<div class="line"></div>
 <div class="zoomed" id="zoom">
 	<button class="prev" id="prev">&#10094;</button>
 	<div class="zoomed-project">
@@ -19,24 +21,33 @@
 	</div>
 	<button class="next" id="next">&#10095;</button>
 </div>
-<div class="line"></div>
-	<nav class="fixed-menu">
-		<div id="menu" class="container">
-			<nav>
-				<a href="index.html" class="visuallyhidden">
+<nav class="fixed-menu" aria-label="Main navigation">
+	<div class="container">
+		<div class="mobile-menu">
+			<div class="mobile-logo">	
+				<a href="index.html" >
 					<h1>Alicja Łukaszewska</h1>
 					<p>Front-End Developer</p>
 				</a>
-				<ul class="toggle-dropdown">
-					<li><a class="scroll" active href="#start">Start</a></li>
-					<li><a class="scroll" href="#omnie">O mnie</a></li>
-					<li><a class="scroll" href="#technologie">Technologie</a></li>
-					<li><a class="scroll" href="#realizacje">Realizacje</a></li>
-					<li><a class="scroll special" href="#kontakt">Kontakt</a></li>
-				</ul>
-			</nav>
+			</div>
+			<button id="nav-icon" type="button" class="toggler" aria-expanded="false" aria-label="Otwórz/Zamknij menu" title="Otwórz/Zamknij menu">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
 		</div>
-	</nav>	
+		<nav id="menu" class="dropdown dropped">
+			<ul>
+				<li><a active href="#start">Start</a></li>
+				<li><a href="#omnie">O mnie</a></li>
+				<li><a href="#technologie">Technologie</a></li>
+				<li><a href="#realizacje">Realizacje</a></li>
+				<li><a class="scroll special" href="#kontakt">Kontakt</a></li>
+			</ul>
+		</nav>
+	</div>
+</nav>
 	<header id="start">
 		<div class="welcome">
 			<div id="logo">
@@ -60,7 +71,7 @@
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cupiditate magnam consectetur veniam! Ratione placeat repellat magni laudantium quibusdam vero laboriosam ut omnis tempore, suscipit aut, quae consequatur sunt incidunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium neque labore voluptatem cumque animi temporibus consequatur, odit id molestias eveniet recusandae, amet alias officia quaerat tempore aliquid deleniti error voluptatibus!</p>
 			<footer>
 				<a class="cv" href="/files/CV.pdf" download="CV - Alicja Łukaszewska.pdf">Pobierz CV</a>
-				<a href="#kontakt" class="scroll">Skontaktuj się</a>
+				<a href="#kontakt">Skontaktuj się</a>
 			</footer>
 		</section>
 	</article>
