@@ -49,6 +49,7 @@ h2 {
 	height: 8px;
 	width: 20px;
 	background-color: $accentColor;
+	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
 	z-index: 99;
 }
@@ -77,8 +78,12 @@ h2 {
 
 	    nav ul{
 	    	height: inherit;
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
-			align-items: center;
+			-webkit-box-align: center;
+			    -ms-flex-align: center;
+			        align-items: center;
 
 
 			li {
@@ -86,8 +91,12 @@ h2 {
 				height: 100%;
 		    		
 				a {
+					display: -webkit-box;
+					display: -ms-flexbox;
 					display: flex;
-					align-items: center;
+					-webkit-box-align: center;
+					    -ms-flex-align: center;
+					        align-items: center;
 					width: 100%;
 					height: 100%;
 					color: $backgroundColor;
@@ -132,7 +141,7 @@ h2 {
 }
 
 header {
-	// position: relative;
+	/* position: relative;*/
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -244,7 +253,8 @@ header {
 		z-index: 10;
 		opacity: 0.7;
 		background: transparent;
-		transform: scale(1.5);
+		-webkit-transform: scale(1.5);
+		        transform: scale(1.5);
 		cursor: pointer;
 
 		&:hover, &:focus {
@@ -443,7 +453,7 @@ header {
 }
 
 .portfolio {
-	 margin-bottom: 60px;
+	margin-bottom: 60px;
 	width: 1170px;
 	display: -ms-grid;
 	display: grid;
@@ -471,12 +481,16 @@ header {
 
 	.project {
 		position: relative;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		overflow: hidden;
 		transition: all 0.3s;
     	-webkit-transition: all 0.3s;
 
 		.image-wrapper {
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
 				transition: all 0.3s;
 		    	-webkit-transition: all 0.3s;
@@ -535,6 +549,7 @@ header {
 
 .zoomed {
 	position: fixed;
+	padding: 60px;
 	width: 100%;
 	height: 100vh;	
 	background-color: rgba(69, 123, 157, 0.4);	
@@ -548,8 +563,6 @@ header {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	transition: all 1s;
-    -webkit-transition: all 1s;
     display: none;
 
     button {
@@ -571,7 +584,7 @@ header {
     }
 
 	.zoomed-project {
-		padding: 10px 0 30px;
+		padding: 20px;
 		position: relative;
 		 display: -webkit-box;	 
 		 display: -ms-flexbox;	
@@ -587,11 +600,12 @@ header {
 		    -ms-flex-pack: center;
 		        justify-content: center;
 		background-color: #ffffff;
-		height: 95%;
-		width: 900px;
+		max-height: 95vh;
 
 		img {
-			max-width: 840px;
+			max-width: 40%;
+			height: auto;
+			cursor: pointer;
 		}
 
 		button {
@@ -636,34 +650,42 @@ header {
 
 		.details {
 			margin-top: 10px;
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
+			max-width: 80%;
 
 			.description {
 				margin: 0 auto;
-				flex: 3;
+				-webkit-box-flex: 3;
+				    -ms-flex: 3;
+				        flex: 3;
 				position: relative;
 				font-size: 18px;
 				padding: 0 30px;
 
 			    h3 {
+			    	width: 100%;
 			    	margin-bottom: 5px;
 			    	color: $mainColor;
-			    	font-size: 36px;
+			    	font-size: 1.8rem;
 			    	font-weight: 300; /*light*/
 			    }
 
 				.date {
 					margin-bottom: 5px;
 					padding-left: 35px;
-					font-size: 16px;
+					font-size: 1rem;
 					font-weight: 300; /*italic*/
 					background-image: url('../img/icons/calendar.svg');
 					background-repeat: no-repeat;
 					background-size: contain;
+					white-space: nowrap;
 				}
 
 				p {
-					font-size: 16px;
+					width: 100%;
+					font-size: 100%;
 					white-space: break-word;
 				}
 			}
@@ -672,7 +694,9 @@ header {
 		ul {
 			padding: 0 30px;
 			margin-bottom: 30px;
-			flex: 1;
+			-webkit-box-flex: 1;
+			    -ms-flex: 1;
+			        flex: 1;
 			color: $mainColor;
 			font-weight: light;
 			font-size: 22px;
@@ -693,11 +717,15 @@ header {
 		}
 
 		.view {
-			padding-left: 60px;
+			padding-top: 15px;
+			padding-left: 15%;
+			padding-bottom: 15px;
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex;	
-			justify-content: flex-start;
+			-webkit-box-pack: start;	
+			    -ms-flex-pack: start;	
+			        justify-content: flex-start;
 			width: 100%;	
 
 			a {

@@ -70,6 +70,7 @@ h2 {
   height: 8px;
   width: 20px;
   background-color: #e63946;
+  -webkit-transition: all 0.2s;
   transition: all 0.2s;
   z-index: 99; }
 
@@ -93,13 +94,21 @@ h2 {
       height: 100%; }
     .fixed-menu .container nav ul {
       height: inherit;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center; }
       .fixed-menu .container nav ul li {
         margin: 8px 15px 0;
         height: 100%; }
         .fixed-menu .container nav ul li a {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           width: 100%;
           height: 100%;
@@ -127,6 +136,7 @@ h2 {
       transition: color 0.2s; }
 
 header {
+  /* position: relative;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -214,6 +224,7 @@ header {
     z-index: 10;
     opacity: 0.7;
     background: transparent;
+    -webkit-transform: scale(1.5);
     transform: scale(1.5);
     cursor: pointer; }
     header .mouse-icon:hover, header .mouse-icon:focus {
@@ -380,11 +391,15 @@ header {
       font-size: 18px; }
   .portfolio .project {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     overflow: hidden;
     transition: all 0.3s;
     -webkit-transition: all 0.3s; }
     .portfolio .project .image-wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       transition: all 0.3s;
       -webkit-transition: all 0.3s; }
@@ -426,6 +441,7 @@ header {
 
 .zoomed {
   position: fixed;
+  padding: 60px;
   width: 100%;
   height: 100vh;
   background-color: rgba(69, 123, 157, 0.4);
@@ -439,8 +455,6 @@ header {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  transition: all 1s;
-  -webkit-transition: all 1s;
   display: none; }
   .zoomed button {
     padding: 20px;
@@ -457,7 +471,7 @@ header {
       transition: all 0.2s;
       -webkit-transition: all 0.2s; }
   .zoomed .zoomed-project {
-    padding: 10px 0 30px;
+    padding: 20px;
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -473,10 +487,11 @@ header {
     -ms-flex-pack: center;
     justify-content: center;
     background-color: #ffffff;
-    height: 95%;
-    width: 900px; }
+    max-height: 95vh; }
     .zoomed .zoomed-project img {
-      max-width: 840px; }
+      max-width: 40%;
+      height: auto;
+      cursor: pointer; }
     .zoomed .zoomed-project button {
       position: absolute;
       top: 0;
@@ -510,34 +525,44 @@ header {
           -webkit-transition: all 0.2s; }
     .zoomed .zoomed-project .details {
       margin-top: 10px;
-      display: flex; }
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      max-width: 80%; }
       .zoomed .zoomed-project .details .description {
         margin: 0 auto;
+        -webkit-box-flex: 3;
+        -ms-flex: 3;
         flex: 3;
         position: relative;
         font-size: 18px;
         padding: 0 30px; }
         .zoomed .zoomed-project .details .description h3 {
+          width: 100%;
           margin-bottom: 5px;
           color: #003366;
-          font-size: 36px;
+          font-size: 1.8rem;
           font-weight: 300;
           /*light*/ }
         .zoomed .zoomed-project .details .description .date {
           margin-bottom: 5px;
           padding-left: 35px;
-          font-size: 16px;
+          font-size: 1rem;
           font-weight: 300;
           /*italic*/
           background-image: url("../img/icons/calendar.svg");
           background-repeat: no-repeat;
-          background-size: contain; }
+          background-size: contain;
+          white-space: nowrap; }
         .zoomed .zoomed-project .details .description p {
-          font-size: 16px;
+          width: 100%;
+          font-size: 100%;
           white-space: break-word; }
     .zoomed .zoomed-project ul {
       padding: 0 30px;
       margin-bottom: 30px;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
       flex: 1;
       color: #003366;
       font-weight: light;
@@ -553,10 +578,14 @@ header {
           font-size: 20px;
           margin-right: 7px; }
     .zoomed .zoomed-project .view {
-      padding-left: 60px;
+      padding-top: 15px;
+      padding-left: 15%;
+      padding-bottom: 15px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
       justify-content: flex-start;
       width: 100%; }
       .zoomed .zoomed-project .view a {
