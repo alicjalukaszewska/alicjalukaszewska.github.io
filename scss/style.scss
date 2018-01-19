@@ -13,7 +13,6 @@
 }
 
 body {
-	/* background-color: $backgroundColor;*/
 	color: $defaultTextColor;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
@@ -28,6 +27,9 @@ h1 {
 	a {
 		color:inherit;
 	}
+	@media #{$down1200} {
+		font-size: 46px;
+	}
 }
 
 h2 {
@@ -35,6 +37,10 @@ h2 {
 	color: $mainColor;
     font-family: 'Lora', serif;
     font-size: 48px;
+
+    @media #{$down1200} {
+		font-size: 44px;
+	}
 }
 
 .container {
@@ -52,28 +58,25 @@ h2 {
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
 	z-index: 99;
+
+	@media #{$down920} {
+		display: none;
+	}
 }
 
 .fixed-menu {
 	position: fixed;
 	width: 100%;
-	z-index: 10;
-
+	z-index: 15;
+	
 	.container {
+		position: relative;
 		height: 90px;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-pack: distribute;
-	    -webkit-box-pack: end;
-	        justify-content: flex-end;
-		-webkit-box-align: center;
-		    -ms-flex-align: center;
-	        align-items: center;	
-	    z-index: 20;
-
+	    
 	    .mobile-menu {
+	    	position: absolute;
 			width: 100%;
+			height: inherit;
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex;
@@ -85,29 +88,52 @@ h2 {
 			               align-items: center;
 
 			.mobile-logo {
-				top: 10px;			
-				margin-top: 0;
-				transition: all 0.3s;
-		    	-webkit-transition: all 0.3s;
-		    	z-index: 15;
-
+				margin-top: calc(100vh - 170px);
+				padding-left: 15px;
+				transition: all 1s;
+		    	-webkit-transition: all 1s;
+		    	
 		    	a {
 		    		color: inherit;
 		    	}
 
+		    	h1 {
+		    		transition: all 0.3s;
+				    -webkit-transition: all 0.3s;
+		    	}
 
-				h1 {
-					font-size: 34px;
-					transition: all 0.3s;
-			    	-webkit-transition: all 0.3s;
-				}
-				p {
-					margin: -5px 2px;
-					font-size: 16px;
+
+    			p {
+					margin-left: 10px;
 					color: $accentColor;
+					font-size: 28px;
 					text-transform: uppercase;
 					transition: all 0.3s;
 			    	-webkit-transition: all 0.3s;
+
+			    	@media #{$down1200} {
+						margin-left: 0;
+					}
+				}
+
+				&.fixed {
+					top: 10px;			
+					margin-top: 0;
+					transition: all 1s;
+			    	-webkit-transition: all 1s;
+			    	
+
+					h1 {
+						font-size: 34px;
+						transition: all 0.3s;
+				    	-webkit-transition: all 0.3s;
+					}
+					p {
+						margin: -5px 2px;
+						font-size: 16px;
+						transition: all 0.3s;
+				    	-webkit-transition: all 0.3s;
+					}
 				}
 			}
 
@@ -116,6 +142,7 @@ h2 {
 			.toggler {
 				width: 60px;
 				height: 45px;
+				margin-right: 15px;
 				position: relative;
 				-webkit-transform: rotate(0deg);
 				transform: scale(0.8) rotate(0deg);
@@ -123,6 +150,12 @@ h2 {
 				transition: .5s ease-in-out;
 				background: transparent;
 				cursor: pointer;
+				z-index: 50;
+
+				@media #{$up920} {
+					display: none;
+				}
+
 
 				&:hover > *, &:focus > * {
 						background-color: $accentHover;
@@ -180,8 +213,11 @@ h2 {
 			}
 	    }
 
-	    nav {
+	    nav.dropdown {
+	    	position: absolute;
+	    	right: 0;
 	    	height: 100%;
+	    	z-index: 30;
 
 		    & ul{
 		    	height: inherit;
@@ -228,17 +264,25 @@ h2 {
 				}
 			}
 
+	    	@media #{$down920}{
+				display: none;
+			}
 
-	    	&.dropped {
-	    		width: 30%;
-	    		height: inherit;
+	    	&.dropped {	  
+	    		display: -webkit-box;	  
+	    		display: -ms-flexbox;	  
+	    		display: flex;  		
 	    		position: fixed;
-	    		display: block;
-	    		margin-top: 90px;
-	    		z-index: 50;
-	    		
+	    		right: 0;
+	    		top: 0;
+	    		width: 40%;
+	    		background-color: $mainColor;  
+				transition: all 0.3s;
+    			-webkit-transition: all 0.3s;  	
+    			@include fadeInRight;	
 
 	    		ul {
+	    			margin-top: 15%;
 					width: 100%;
 					display: -webkit-box;
 					display: -ms-flexbox;
@@ -246,17 +290,34 @@ h2 {
 					-webkit-box-orient: vertical;
 					-webkit-box-direction: normal;
 					    -ms-flex-direction: column;
-					        flex-direction: column;
-	    		}
+					        flex-direction: column;   		
 
-	    		li {
-	    			padding: 30px;
-	    			text-transform: uppercase;
+					li {
+		    			width: 100%;
+		    			height: auto;
+		    			text-transform: uppercase;
+
+
+		    			a {
+		    				
+		    				padding: 20px 40px;
+		    				display: block;
+		    				width: 100%;
+		    				height: 100%;
+		    				
+
+		    				&.active {
+		    					position: relative;
+		    					background-color: $accentColor;
+		    					color: $mainColor;
+		    					font-weight: bold;
+		    					
+		    				}
+		    			}
+		    		}
 	    		}
 	    	}
 	    }
-
-
 	}
 
 	&.scrolled {
@@ -300,8 +361,7 @@ header {
 	  position: absolute;
 	  top: 0;
 	  left: 0;
-	  z-index: 1;
-	}
+	  }
 
 	.alt {
 	  position: absolute;
@@ -311,18 +371,12 @@ header {
 
 	.welcome {
 		width: 1170px;
-		height: 250px;
-		p {
-			margin-left: 10px;
-			color: $accentColor;
-			font-size: 28px;
-			text-transform: uppercase;
-		}
+		padding-left: 10px;
 
 		& > a {
 			top: auto;
 			margin-left: 10px;
-			margin-top: 30px;
+			margin-top: 150px;
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex;
@@ -341,28 +395,6 @@ header {
 
 			&:hover, &:focus {
 				background-color: rgba(255, 255, 255, 0.2);
-				transition: all 0.3s;
-		    	-webkit-transition: all 0.3s;
-			}
-		}
-
-		.fixed {
-			position: fixed;
-			top: 10px;			
-			margin-top: 0;
-			transition: all 0.3s;
-	    	-webkit-transition: all 0.3s;
-	    	z-index: 15;
-
-
-			h1 {
-				font-size: 34px;
-				transition: all 0.3s;
-		    	-webkit-transition: all 0.3s;
-			}
-			p {
-				margin: -5px 2px;
-				font-size: 16px;
 				transition: all 0.3s;
 		    	-webkit-transition: all 0.3s;
 			}
@@ -438,15 +470,33 @@ header {
 	display: -ms-inline-flexbox;
 	display: -webkit-box;
 	display: flex;
+	@media screen and (min-aspect-ratio: 3/2) {
+		height: auto;
+	}
+
+	@media #{$down1200} {
+		height: auto;
+	}
 
 	figure {
 		height: inherit;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
 		width: 470px;
 		background-color: $mainColor;
+		background: {
+			image: url('../img/placeholder.jpg');
+			size: cover;
+			position: center center;
+		}
 	}
 
 	section {
 		margin: 0 10px 0 30px;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1;
+		        flex: 2;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -455,8 +505,19 @@ header {
 		    -ms-flex-direction: column;
 		        flex-direction: column;
 
+		h2 {
+
+			@media #{$down1200} {
+				padding: 30px 0;
+			}
+		}
+
 		p {
 			margin-left: 130px;
+
+			@media #{$down1200} {
+				margin-left: 70px;
+			}
 		}
 
 		footer {
@@ -484,6 +545,10 @@ header {
 				text-transform: uppercase;
 						transition: all 0.5s;
 			   		 -webkit-transition: all 0.5s;
+			
+				@media #{$down1200} {
+					margin: 30px 15px;
+				}
 			}
 
 			a:first-child {
@@ -515,6 +580,7 @@ header {
 
 .skills {
 	padding-bottom: 3.2rem;
+	height: calc(100vh - 90px);
 	background: {
 		image: 
 			linear-gradient(rgba(168, 218, 220, 0.45), rgba(168, 218, 220, 0.45)), 
@@ -524,12 +590,23 @@ header {
 		size: cover;
 		position: center center;
 	}
+	@media screen and (min-aspect-ratio: 3/2) {
+		height: auto;
+	}
+
+	@media #{$down1200} {
+		height: auto;
+	}
 
 	h2 {
 		padding: 1.5rem 0;
 		margin: 0 auto;
 		display: block;
 		max-width: 1170px;
+
+		@media #{$down1200} {
+			margin-left: 15px;
+		}
 	}
 
 	.container {
@@ -547,6 +624,10 @@ header {
 			padding-left: 60px;
 			color: $mainColor;
 			font-size: 1.8rem;
+
+			@media #{$down920} {
+				font-size: 26px;
+			}
 		}
 
 		& > ul {
@@ -596,6 +677,10 @@ header {
 	-ms-grid-rows: auto auto auto;
 	    grid-template-rows: auto auto auto;
 
+	    @media #{$down1200} {
+	    	width: 100%;
+	    }
+
 	.aboutProjects {
 		padding: 30px;
 		-ms-grid-column: 1;
@@ -628,6 +713,7 @@ header {
 			display: flex;
 				transition: all 0.3s;
 		    	-webkit-transition: all 0.3s;
+			overflow: hidden;
 		}
 
 		&:after {
@@ -688,9 +774,6 @@ header {
 	height: 100vh;	
 	background-color: rgba(69, 123, 157, 0.4);	
 	z-index: 1000;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
 	-webkit-box-pack: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
@@ -734,12 +817,24 @@ header {
 		    -ms-flex-pack: center;
 		        justify-content: center;
 		background-color: #ffffff;
+		overflow: hidden;
 		max-height: 95vh;
 
 		img {
-			max-width: 40%;
+			max-width: 80%;
 			height: auto;
 			cursor: pointer;
+
+			@media #{$ratio3-2} {
+				max-width: 40%;
+			}
+
+			&.clicked {
+				max-width: 100%;
+				@media #{$ratio3-2} {
+					max-width: 70%;
+				}
+			}
 		}
 
 		button {
@@ -754,8 +849,7 @@ header {
 		    -webkit-transition: all 0.2s;
 
 		    &.close {			
-		    	-ms-flex-item-align: end;
-			    align-self: flex-end;
+			   	right: 0;
 				color: $backgroundColor;
 				background-color: $mainColor;
 		    	&:hover, &:focus {
@@ -767,8 +861,7 @@ header {
 
 		    &.back {
 		    	display: none;
-		    	-ms-flex-item-align: start;
-			    align-self: flex-start;
+		    	left: 0;
 				color: $backgroundColor;
 				background-color: $accentColor;
 						transition: all 0.2s;
@@ -787,7 +880,7 @@ header {
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex;
-			max-width: 80%;
+			max-width: 1500px;
 
 			.description {
 				margin: 0 auto;
@@ -908,12 +1001,17 @@ header {
 	}
 }
 
+
+
 .contact {
 	padding-bottom: 60px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-
+		@media #{$down1200} {
+			margin-left: 15px;
+			padding-bottom: 30px;
+		}
 	h2 {
 		padding-top: 30px;
 		padding-bottom: 10px;
@@ -943,6 +1041,10 @@ header {
 
 	.contact-form {
 		padding-right: 100px;
+
+		@media #{$down1200} {
+			padding-right: 30px;
+		}
 	}
 
 	form {
@@ -989,12 +1091,18 @@ header {
 
 		input {
 			height: 60px;
+			@media #{$down1200} {
+				height: 40px;
+			}
 		}
 
 		textarea {
 			padding-top:5px;
 			vertical-align: top;
 			height: 180px;
+			@media #{$down1200} {
+				height: 100px;
+			}
 		}
 
 		button {
@@ -1021,6 +1129,10 @@ header {
 .links {
 	padding-left: 100px;
 	border-left: 6px solid $mainColor;
+
+	@media #{$down1200} {
+		padding-left: 40px;
+	}
 
 	li {
 		margin: 30px 0;

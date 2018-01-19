@@ -17,25 +17,32 @@ const line = document.querySelector('.line');
 
 function changeMenu () {
 	const logo = document.querySelector('#logo');
-	const welcomeTop = document.querySelector('.welcome').offsetTop;
+	if (window.scrollY <= 50) {
+		logo.classList.remove('fixed');
+		menu.classList.remove('scrolled');		
 
-	if (window.scrollY >= welcomeTop) {
+	} else  {
 		logo.classList.add('fixed');
 		menu.classList.add('scrolled');
-	} else  {
-		logo.classList.remove('fixed');
-		menu.classList.remove('scrolled');
 	}
 }
 
 window.addEventListener('scroll', changeMenu);
+window.addEventListener('load', changeMenu);
 
-/* move line above active link and change its width */
-function changeLine () {
+function addLine () {
 	const linksCoords = this.getBoundingClientRect();
 	line.style.width = `${linksCoords.width}px`;
 	line.style.transform = `translate(${linksCoords.left}px, ${linksCoords.top}px)`;
 	line.style.opacity = 1;
+}
+/* move line above active link and change its width */
+function changeLine () {
+	links.forEach(link => link.classList.remove('active'));
+	this.classList.add('active');
+	if (window.innerWidth >= 920) {
+		addLine.call(this);
+	}	
 }
 
 const anchors = {
@@ -84,12 +91,14 @@ const nextBtn = document.querySelector('#next');
 const prevBtn = document.querySelector('#prev');
 
 function hideZoomImage () {
+	zoomedImage.classList.remove('clicked');
 	backBtn.style.display = "none";
 	zoomedContent.classList.remove('visuallyhidden');
 	zoomedImage.addEventListener('click', zoomImage);
 }
 
 function zoomImage () {
+	zoomedImage.classList.add('clicked');
 	backBtn.style.display = "block";
 	zoomedContent.classList.add('visuallyhidden');
 	zoomedImage.removeEventListener('click', zoomImage);
@@ -146,5 +155,8 @@ zoomWindow.addEventListener('click', function(e) {
 })
 nextBtn.addEventListener('click', () => changeProjectByArrow('right'));
 prevBtn.addEventListener('click', () => changeProjectByArrow('left'));
+
+
+
 
 // }());

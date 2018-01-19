@@ -10,6 +10,13 @@ $accentHover: #7c010a;
 
 $gradientOverlay: rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.4);
 
+$up920: "only screen and (min-width: 920px)";
+$down920: "only screen and (max-width: 920px)";
+$down1200: "only screen and (max-width: 1200px)";
+$up1200: "only screen and (min-width: 1200px)"; 
+$ratio16-9: "screen and (min-aspect-ratio: 16/9)";
+$ratio3-2: "screen and (min-aspect-ratio: 3/2)";
+
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -46,4 +53,38 @@ $gradientOverlay: rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.4);
   100% {
     top: 5px;
   }
+}
+
+@-webkit-keyframes fadeRight {
+  0% {
+    right: -1000px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    right: -1000px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    right: -500px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@mixin fadeInRight {
+  -webkit-animation-name: fadeInRight;
+          animation-name: fadeInRight;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
 }

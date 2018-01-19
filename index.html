@@ -24,7 +24,7 @@
 <nav class="fixed-menu" aria-label="Main navigation">
 	<div class="container">
 		<div class="mobile-menu">
-			<div class="mobile-logo">	
+			<div id="logo" class="mobile-logo">	
 				<a href="index.html" >
 					<h1>Alicja Łukaszewska</h1>
 					<p>Front-End Developer</p>
@@ -37,9 +37,9 @@
 				<span></span>
 			</button>
 		</div>
-		<nav id="menu" class="dropdown dropped">
+		<nav id="menu" class="dropdown">
 			<ul>
-				<li><a active href="#start">Start</a></li>
+				<li><a class="active" href="#start">Start</a></li>
 				<li><a href="#omnie">O mnie</a></li>
 				<li><a href="#technologie">Technologie</a></li>
 				<li><a href="#realizacje">Realizacje</a></li>
@@ -50,12 +50,6 @@
 </nav>
 	<header id="start">
 		<div class="welcome">
-			<div id="logo">
-				<a href="index.html" aria-hidden="true">
-					<h1>Alicja Łukaszewska</h1>
-					<p>Front-End Developer</p>
-				</a>
-			</div>
 			<a href="#realizacje" class="projects scroll">Zobacz projekty</a>
 		</div>			
 		<a class="mouse-icon scroll" href="#omnie" aria-label="zjedź niżej" title="zjedź niżej">
@@ -64,7 +58,6 @@
 	</header>
 	<article class="about container" role="main" id="omnie">
 		<figure>
-			<img src="" alt="Zdjęcie Alicji Łukaszewskiej">
 		</figure>
 		<section>
 			<h2>O mnie</h2>
