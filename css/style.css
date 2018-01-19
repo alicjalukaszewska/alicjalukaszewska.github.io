@@ -245,10 +245,10 @@ h2 {
         .fixed-menu .container nav.dropdown {
           display: none; } }
       .fixed-menu .container nav.dropdown.dropped {
+        position: fixed;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        position: fixed;
         right: 0;
         top: 0;
         width: 40%;
@@ -260,7 +260,6 @@ h2 {
         -webkit-animation-duration: 0.5s;
         animation-duration: 0.5s; }
         .fixed-menu .container nav.dropdown.dropped ul {
-          margin-top: 15%;
           width: 100%;
           display: -webkit-box;
           display: -ms-flexbox;
@@ -268,7 +267,10 @@ h2 {
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
           -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center; }
           .fixed-menu .container nav.dropdown.dropped ul li {
             width: 100%;
             height: auto;
@@ -344,8 +346,6 @@ header {
         background-color: rgba(255, 255, 255, 0.2);
         transition: all 0.3s;
         -webkit-transition: all 0.3s; }
-    header .welcome .fixed + .projects {
-      opacity: 0; }
   header .mouse-icon {
     position: absolute;
     bottom: 0;
@@ -438,6 +438,9 @@ header {
       @media only screen and (max-width: 1200px) {
         .about section p {
           margin-left: 70px; } }
+      @media only screen and (max-width: 768px) {
+        .about section p {
+          margin-left: 40px; } }
     .about section footer {
       -ms-flex-item-align: end;
       align-self: flex-end; }
@@ -519,9 +522,13 @@ header {
       font-size: 1.8rem; }
       @media only screen and (max-width: 920px) {
         .skills .column h3 {
-          font-size: 26px; } }
+          font-size: 26px;
+          padding-left: 40px; } }
     .skills .column > ul {
       margin-left: 100px; }
+      @media only screen and (max-width: 920px) {
+        .skills .column > ul {
+          margin-left: 60px; } }
     .skills .column > ul > li {
       color: #003366;
       font-weight: bold; }
@@ -540,26 +547,33 @@ header {
       font-weight: normal;
       margin-left: 60px;
       padding-bottom: 20px; }
+      @media only screen and (max-width: 768px) {
+        .skills .column > ul > li > ul {
+          margin-left: 20px;
+          word-wrap: break-word; } }
       .skills .column > ul > li > ul > li:before {
         content: " - "; }
 
 .portfolio {
   margin-bottom: 60px;
-  width: 1170px;
+  max-width: 1170px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: auto auto auto;
-  grid-template-rows: auto auto auto; }
-  @media only screen and (max-width: 1200px) {
+  -ms-grid-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr; }
+  @media only screen and (max-width: 920px) {
     .portfolio {
-      width: 100%; } }
+      width: 100%;
+      -ms-grid-columns: minmax(250px, 1fr) [auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); } }
   .portfolio .aboutProjects {
     padding: 30px;
     -ms-grid-column: 1;
-    grid-column-start: 1;
-    grid-column-end: 3; }
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2; }
+    @media only screen and (max-width: 920px) {
+      .portfolio .aboutProjects {
+        grid-column: 1 / -1; } }
     .portfolio .aboutProjects h2 {
       padding: 10px 0;
       text-align: center; }
@@ -611,10 +625,15 @@ header {
     .portfolio .project img {
       width: 100%;
       height: 100%;
-      -o-object-fit: contain;
-      object-fit: contain;
+      -o-object-fit: cover;
+      object-fit: cover;
       transition: all 0.3s;
       -webkit-transition: all 0.3s; }
+      .portfolio .project img.brand {
+        height: 310px; }
+        @media only screen and (max-width: 920px) {
+          .portfolio .project img.brand {
+            height: 100%; } }
 
 .zoomed {
   position: fixed;
@@ -812,6 +831,12 @@ header {
     .contact {
       margin-left: 15px;
       padding-bottom: 30px; } }
+  @media only screen and (max-width: 805px) {
+    .contact {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
   .contact h2 {
     padding-top: 30px;
     padding-bottom: 10px; }
@@ -821,10 +846,14 @@ header {
     font-size: 20px;
     padding-top: 5px; }
   .contact a {
+    display: block;
     color: #e63946;
     font-weight: bold;
     transition: all 0.3s;
     -webkit-transition: all 0.3s; }
+    @media only screen and (max-width: 1200px) {
+      .contact a {
+        display: inline; } }
     .contact a:hover, .contact a:focus {
       color: #7c010a;
       text-decoration: underline;
@@ -835,6 +864,9 @@ header {
     @media only screen and (max-width: 1200px) {
       .contact .contact-form {
         padding-right: 30px; } }
+    @media only screen and (max-width: 805px) {
+      .contact .contact-form {
+        padding: 0; } }
   .contact form {
     margin-top: 30px;
     display: -webkit-box;
@@ -844,14 +876,22 @@ header {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
+    @media only screen and (max-width: 805px) {
+      .contact form {
+        margin: 0; } }
     .contact form p {
       margin-bottom: 30px;
       -ms-flex-item-align: end;
       align-self: flex-end;
       font-size: 20px; }
+      @media only screen and (max-width: 805px) {
+        .contact form p {
+          margin: 15px auto;
+          -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center; } }
     .contact form label {
       margin-top: 15px;
-      width: 70px;
       text-align: right; }
       .contact form label span {
         margin-top: -5px; }
@@ -901,15 +941,37 @@ header {
   @media only screen and (max-width: 1200px) {
     .links {
       padding-left: 40px; } }
+  @media only screen and (max-width: 920px) {
+    .links {
+      padding: 0 20px; } }
+  @media only screen and (max-width: 805px) {
+    .links {
+      width: 100%;
+      padding: 0;
+      padding-bottom: 30px;
+      border: 0; } }
+  @media only screen and (max-width: 805px) {
+    .links ul {
+      text-align: center; } }
   .links li {
     margin: 30px 0; }
+    @media only screen and (max-width: 805px) {
+      .links li {
+        display: inline-block;
+        margin: 15px 0;
+        margin-right: 15px; } }
     .links li a {
+      display: block;
       color: #003366;
       font-size: 24px;
       font-weight: normal;
       background-repeat: no-repeat;
       background-size: contain;
-      padding-left: 60px; }
+      padding-left: 60px;
+      white-space: nowrap; }
+      @media only screen and (max-width: 805px) {
+        .links li a {
+          padding-left: 45px; } }
       .links li a:hover, .links li a:focus {
         color: #003366;
         text-decoration: underline; }

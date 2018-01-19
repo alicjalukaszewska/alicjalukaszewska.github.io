@@ -1,4 +1,6 @@
 // (function (){
+'use strict';
+
 
 /* initiate smooth-scroll plugin */
 const scroll = new SmoothScroll( 'a[href*="#"]', { 
@@ -73,6 +75,14 @@ const dropdown = document.querySelector('.dropdown');
 
 dropdownBtn.addEventListener('click', () => dropdown.classList.toggle('dropped'));
 dropdownBtn.addEventListener('click', () => dropdownBtn.classList.toggle('open'));
+links.forEach(link => link.addEventListener('click', (e) => {
+	console.log(e.target);
+	dropdown.classList.remove('dropped');
+	dropdownBtn.classList.remove('open');
+})
+)
+
+
 
 /* show/hide zoomed project */
 

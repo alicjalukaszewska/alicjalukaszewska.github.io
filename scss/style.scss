@@ -268,11 +268,11 @@ h2 {
 				display: none;
 			}
 
-	    	&.dropped {	  
+	    	&.dropped {
+	    		position: fixed;  
 	    		display: -webkit-box;	  
 	    		display: -ms-flexbox;	  
 	    		display: flex;  		
-	    		position: fixed;
 	    		right: 0;
 	    		top: 0;
 	    		width: 40%;
@@ -282,7 +282,6 @@ h2 {
     			@include fadeInRight;	
 
 	    		ul {
-	    			margin-top: 15%;
 					width: 100%;
 					display: -webkit-box;
 					display: -ms-flexbox;
@@ -290,7 +289,10 @@ h2 {
 					-webkit-box-orient: vertical;
 					-webkit-box-direction: normal;
 					    -ms-flex-direction: column;
-					        flex-direction: column;   		
+					        flex-direction: column; 
+					-webkit-box-pack: center; 
+					    -ms-flex-pack: center; 
+					        justify-content: center;  		
 
 					li {
 		    			width: 100%;
@@ -398,10 +400,6 @@ header {
 				transition: all 0.3s;
 		    	-webkit-transition: all 0.3s;
 			}
-		}
-
-		.fixed + .projects {
-			opacity: 0;
 		}
 	}
 
@@ -518,6 +516,9 @@ header {
 			@media #{$down1200} {
 				margin-left: 70px;
 			}
+			@media #{$down768} {
+				margin-left: 40px;
+			}
 		}
 
 		footer {
@@ -627,11 +628,15 @@ header {
 
 			@media #{$down920} {
 				font-size: 26px;
+				padding-left: 40px;
 			}
 		}
 
 		& > ul {
 			margin-left: 100px;
+			@media #{$down920} {
+				margin-left: 60px;
+			}
 		}
 
 		& > ul > li {
@@ -658,6 +663,11 @@ header {
 			margin-left: 60px;
 			padding-bottom: 20px;
 
+			@media #{$down768} {
+				margin-left: 20px;
+				word-wrap: break-word;
+			}
+
 			& > li {
 				&:before {
 					content: " - ";
@@ -669,23 +679,28 @@ header {
 
 .portfolio {
 	margin-bottom: 60px;
-	width: 1170px;
+	max-width: 1170px;
 	display: -ms-grid;
 	display: grid;
-	-ms-grid-columns: 1fr 1fr;
-	    grid-template-columns: 1fr 1fr 1fr;
-	-ms-grid-rows: auto auto auto;
-	    grid-template-rows: auto auto auto;
+	-ms-grid-columns: auto auto auto;
+	grid-template-columns: 1fr 1fr 1fr;
 
-	    @media #{$down1200} {
-	    	width: 100%;
-	    }
+	@media #{$down920} {
+		width: 100%;	
+	  	-ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+	      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	}
 
 	.aboutProjects {
 		padding: 30px;
 		-ms-grid-column: 1;
-		 grid-column-start: 1;
-		grid-column-end: 3;    
+		-ms-grid-column-span: 2;
+		grid-column: 1 / span 2;
+
+	    @media #{$down920} {
+	    	grid-column: 1 / -1;	
+
+	    }	
 
 		h2 {
 			padding: 10px 0;
@@ -758,11 +773,21 @@ header {
 
 		img {
 			width: 100%;
-			 height: 100%;
-			-o-object-fit: contain;
-		   	object-fit: contain;
+			height: 100%;
+			-o-object-fit: cover;
+		   	object-fit: cover;
 			transition: all 0.3s;
 	    	-webkit-transition: all 0.3s;
+
+	    	&.brand {
+	    		height: 310px;
+
+		    	@media #{$down920} {
+		    		height: 100%;
+		    	}
+	    	}
+
+
 		}
 	}
 }
@@ -1012,6 +1037,13 @@ header {
 			margin-left: 15px;
 			padding-bottom: 30px;
 		}
+
+		@media #{$down805} {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			    -ms-flex-direction: column;
+			        flex-direction: column;
+		}
 	h2 {
 		padding-top: 30px;
 		padding-bottom: 10px;
@@ -1026,10 +1058,15 @@ header {
 	}
 
 	a {
+		display: block;
 		color: $accentColor;
 		font-weight: bold;
 		transition: all 0.3s;
 	    -webkit-transition: all 0.3s;
+		@media #{$down1200} {
+			display: inline;
+		}
+
 
 		&:hover, &:focus {
 			color: $accentHover;
@@ -1045,6 +1082,9 @@ header {
 		@media #{$down1200} {
 			padding-right: 30px;
 		}
+		@media #{$down805} {
+			padding: 0;
+		}
 	}
 
 	form {
@@ -1056,16 +1096,25 @@ header {
 		-webkit-box-direction: normal;
 		    -ms-flex-direction: column;
 		        flex-direction: column;
+			@media #{$down805} {
+				margin: 0;
+			}
 		p {
 			margin-bottom: 30px;
-				-ms-flex-item-align: end;
-			    align-self: flex-end;
-			    font-size: 20px;
+			-ms-flex-item-align: end;
+			 align-self: flex-end;
+			font-size: 20px;
+
+			@media #{$down805} {
+				margin: 15px auto;
+				-ms-flex-item-align: center;
+				    -ms-grid-row-align: center;
+				    align-self: center;
+			}
 		}
 
 		label {
 			margin-top: 15px;
-			width: 70px;
 			text-align: right;
 			
 			span {
@@ -1081,6 +1130,7 @@ header {
 			outline: 1px solid $linksColor;
 			transition: all 0.5s;
 		    -webkit-transition: all 0.5s;
+
 		
 			&:hover, &:focus {
 				outline: 1px solid $mainColor;
@@ -1134,15 +1184,45 @@ header {
 		padding-left: 40px;
 	}
 
+	@media #{$down920} {
+		padding: 0 20px;
+	}
+
+	@media #{$down805} {
+		width: 100%;
+		padding: 0;
+		padding-bottom: 30px;
+		border: 0;
+	}
+
+	ul {
+		@media #{$down805} {
+			text-align: center;
+		}
+	}
+
 	li {
 		margin: 30px 0;
 
+
+		@media #{$down805} {
+			display: inline-block;
+			margin: 15px 0;
+			margin-right: 15px;
+		}
+
 		a {
+			display: block;
 			color: $mainColor;
 			font-size: 24px;
 			font-weight: normal;background-repeat: no-repeat;
 			background-size: contain;
 			padding-left: 60px;
+			white-space: nowrap;
+
+			@media #{$down805} {
+				padding-left: 45px;
+			}
 
 
 			&:hover, &:focus {
