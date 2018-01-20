@@ -30,6 +30,10 @@ h1 {
 	@media #{$down1200} {
 		font-size: 46px;
 	}
+
+	@media #{$down665} {
+		font-size: 38px;
+	}
 }
 
 h2 {
@@ -113,6 +117,9 @@ h2 {
 
 			    	@media #{$down1200} {
 						margin-left: 0;
+					}
+					@media #{$down665} {
+						font-size: 20px;
 					}
 				}
 
@@ -395,6 +402,12 @@ header {
 			transition: all 0.3s;
 		    -webkit-transition: all 0.3s;
 
+			@media #{$down665} {
+				font-size: 18px;
+				height: 60px;
+				width: 180px;
+			}
+
 			&:hover, &:focus {
 				background-color: rgba(255, 255, 255, 0.2);
 				transition: all 0.3s;
@@ -476,6 +489,12 @@ header {
 		height: auto;
 	}
 
+	@media #{$down665} {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
 	figure {
 		height: inherit;
 		-webkit-box-flex: 1;
@@ -488,13 +507,27 @@ header {
 			size: cover;
 			position: center center;
 		}
+		@media #{$down665} {
+			height: 350px;
+			width: 100%;
+			-webkit-box-flex: 1;
+			    -ms-flex: auto;
+			        flex: auto;
+			background-position: top center;
+			-webkit-box-ordinal-group: 6;
+			    -ms-flex-order: 5;
+			        order: 5;
+		}
 	}
 
 	section {
 		margin: 0 10px 0 30px;
-		-webkit-box-flex: 1;
-		    -ms-flex: 1;
-		        flex: 2;
+		        -webkit-box-flex: 2;
+		            -ms-flex: 2;
+		                flex: 2;
+		-webkit-box-ordinal-group: 2;
+		    -ms-flex-order: 1;
+		        order: 1;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -503,10 +536,16 @@ header {
 		    -ms-flex-direction: column;
 		        flex-direction: column;
 
-		h2 {
+		@media #{$down665} {
+			margin: 10px;
+		}
 
+		h2 {
 			@media #{$down1200} {
 				padding: 30px 0;
+			}
+			@media #{$down665} {
+				padding: 20px 0;
 			}
 		}
 
@@ -519,11 +558,20 @@ header {
 			@media #{$down768} {
 				margin-left: 40px;
 			}
+			@media #{$down665} {
+				margin-left: 25px;
+				font-size: 18px;
+			}
 		}
 
 		footer {
 			-ms-flex-item-align: end;
 			    align-self: flex-end;
+				@media #{$down665} {
+					-ms-flex-item-align: center;
+					    -ms-grid-row-align: center;
+					    align-self: center;
+				}
 
 			a {
 				margin: 3.5rem 0 3.5rem 2rem;
@@ -599,6 +647,7 @@ header {
 		height: auto;
 	}
 
+
 	h2 {
 		padding: 1.5rem 0;
 		margin: 0 auto;
@@ -608,18 +657,33 @@ header {
 		@media #{$down1200} {
 			margin-left: 15px;
 		}
+		@media #{$down665} {
+			text-align: center;
+			padding: 20px 0;
+		}
 	}
 
 	.container {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
+
+		@media #{$down665} {
+			display: inline-block;
+		}
 	}
 
 	.column {
 		-webkit-box-flex: 1;
 		    -ms-flex: 1;
 		        flex: 1;
+
+		@media #{$down665} {
+			padding: 0 30px 30px;
+			float: left;
+		}
+
+
 		h3 {
 			padding-bottom: 10px;
 			padding-left: 60px;
@@ -630,6 +694,15 @@ header {
 				font-size: 26px;
 				padding-left: 40px;
 			}
+
+			@media #{$down920} {
+				font-size: 22px;
+				padding-left: 10px;
+			}
+
+			@media #{$down665} {
+				font-size: 26px;
+			}
 		}
 
 		& > ul {
@@ -637,23 +710,34 @@ header {
 			@media #{$down920} {
 				margin-left: 60px;
 			}
+			@media #{$down768} {
+				margin-left: 15px;
+			}
 		}
 
 		& > ul > li {
 			color: $mainColor;
 			font-weight: bold;
 
+			@media #{$down665} {
+				font-size: 20px;
+			}
+
 			&:before {
 				content: '\2015';
 				color: $accentColor;
 				font-size: 30px;
 				margin-right: 7px;
+				@media #{$down665} {
+					font-size: 24px;
+				}
 			}				
 
 			span {
 				color: $defaultTextColor;
 				font-size: 18px;
 				font-weight: normal;
+
 			}
 		}
 		& > ul > li > ul {
@@ -663,9 +747,13 @@ header {
 			margin-left: 60px;
 			padding-bottom: 20px;
 
-			@media #{$down768} {
-				margin-left: 20px;
+			@media #{$down920} {
+				margin-left: 40px;
 				word-wrap: break-word;
+			}
+			@media #{$down768} {
+				margin-left: 25px;
+
 			}
 
 			& > li {
@@ -691,6 +779,10 @@ header {
 	      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	}
 
+	@media #{$down805} {
+		margin: 0;
+	}
+
 	.aboutProjects {
 		padding: 30px;
 		-ms-grid-column: 1;
@@ -699,7 +791,6 @@ header {
 
 	    @media #{$down920} {
 	    	grid-column: 1 / -1;	
-
 	    }	
 
 		h2 {
@@ -721,6 +812,7 @@ header {
 		overflow: hidden;
 		transition: all 0.3s;
     	-webkit-transition: all 0.3s;
+    	cursor: pointer;
 
 		.image-wrapper {
 			display: -webkit-box;
@@ -786,8 +878,6 @@ header {
 		    		height: 100%;
 		    	}
 	    	}
-
-
 		}
 	}
 }
@@ -807,9 +897,12 @@ header {
 	        align-items: center;
     display: none;
 
+	@media #{$down805} {
+		padding: 10px;
+	}
+
     button {
 		padding: 20px;
-	    width: 50px;
 	    height: 80px;
 		font-size: 30px;
 		cursor: pointer;
@@ -817,6 +910,10 @@ header {
 	    -webkit-transition: all 0.2s;
 		color: $backgroundColor;
 		background-color: $mainColor;
+		@media #{$down805} {
+			height: 60px;
+			padding: 0 10px;
+		}
 
     	&:hover, &:focus {
 			background-color: $accentHover;
@@ -906,6 +1003,12 @@ header {
 			display: -ms-flexbox;
 			display: flex;
 			max-width: 1500px;
+			@media #{$down665} {
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				    -ms-flex-direction: column;
+				        flex-direction: column;
+			}
 
 			.description {
 				margin: 0 auto;
@@ -915,6 +1018,9 @@ header {
 				position: relative;
 				font-size: 18px;
 				padding: 0 30px;
+				@media #{$down805} {
+					font-size: 16px;
+				}
 
 			    h3 {
 			    	width: 100%;
@@ -933,6 +1039,9 @@ header {
 					background-repeat: no-repeat;
 					background-size: contain;
 					white-space: nowrap;
+					@media #{$down665} {
+						font-size: 14px;
+					}
 				}
 
 				p {
@@ -949,15 +1058,46 @@ header {
 			-webkit-box-flex: 1;
 			    -ms-flex: 1;
 			        flex: 1;
-			color: $mainColor;
-			font-weight: light;
-			font-size: 22px;
-			border-left: 3px solid $mainColor;
+			border-left: 3px solid $mainColor;	
+
+			@media #{$down665} {
+				margin: 15px 0;
+				-webkit-box-pack: justify;
+				    -ms-flex-pack: justify;
+				        justify-content: space-between;
+				padding-top: 10px;
+				border: 0;
+				width: 60%;
+				display: -ms-grid;
+				display: grid;
+				-ms-grid-row: 1;
+				-ms-grid-column: 1;
+				-ms-grid-columns: auto auto;
+				    grid-template-columns: auto auto;
+			}
+
+			h4 {
+				color: $mainColor;
+				font-weight: light;
+				font-size: 22px;
+
+				@media #{$down665} {
+					font-size: 18px;
+					grid-column: 1 / -1;
+				}
+			}
+
 
 			li {
 				color: $defaultTextColor;
 				font-weight: normal;
 				font-size: 16px;
+				white-space: nowrap;
+
+				@media #{$down665} {
+					font-size: 14px;
+					padding-right: 15px;
+				}
 
 				&:before {
 					content: '\2015';
@@ -969,9 +1109,7 @@ header {
 		}
 
 		.view {
-			padding-top: 15px;
-			padding-left: 15%;
-			padding-bottom: 15px;
+			padding: 15px 0 15px 15%;
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex;	
@@ -979,6 +1117,9 @@ header {
 			    -ms-flex-pack: start;	
 			        justify-content: flex-start;
 			width: 100%;	
+			@media #{$down665} {
+				padding-left: 30px;
+			}
 
 			a {
 				display: -webkit-box;
@@ -996,6 +1137,10 @@ header {
 				text-transform: uppercase;
 				transition: all 0.3s;
 			    -webkit-transition: all 0.3s;
+				@media #{$down665} {
+					height: 40px;
+					font-size: 18px;
+				}
 
 				&.live {
 					color: $mainColor;
@@ -1114,7 +1259,7 @@ header {
 		}
 
 		label {
-			margin-top: 15px;
+			display: inline-block;
 			text-align: right;
 			
 			span {
@@ -1131,6 +1276,9 @@ header {
 			transition: all 0.5s;
 		    -webkit-transition: all 0.5s;
 
+			@media #{$down920} {
+				width: 450px;
+			}
 		
 			&:hover, &:focus {
 				outline: 1px solid $mainColor;
@@ -1141,6 +1289,7 @@ header {
 
 		input {
 			height: 60px;
+
 			@media #{$down1200} {
 				height: 40px;
 			}
@@ -1150,6 +1299,7 @@ header {
 			padding-top:5px;
 			vertical-align: top;
 			height: 180px;
+
 			@media #{$down1200} {
 				height: 100px;
 			}
@@ -1191,7 +1341,6 @@ header {
 	@media #{$down805} {
 		width: 100%;
 		padding: 0;
-		padding-bottom: 30px;
 		border: 0;
 	}
 
@@ -1199,15 +1348,17 @@ header {
 		@media #{$down805} {
 			text-align: center;
 		}
+		@media #{$down665} {
+			text-align: left;
+		}
 	}
 
 	li {
 		margin: 30px 0;
 
-
 		@media #{$down805} {
 			display: inline-block;
-			margin: 15px 0;
+			margin: 15px 0 15px;
 			margin-right: 15px;
 		}
 
@@ -1220,10 +1371,18 @@ header {
 			padding-left: 60px;
 			white-space: nowrap;
 
+			@media #{$down920} {
+				font-size: 22px;
+			}
+
 			@media #{$down805} {
 				padding-left: 45px;
 			}
 
+			@media #{$down665} {
+				padding-left: 35px;
+				font-size: 18px;
+			}
 
 			&:hover, &:focus {
 				color: $mainColor;

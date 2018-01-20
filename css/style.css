@@ -72,6 +72,9 @@ h1 {
   @media only screen and (max-width: 1200px) {
     h1 {
       font-size: 46px; } }
+  @media only screen and (max-width: 665px) {
+    h1 {
+      font-size: 38px; } }
 
 h2 {
   padding: 3.2rem 0;
@@ -141,6 +144,9 @@ h2 {
           @media only screen and (max-width: 1200px) {
             .fixed-menu .container .mobile-menu .mobile-logo p {
               margin-left: 0; } }
+          @media only screen and (max-width: 665px) {
+            .fixed-menu .container .mobile-menu .mobile-logo p {
+              font-size: 20px; } }
         .fixed-menu .container .mobile-menu .mobile-logo.fixed {
           top: 10px;
           margin-top: 0;
@@ -342,6 +348,11 @@ header {
       color: #f1faee;
       transition: all 0.3s;
       -webkit-transition: all 0.3s; }
+      @media only screen and (max-width: 665px) {
+        header .welcome > a {
+          font-size: 18px;
+          height: 60px;
+          width: 180px; } }
       header .welcome > a:hover, header .welcome > a:focus {
         background-color: rgba(255, 255, 255, 0.2);
         transition: all 0.3s;
@@ -408,6 +419,12 @@ header {
   @media only screen and (max-width: 1200px) {
     .about {
       height: auto; } }
+  @media only screen and (max-width: 665px) {
+    .about {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
   .about figure {
     height: inherit;
     -webkit-box-flex: 1;
@@ -418,11 +435,25 @@ header {
     background-image: url("../img/placeholder.jpg");
     background-size: cover;
     background-position: center center; }
+    @media only screen and (max-width: 665px) {
+      .about figure {
+        height: 350px;
+        width: 100%;
+        -webkit-box-flex: 1;
+        -ms-flex: auto;
+        flex: auto;
+        background-position: top center;
+        -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+        order: 5; } }
   .about section {
     margin: 0 10px 0 30px;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
+    -webkit-box-flex: 2;
+    -ms-flex: 2;
     flex: 2;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -430,9 +461,15 @@ header {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
+    @media only screen and (max-width: 665px) {
+      .about section {
+        margin: 10px; } }
     @media only screen and (max-width: 1200px) {
       .about section h2 {
         padding: 30px 0; } }
+    @media only screen and (max-width: 665px) {
+      .about section h2 {
+        padding: 20px 0; } }
     .about section p {
       margin-left: 130px; }
       @media only screen and (max-width: 1200px) {
@@ -441,9 +478,18 @@ header {
       @media only screen and (max-width: 768px) {
         .about section p {
           margin-left: 40px; } }
+      @media only screen and (max-width: 665px) {
+        .about section p {
+          margin-left: 25px;
+          font-size: 18px; } }
     .about section footer {
       -ms-flex-item-align: end;
       align-self: flex-end; }
+      @media only screen and (max-width: 665px) {
+        .about section footer {
+          -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center; } }
       .about section footer a {
         margin: 3.5rem 0 3.5rem 2rem;
         margin-left: 2rem;
@@ -507,14 +553,25 @@ header {
     @media only screen and (max-width: 1200px) {
       .skills h2 {
         margin-left: 15px; } }
+    @media only screen and (max-width: 665px) {
+      .skills h2 {
+        text-align: center;
+        padding: 20px 0; } }
   .skills .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+    @media only screen and (max-width: 665px) {
+      .skills .container {
+        display: inline-block; } }
   .skills .column {
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1; }
+    @media only screen and (max-width: 665px) {
+      .skills .column {
+        padding: 0 30px 30px;
+        float: left; } }
     .skills .column h3 {
       padding-bottom: 10px;
       padding-left: 60px;
@@ -524,19 +581,35 @@ header {
         .skills .column h3 {
           font-size: 26px;
           padding-left: 40px; } }
+      @media only screen and (max-width: 920px) {
+        .skills .column h3 {
+          font-size: 22px;
+          padding-left: 10px; } }
+      @media only screen and (max-width: 665px) {
+        .skills .column h3 {
+          font-size: 26px; } }
     .skills .column > ul {
       margin-left: 100px; }
       @media only screen and (max-width: 920px) {
         .skills .column > ul {
           margin-left: 60px; } }
+      @media only screen and (max-width: 768px) {
+        .skills .column > ul {
+          margin-left: 15px; } }
     .skills .column > ul > li {
       color: #003366;
       font-weight: bold; }
+      @media only screen and (max-width: 665px) {
+        .skills .column > ul > li {
+          font-size: 20px; } }
       .skills .column > ul > li:before {
         content: '\2015';
         color: #e63946;
         font-size: 30px;
         margin-right: 7px; }
+        @media only screen and (max-width: 665px) {
+          .skills .column > ul > li:before {
+            font-size: 24px; } }
       .skills .column > ul > li span {
         color: #363636;
         font-size: 18px;
@@ -547,10 +620,13 @@ header {
       font-weight: normal;
       margin-left: 60px;
       padding-bottom: 20px; }
+      @media only screen and (max-width: 920px) {
+        .skills .column > ul > li > ul {
+          margin-left: 40px;
+          word-wrap: break-word; } }
       @media only screen and (max-width: 768px) {
         .skills .column > ul > li > ul {
-          margin-left: 20px;
-          word-wrap: break-word; } }
+          margin-left: 25px; } }
       .skills .column > ul > li > ul > li:before {
         content: " - "; }
 
@@ -566,6 +642,9 @@ header {
       width: 100%;
       -ms-grid-columns: minmax(250px, 1fr) [auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); } }
+  @media only screen and (max-width: 805px) {
+    .portfolio {
+      margin: 0; } }
   .portfolio .aboutProjects {
     padding: 30px;
     -ms-grid-column: 1;
@@ -586,7 +665,8 @@ header {
     display: flex;
     overflow: hidden;
     transition: all 0.3s;
-    -webkit-transition: all 0.3s; }
+    -webkit-transition: all 0.3s;
+    cursor: pointer; }
     .portfolio .project .image-wrapper {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -649,9 +729,11 @@ header {
   -ms-flex-align: center;
   align-items: center;
   display: none; }
+  @media only screen and (max-width: 805px) {
+    .zoomed {
+      padding: 10px; } }
   .zoomed button {
     padding: 20px;
-    width: 50px;
     height: 80px;
     font-size: 30px;
     cursor: pointer;
@@ -659,6 +741,10 @@ header {
     -webkit-transition: all 0.2s;
     color: #f1faee;
     background-color: #003366; }
+    @media only screen and (max-width: 805px) {
+      .zoomed button {
+        height: 60px;
+        padding: 0 10px; } }
     .zoomed button:hover, .zoomed button:focus {
       background-color: #7c010a;
       transition: all 0.2s;
@@ -729,6 +815,12 @@ header {
       display: -ms-flexbox;
       display: flex;
       max-width: 1500px; }
+      @media only screen and (max-width: 665px) {
+        .zoomed .zoomed-project .details {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column; } }
       .zoomed .zoomed-project .details .description {
         margin: 0 auto;
         -webkit-box-flex: 3;
@@ -737,6 +829,9 @@ header {
         position: relative;
         font-size: 18px;
         padding: 0 30px; }
+        @media only screen and (max-width: 805px) {
+          .zoomed .zoomed-project .details .description {
+            font-size: 16px; } }
         .zoomed .zoomed-project .details .description h3 {
           width: 100%;
           margin-bottom: 5px;
@@ -754,6 +849,9 @@ header {
           background-repeat: no-repeat;
           background-size: contain;
           white-space: nowrap; }
+          @media only screen and (max-width: 665px) {
+            .zoomed .zoomed-project .details .description .date {
+              font-size: 14px; } }
         .zoomed .zoomed-project .details .description p {
           width: 100%;
           font-size: 100%;
@@ -764,23 +862,46 @@ header {
       -webkit-box-flex: 1;
       -ms-flex: 1;
       flex: 1;
-      color: #003366;
-      font-weight: light;
-      font-size: 22px;
       border-left: 3px solid #003366; }
+      @media only screen and (max-width: 665px) {
+        .zoomed .zoomed-project ul {
+          margin: 15px 0;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          padding-top: 10px;
+          border: 0;
+          width: 60%;
+          display: -ms-grid;
+          display: grid;
+          -ms-grid-row: 1;
+          -ms-grid-column: 1;
+          -ms-grid-columns: auto auto;
+          grid-template-columns: auto auto; } }
+      .zoomed .zoomed-project ul h4 {
+        color: #003366;
+        font-weight: light;
+        font-size: 22px; }
+        @media only screen and (max-width: 665px) {
+          .zoomed .zoomed-project ul h4 {
+            font-size: 18px;
+            grid-column: 1 / -1; } }
       .zoomed .zoomed-project ul li {
         color: #363636;
         font-weight: normal;
-        font-size: 16px; }
+        font-size: 16px;
+        white-space: nowrap; }
+        @media only screen and (max-width: 665px) {
+          .zoomed .zoomed-project ul li {
+            font-size: 14px;
+            padding-right: 15px; } }
         .zoomed .zoomed-project ul li:before {
           content: '\2015';
           color: #e63946;
           font-size: 20px;
           margin-right: 7px; }
     .zoomed .zoomed-project .view {
-      padding-top: 15px;
-      padding-left: 15%;
-      padding-bottom: 15px;
+      padding: 15px 0 15px 15%;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -788,6 +909,9 @@ header {
       -ms-flex-pack: start;
       justify-content: flex-start;
       width: 100%; }
+      @media only screen and (max-width: 665px) {
+        .zoomed .zoomed-project .view {
+          padding-left: 30px; } }
       .zoomed .zoomed-project .view a {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -804,6 +928,10 @@ header {
         text-transform: uppercase;
         transition: all 0.3s;
         -webkit-transition: all 0.3s; }
+        @media only screen and (max-width: 665px) {
+          .zoomed .zoomed-project .view a {
+            height: 40px;
+            font-size: 18px; } }
         .zoomed .zoomed-project .view a.live {
           color: #003366;
           border: 1px solid #003366; }
@@ -891,7 +1019,7 @@ header {
           -ms-grid-row-align: center;
           align-self: center; } }
     .contact form label {
-      margin-top: 15px;
+      display: inline-block;
       text-align: right; }
       .contact form label span {
         margin-top: -5px; }
@@ -903,6 +1031,9 @@ header {
       outline: 1px solid #a8dadc;
       transition: all 0.5s;
       -webkit-transition: all 0.5s; }
+      @media only screen and (max-width: 920px) {
+        .contact form input, .contact form textarea {
+          width: 450px; } }
       .contact form input:hover, .contact form input:focus, .contact form textarea:hover, .contact form textarea:focus {
         outline: 1px solid #003366;
         transition: all 0.5s;
@@ -948,17 +1079,19 @@ header {
     .links {
       width: 100%;
       padding: 0;
-      padding-bottom: 30px;
       border: 0; } }
   @media only screen and (max-width: 805px) {
     .links ul {
       text-align: center; } }
+  @media only screen and (max-width: 665px) {
+    .links ul {
+      text-align: left; } }
   .links li {
     margin: 30px 0; }
     @media only screen and (max-width: 805px) {
       .links li {
         display: inline-block;
-        margin: 15px 0;
+        margin: 15px 0 15px;
         margin-right: 15px; } }
     .links li a {
       display: block;
@@ -969,9 +1102,16 @@ header {
       background-size: contain;
       padding-left: 60px;
       white-space: nowrap; }
+      @media only screen and (max-width: 920px) {
+        .links li a {
+          font-size: 22px; } }
       @media only screen and (max-width: 805px) {
         .links li a {
           padding-left: 45px; } }
+      @media only screen and (max-width: 665px) {
+        .links li a {
+          padding-left: 35px;
+          font-size: 18px; } }
       .links li a:hover, .links li a:focus {
         color: #003366;
         text-decoration: underline; }
