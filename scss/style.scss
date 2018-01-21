@@ -17,6 +17,13 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
     line-height: 1.5;
+
+    @media #{$down665} {
+    	font-size: 16px;
+    }
+	@media #{$down320} {
+		font-size: 14px;
+	}
 }
 
 h1 {
@@ -45,6 +52,9 @@ h2 {
     @media #{$down1200} {
 		font-size: 44px;
 	}
+	@media #{$down320} {
+		font-size: 30px;
+	}
 }
 
 .container {
@@ -66,6 +76,11 @@ h2 {
 	@media #{$down920} {
 		display: none;
 	}
+}
+
+.canvas {
+	width: 100%;
+	height: 100vh;
 }
 
 .fixed-menu {
@@ -134,6 +149,10 @@ h2 {
 						font-size: 34px;
 						transition: all 0.3s;
 				    	-webkit-transition: all 0.3s;
+
+				    	@media #{$down520} {
+				    		font-size: 24px;
+				    	}
 					}
 					p {
 						margin: -5px 2px;
@@ -163,6 +182,10 @@ h2 {
 					display: none;
 				}
 
+				@media #{$down320} {
+					-webkit-transform: scale(0.6);
+					        transform: scale(0.6);
+				}
 
 				&:hover > *, &:focus > * {
 						background-color: $accentHover;
@@ -226,11 +249,17 @@ h2 {
 	    	height: 100%;
 	    	z-index: 30;
 
+	    	@media #{$down920}{
+				display: none;
+			}
+
+
 		    & ul{
 		    	height: inherit;
 				-webkit-box-align: center;
 				    -ms-flex-align: center;
 				        align-items: center;
+
 
 				li {
 					margin: 8px 15px 0;
@@ -249,7 +278,6 @@ h2 {
 						color: $backgroundColor;
 						transition: all 0.3s;
 			    		-webkit-transition: all 0.3s;
-
 
 						
 						&.special {
@@ -271,9 +299,6 @@ h2 {
 				}
 			}
 
-	    	@media #{$down920}{
-				display: none;
-			}
 
 	    	&.dropped {
 	    		position: fixed;  
@@ -288,6 +313,10 @@ h2 {
     			-webkit-transition: all 0.3s;  	
     			@include fadeInRight;	
 
+    			@media #{$down768} {
+    				width: 70%;
+    			}
+
 	    		ul {
 					width: 100%;
 					display: -webkit-box;
@@ -300,19 +329,27 @@ h2 {
 					-webkit-box-pack: center; 
 					    -ms-flex-pack: center; 
 					        justify-content: center;  		
+			    	@media #{$down920} and (min-height: 800px) {
+			    		margin-top: 90px;
+						-webkit-box-pack: start;
+						    -ms-flex-pack: start;
+						        justify-content: flex-start;
+					}
 
 					li {
 		    			width: 100%;
 		    			height: auto;
 		    			text-transform: uppercase;
 
-
 		    			a {
-		    				
 		    				padding: 20px 40px;
 		    				display: block;
 		    				width: 100%;
 		    				height: 100%;
+
+		    				@media #{$down320} {
+		    					padding: 10px 40px;
+		    				}
 		    				
 
 		    				&.active {
@@ -345,7 +382,6 @@ h2 {
 }
 
 header {
-	/* position: relative;*/
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -366,24 +402,13 @@ header {
 		size: cover;
 	}
 
-	canvas {
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  }
-
-	.alt {
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	}
 
 	.welcome {
 		width: 1170px;
 		padding-left: 10px;
 
 		& > a {
-			top: auto;
+			position: relative;
 			margin-left: 10px;
 			margin-top: 150px;
 			display: -webkit-box;
@@ -401,11 +426,24 @@ header {
 			color: $backgroundColor;
 			transition: all 0.3s;
 		    -webkit-transition: all 0.3s;
+		    z-index: 10;
 
 			@media #{$down665} {
 				font-size: 18px;
 				height: 60px;
 				width: 180px;
+			}
+
+			@media #{$down520} {
+				font-size: 16px;
+				height: 55px;
+				width: 140px;
+			}
+
+			@media #{$down320} {
+				font-size: 14px;
+				height: 50px;
+				width: 120px;
 			}
 
 			&:hover, &:focus {
@@ -433,6 +471,12 @@ header {
 		-webkit-transform: scale(1.5);
 		        transform: scale(1.5);
 		cursor: pointer;
+
+		@media #{$down520} {
+    		margin-bottom: 30px;
+    		-webkit-transform: scale(1.1);
+    		        transform: scale(1.1);
+    	}
 
 		&:hover, &:focus {
 			background-color: rgba(255, 255, 255, 0.3);
@@ -481,6 +525,7 @@ header {
 	display: -ms-inline-flexbox;
 	display: -webkit-box;
 	display: flex;
+
 	@media screen and (min-aspect-ratio: 3/2) {
 		height: auto;
 	}
@@ -562,6 +607,9 @@ header {
 				margin-left: 25px;
 				font-size: 18px;
 			}
+			@media #{$down320} {
+				font-size: 16px;
+			}
 		}
 
 		footer {
@@ -597,6 +645,14 @@ header {
 			
 				@media #{$down1200} {
 					margin: 30px 15px;
+				}
+
+				@media #{$down520} {
+					white-space: nowrap;
+					margin: 20px 5px 0;
+					height: 55px;
+					width: 120px;
+					font-size: 14px;
 				}
 			}
 
@@ -703,6 +759,10 @@ header {
 			@media #{$down665} {
 				font-size: 26px;
 			}
+
+			@media #{$down320} {
+				font-size: 22px;
+			}
 		}
 
 		& > ul {
@@ -723,6 +783,10 @@ header {
 				font-size: 20px;
 			}
 
+			@media #{$down320} {
+				font-size: 18px;
+			}
+
 			&:before {
 				content: '\2015';
 				color: $accentColor;
@@ -730,6 +794,10 @@ header {
 				margin-right: 7px;
 				@media #{$down665} {
 					font-size: 24px;
+				}
+
+				@media #{$down320} {
+					font-size: 16px;
 				}
 			}				
 
@@ -909,11 +977,25 @@ header {
 		transition: all 0.2s;
 	    -webkit-transition: all 0.2s;
 		color: $backgroundColor;
-		background-color: $mainColor;
+		background-color: $mainColor;			
+		z-index: 99;
+
 		@media #{$down805} {
 			height: 60px;
 			padding: 0 10px;
 		}
+		@media #{$down768} {
+			position: absolute;
+		}
+
+		&.prev {
+			left: 0;
+		}
+
+		&.next {
+			right: 0;
+		}
+
 
     	&:hover, &:focus {
 			background-color: $accentHover;
@@ -951,6 +1033,10 @@ header {
 				max-width: 40%;
 			}
 
+			@media #{$down320} {
+				display: none;
+			}
+
 			&.clicked {
 				max-width: 100%;
 				@media #{$ratio3-2} {
@@ -969,6 +1055,12 @@ header {
 			cursor: pointer;
 			transition: all 0.2s;
 		    -webkit-transition: all 0.2s;
+
+			@media #{$down768} {
+				padding: 0;
+				width: 50px;
+				height: 50px;
+			}
 
 		    &.close {			
 			   	right: 0;
@@ -1003,6 +1095,7 @@ header {
 			display: -ms-flexbox;
 			display: flex;
 			max-width: 1500px;
+
 			@media #{$down665} {
 				-webkit-box-orient: vertical;
 				-webkit-box-direction: normal;
@@ -1018,16 +1111,25 @@ header {
 				position: relative;
 				font-size: 18px;
 				padding: 0 30px;
+
 				@media #{$down805} {
 					font-size: 16px;
 				}
-
+				
 			    h3 {
 			    	width: 100%;
 			    	margin-bottom: 5px;
 			    	color: $mainColor;
 			    	font-size: 1.8rem;
 			    	font-weight: 300; /*light*/
+
+					@media #{$down805} {
+						font-size: 24px;
+					}
+
+					@media #{$down320} {
+						font-size: 18px;
+					}
 			    }
 
 				.date {
@@ -1041,6 +1143,9 @@ header {
 					white-space: nowrap;
 					@media #{$down665} {
 						font-size: 14px;
+					}
+					@media #{$down520} {
+						display: none;
 					}
 				}
 
@@ -1065,7 +1170,6 @@ header {
 				-webkit-box-pack: justify;
 				    -ms-flex-pack: justify;
 				        justify-content: space-between;
-				padding-top: 10px;
 				border: 0;
 				width: 60%;
 				display: -ms-grid;
@@ -1074,6 +1178,9 @@ header {
 				-ms-grid-column: 1;
 				-ms-grid-columns: auto auto;
 				    grid-template-columns: auto auto;
+			}
+			@media #{$down520} {
+				display: none;
 			}
 
 			h4 {
@@ -1116,8 +1223,10 @@ header {
 			-webkit-box-pack: start;	
 			    -ms-flex-pack: start;	
 			        justify-content: flex-start;
-			width: 100%;	
+			width: 100%;
+
 			@media #{$down665} {
+				padding: 0;
 				padding-left: 30px;
 			}
 
@@ -1137,9 +1246,15 @@ header {
 				text-transform: uppercase;
 				transition: all 0.3s;
 			    -webkit-transition: all 0.3s;
+
 				@media #{$down665} {
 					height: 40px;
 					font-size: 18px;
+				}
+
+				@media #{$down520} {
+					margin-top: 10px;
+					width: 80px;
 				}
 
 				&.live {
@@ -1179,7 +1294,7 @@ header {
 	display: -ms-flexbox;
 	display: flex;
 		@media #{$down1200} {
-			margin-left: 15px;
+			margin: 0 15px;
 			padding-bottom: 30px;
 		}
 
@@ -1192,14 +1307,21 @@ header {
 	h2 {
 		padding-top: 30px;
 		padding-bottom: 10px;
+
 	}
 
 	.lead {
 		font-size: 24px;
+		@media #{$down520} {
+			font-size: 20px;
+		}
 	}
 	p {
 		font-size: 20px;
 		padding-top: 5px;
+		@media #{$down520} {
+			font-size: 18px;
+		}
 	}
 
 	a {
@@ -1211,7 +1333,6 @@ header {
 		@media #{$down1200} {
 			display: inline;
 		}
-
 
 		&:hover, &:focus {
 			color: $accentHover;
@@ -1244,10 +1365,14 @@ header {
 			@media #{$down805} {
 				margin: 0;
 			}
+
+			@media #{$down520} {
+				display: block;
+			}
 		p {
 			margin-bottom: 30px;
 			-ms-flex-item-align: end;
-			 align-self: flex-end;
+			align-self: flex-end;
 			font-size: 20px;
 
 			@media #{$down805} {
@@ -1278,6 +1403,12 @@ header {
 
 			@media #{$down920} {
 				width: 450px;
+			}
+
+			@media #{$down520} {
+				margin: 0;
+				padding: 0;
+				width: 100%;
 			}
 		
 			&:hover, &:focus {
@@ -1349,6 +1480,10 @@ header {
 			text-align: center;
 		}
 		@media #{$down665} {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 1fr 1fr;
+			    grid-template-columns: 1fr 1fr;
 			text-align: left;
 		}
 	}
@@ -1381,9 +1516,12 @@ header {
 
 			@media #{$down665} {
 				padding-left: 35px;
+				margin: 5px;
+				font-size: 20px;
+			}
+			@media #{$down320} {
 				font-size: 18px;
 			}
-
 			&:hover, &:focus {
 				color: $mainColor;
 				text-decoration: underline;
@@ -1430,6 +1568,10 @@ body > footer {
 	font-size: 18px;
 	color: $backgroundColor;
 	background-color: $mainColor;
+
+	@media #{$down665} {
+		font-size: 14px;
+	}
 
 	span {
 		padding: 0 5px;

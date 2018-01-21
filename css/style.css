@@ -62,6 +62,12 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
   line-height: 1.5; }
+  @media only screen and (max-width: 665px) {
+    body {
+      font-size: 16px; } }
+  @media only screen and (max-width: 320px) {
+    body {
+      font-size: 14px; } }
 
 h1 {
   color: #f1faee;
@@ -84,6 +90,9 @@ h2 {
   @media only screen and (max-width: 1200px) {
     h2 {
       font-size: 44px; } }
+  @media only screen and (max-width: 320px) {
+    h2 {
+      font-size: 30px; } }
 
 .container {
   max-width: 1170px;
@@ -102,6 +111,10 @@ h2 {
   @media only screen and (max-width: 920px) {
     .line {
       display: none; } }
+
+.canvas {
+  width: 100%;
+  height: 100vh; }
 
 .fixed-menu {
   position: fixed;
@@ -156,6 +169,9 @@ h2 {
             font-size: 34px;
             transition: all 0.3s;
             -webkit-transition: all 0.3s; }
+            @media only screen and (max-width: 520px) {
+              .fixed-menu .container .mobile-menu .mobile-logo.fixed h1 {
+                font-size: 24px; } }
           .fixed-menu .container .mobile-menu .mobile-logo.fixed p {
             margin: -5px 2px;
             font-size: 16px;
@@ -176,6 +192,10 @@ h2 {
         @media only screen and (min-width: 920px) {
           .fixed-menu .container .mobile-menu .toggler {
             display: none; } }
+        @media only screen and (max-width: 320px) {
+          .fixed-menu .container .mobile-menu .toggler {
+            -webkit-transform: scale(0.6);
+            transform: scale(0.6); } }
         .fixed-menu .container .mobile-menu .toggler:hover > *, .fixed-menu .container .mobile-menu .toggler:focus > * {
           background-color: #7c010a; }
         .fixed-menu .container .mobile-menu .toggler span {
@@ -216,6 +236,9 @@ h2 {
       right: 0;
       height: 100%;
       z-index: 30; }
+      @media only screen and (max-width: 920px) {
+        .fixed-menu .container nav.dropdown {
+          display: none; } }
       .fixed-menu .container nav.dropdown ul {
         height: inherit;
         -webkit-box-align: center;
@@ -247,9 +270,6 @@ h2 {
               text-decoration: underline;
               transition: all 0.3s;
               -webkit-transition: all 0.3s; }
-      @media only screen and (max-width: 920px) {
-        .fixed-menu .container nav.dropdown {
-          display: none; } }
       .fixed-menu .container nav.dropdown.dropped {
         position: fixed;
         display: -webkit-box;
@@ -265,6 +285,9 @@ h2 {
         animation-name: fadeInRight;
         -webkit-animation-duration: 0.5s;
         animation-duration: 0.5s; }
+        @media only screen and (max-width: 768px) {
+          .fixed-menu .container nav.dropdown.dropped {
+            width: 70%; } }
         .fixed-menu .container nav.dropdown.dropped ul {
           width: 100%;
           display: -webkit-box;
@@ -277,6 +300,12 @@ h2 {
           -webkit-box-pack: center;
           -ms-flex-pack: center;
           justify-content: center; }
+          @media only screen and (max-width: 920px) and (min-height: 800px) {
+            .fixed-menu .container nav.dropdown.dropped ul {
+              margin-top: 90px;
+              -webkit-box-pack: start;
+              -ms-flex-pack: start;
+              justify-content: flex-start; } }
           .fixed-menu .container nav.dropdown.dropped ul li {
             width: 100%;
             height: auto;
@@ -286,6 +315,9 @@ h2 {
               display: block;
               width: 100%;
               height: 100%; }
+              @media only screen and (max-width: 320px) {
+                .fixed-menu .container nav.dropdown.dropped ul li a {
+                  padding: 10px 40px; } }
               .fixed-menu .container nav.dropdown.dropped ul li a.active {
                 position: relative;
                 background-color: #e63946;
@@ -302,7 +334,6 @@ h2 {
       transition: color 0.2s; }
 
 header {
-  /* position: relative;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -318,19 +349,11 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
-  header canvas {
-    position: absolute;
-    top: 0;
-    left: 0; }
-  header .alt {
-    position: absolute;
-    top: 0;
-    left: 0; }
   header .welcome {
     width: 1170px;
     padding-left: 10px; }
     header .welcome > a {
-      top: auto;
+      position: relative;
       margin-left: 10px;
       margin-top: 150px;
       display: -webkit-box;
@@ -347,12 +370,23 @@ header {
       border: 3px solid #f1faee;
       color: #f1faee;
       transition: all 0.3s;
-      -webkit-transition: all 0.3s; }
+      -webkit-transition: all 0.3s;
+      z-index: 10; }
       @media only screen and (max-width: 665px) {
         header .welcome > a {
           font-size: 18px;
           height: 60px;
           width: 180px; } }
+      @media only screen and (max-width: 520px) {
+        header .welcome > a {
+          font-size: 16px;
+          height: 55px;
+          width: 140px; } }
+      @media only screen and (max-width: 320px) {
+        header .welcome > a {
+          font-size: 14px;
+          height: 50px;
+          width: 120px; } }
       header .welcome > a:hover, header .welcome > a:focus {
         background-color: rgba(255, 255, 255, 0.2);
         transition: all 0.3s;
@@ -374,6 +408,11 @@ header {
     -webkit-transform: scale(1.5);
     transform: scale(1.5);
     cursor: pointer; }
+    @media only screen and (max-width: 520px) {
+      header .mouse-icon {
+        margin-bottom: 30px;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1); } }
     header .mouse-icon:hover, header .mouse-icon:focus {
       background-color: rgba(255, 255, 255, 0.3); }
   header .mouse-icon .wheel {
@@ -482,6 +521,9 @@ header {
         .about section p {
           margin-left: 25px;
           font-size: 18px; } }
+      @media only screen and (max-width: 320px) {
+        .about section p {
+          font-size: 16px; } }
     .about section footer {
       -ms-flex-item-align: end;
       align-self: flex-end; }
@@ -514,6 +556,13 @@ header {
         @media only screen and (max-width: 1200px) {
           .about section footer a {
             margin: 30px 15px; } }
+        @media only screen and (max-width: 520px) {
+          .about section footer a {
+            white-space: nowrap;
+            margin: 20px 5px 0;
+            height: 55px;
+            width: 120px;
+            font-size: 14px; } }
       .about section footer a:first-child {
         background-color: #a8dadc;
         color: #003366; }
@@ -588,6 +637,9 @@ header {
       @media only screen and (max-width: 665px) {
         .skills .column h3 {
           font-size: 26px; } }
+      @media only screen and (max-width: 320px) {
+        .skills .column h3 {
+          font-size: 22px; } }
     .skills .column > ul {
       margin-left: 100px; }
       @media only screen and (max-width: 920px) {
@@ -602,6 +654,9 @@ header {
       @media only screen and (max-width: 665px) {
         .skills .column > ul > li {
           font-size: 20px; } }
+      @media only screen and (max-width: 320px) {
+        .skills .column > ul > li {
+          font-size: 18px; } }
       .skills .column > ul > li:before {
         content: '\2015';
         color: #e63946;
@@ -610,6 +665,9 @@ header {
         @media only screen and (max-width: 665px) {
           .skills .column > ul > li:before {
             font-size: 24px; } }
+        @media only screen and (max-width: 320px) {
+          .skills .column > ul > li:before {
+            font-size: 16px; } }
       .skills .column > ul > li span {
         color: #363636;
         font-size: 18px;
@@ -740,11 +798,19 @@ header {
     transition: all 0.2s;
     -webkit-transition: all 0.2s;
     color: #f1faee;
-    background-color: #003366; }
+    background-color: #003366;
+    z-index: 99; }
     @media only screen and (max-width: 805px) {
       .zoomed button {
         height: 60px;
         padding: 0 10px; } }
+    @media only screen and (max-width: 768px) {
+      .zoomed button {
+        position: absolute; } }
+    .zoomed button.prev {
+      left: 0; }
+    .zoomed button.next {
+      right: 0; }
     .zoomed button:hover, .zoomed button:focus {
       background-color: #7c010a;
       transition: all 0.2s;
@@ -775,6 +841,9 @@ header {
       @media screen and (min-aspect-ratio: 3 / 2) {
         .zoomed .zoomed-project img {
           max-width: 40%; } }
+      @media only screen and (max-width: 320px) {
+        .zoomed .zoomed-project img {
+          display: none; } }
       .zoomed .zoomed-project img.clicked {
         max-width: 100%; }
         @media screen and (min-aspect-ratio: 3 / 2) {
@@ -790,6 +859,11 @@ header {
       cursor: pointer;
       transition: all 0.2s;
       -webkit-transition: all 0.2s; }
+      @media only screen and (max-width: 768px) {
+        .zoomed .zoomed-project button {
+          padding: 0;
+          width: 50px;
+          height: 50px; } }
       .zoomed .zoomed-project button.close {
         right: 0;
         color: #f1faee;
@@ -839,6 +913,12 @@ header {
           font-size: 1.8rem;
           font-weight: 300;
           /*light*/ }
+          @media only screen and (max-width: 805px) {
+            .zoomed .zoomed-project .details .description h3 {
+              font-size: 24px; } }
+          @media only screen and (max-width: 320px) {
+            .zoomed .zoomed-project .details .description h3 {
+              font-size: 18px; } }
         .zoomed .zoomed-project .details .description .date {
           margin-bottom: 5px;
           padding-left: 35px;
@@ -852,6 +932,9 @@ header {
           @media only screen and (max-width: 665px) {
             .zoomed .zoomed-project .details .description .date {
               font-size: 14px; } }
+          @media only screen and (max-width: 520px) {
+            .zoomed .zoomed-project .details .description .date {
+              display: none; } }
         .zoomed .zoomed-project .details .description p {
           width: 100%;
           font-size: 100%;
@@ -869,7 +952,6 @@ header {
           -webkit-box-pack: justify;
           -ms-flex-pack: justify;
           justify-content: space-between;
-          padding-top: 10px;
           border: 0;
           width: 60%;
           display: -ms-grid;
@@ -878,6 +960,9 @@ header {
           -ms-grid-column: 1;
           -ms-grid-columns: auto auto;
           grid-template-columns: auto auto; } }
+      @media only screen and (max-width: 520px) {
+        .zoomed .zoomed-project ul {
+          display: none; } }
       .zoomed .zoomed-project ul h4 {
         color: #003366;
         font-weight: light;
@@ -911,6 +996,7 @@ header {
       width: 100%; }
       @media only screen and (max-width: 665px) {
         .zoomed .zoomed-project .view {
+          padding: 0;
           padding-left: 30px; } }
       .zoomed .zoomed-project .view a {
         display: -webkit-box;
@@ -932,6 +1018,10 @@ header {
           .zoomed .zoomed-project .view a {
             height: 40px;
             font-size: 18px; } }
+        @media only screen and (max-width: 520px) {
+          .zoomed .zoomed-project .view a {
+            margin-top: 10px;
+            width: 80px; } }
         .zoomed .zoomed-project .view a.live {
           color: #003366;
           border: 1px solid #003366; }
@@ -957,7 +1047,7 @@ header {
   display: flex; }
   @media only screen and (max-width: 1200px) {
     .contact {
-      margin-left: 15px;
+      margin: 0 15px;
       padding-bottom: 30px; } }
   @media only screen and (max-width: 805px) {
     .contact {
@@ -970,9 +1060,15 @@ header {
     padding-bottom: 10px; }
   .contact .lead {
     font-size: 24px; }
+    @media only screen and (max-width: 520px) {
+      .contact .lead {
+        font-size: 20px; } }
   .contact p {
     font-size: 20px;
     padding-top: 5px; }
+    @media only screen and (max-width: 520px) {
+      .contact p {
+        font-size: 18px; } }
   .contact a {
     display: block;
     color: #e63946;
@@ -1007,6 +1103,9 @@ header {
     @media only screen and (max-width: 805px) {
       .contact form {
         margin: 0; } }
+    @media only screen and (max-width: 520px) {
+      .contact form {
+        display: block; } }
     .contact form p {
       margin-bottom: 30px;
       -ms-flex-item-align: end;
@@ -1034,6 +1133,11 @@ header {
       @media only screen and (max-width: 920px) {
         .contact form input, .contact form textarea {
           width: 450px; } }
+      @media only screen and (max-width: 520px) {
+        .contact form input, .contact form textarea {
+          margin: 0;
+          padding: 0;
+          width: 100%; } }
       .contact form input:hover, .contact form input:focus, .contact form textarea:hover, .contact form textarea:focus {
         outline: 1px solid #003366;
         transition: all 0.5s;
@@ -1085,6 +1189,10 @@ header {
       text-align: center; } }
   @media only screen and (max-width: 665px) {
     .links ul {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       text-align: left; } }
   .links li {
     margin: 30px 0; }
@@ -1111,6 +1219,10 @@ header {
       @media only screen and (max-width: 665px) {
         .links li a {
           padding-left: 35px;
+          margin: 5px;
+          font-size: 20px; } }
+      @media only screen and (max-width: 320px) {
+        .links li a {
           font-size: 18px; } }
       .links li a:hover, .links li a:focus {
         color: #003366;
@@ -1144,6 +1256,9 @@ body > footer {
   font-size: 18px;
   color: #f1faee;
   background-color: #003366; }
+  @media only screen and (max-width: 665px) {
+    body > footer {
+      font-size: 14px; } }
   body > footer span {
     padding: 0 5px;
     color: #e63946; }

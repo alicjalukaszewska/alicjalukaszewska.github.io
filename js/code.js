@@ -5,16 +5,16 @@
 /* initiate smooth-scroll plugin */
 const scroll = new SmoothScroll( 'a[href*="#"]', { 
 	before: function() { 
-		window.removeEventListener('scroll', changeActive);
+		window.removeEventListener('scroll', getPosition);
 	}, 
 	after: function() { 
-				window.addEventListener('scroll', changeActive);
+				window.addEventListener('scroll', getPosition);
 	} 
 });
 
 /* add logo item and background to menu */
 const menu = document.querySelector('.fixed-menu');
-const links = menu.querySelectorAll('a');
+const links = document.querySelectorAll('.dropdown a');
 const line = document.querySelector('.line');
 
 function changeMenu () {
@@ -32,14 +32,16 @@ function changeMenu () {
 window.addEventListener('scroll', changeMenu);
 window.addEventListener('load', changeMenu);
 
+/* move line above active link and change its width */
 function addLine () {
 	const linksCoords = this.getBoundingClientRect();
 	line.style.width = `${linksCoords.width}px`;
 	line.style.transform = `translate(${linksCoords.left}px, ${linksCoords.top}px)`;
 	line.style.opacity = 1;
 }
-/* move line above active link and change its width */
-function changeLine () {
+
+
+function changeActive () {
 	links.forEach(link => link.classList.remove('active'));
 	this.classList.add('active');
 	if (window.innerWidth >= 920) {
@@ -55,17 +57,18 @@ const anchors = {
 	kontakt: document.querySelector('#kontakt').offsetTop - 250,
 }
 
-function changeActive () {
+function getPosition () {
 	Object.entries( anchors ).forEach(([name, topValue]) => {
 		if(window.scrollY >= topValue) {
 			let currentSection = menu.querySelector(`a[href='#${name}']`);
-			changeLine.call(currentSection);
+			changeActive.call(currentSection);
 		} 
 	})
 }
 
-links.forEach(link => link.addEventListener('click', changeLine));
-window.addEventListener('scroll', changeActive);
+links.forEach(link => link.addEventListener('click', changeActive));
+window.addEventListener('load', getPosition);
+window.addEventListener('scroll', getPosition);
 
 
 /* dropdown menu */
@@ -73,15 +76,14 @@ window.addEventListener('scroll', changeActive);
 const dropdownBtn = document.querySelector('#nav-icon');
 const dropdown = document.querySelector('.dropdown');
 
+
 dropdownBtn.addEventListener('click', () => dropdown.classList.toggle('dropped'));
 dropdownBtn.addEventListener('click', () => dropdownBtn.classList.toggle('open'));
 links.forEach(link => link.addEventListener('click', (e) => {
-	console.log(e.target);
-	dropdown.classList.remove('dropped');
-	dropdownBtn.classList.remove('open');
-})
+		dropdown.classList.remove('dropped');
+		dropdownBtn.classList.remove('open');
+	})
 )
-
 
 
 /* show/hide zoomed project */
@@ -165,8 +167,6 @@ zoomWindow.addEventListener('click', function(e) {
 })
 nextBtn.addEventListener('click', () => changeProjectByArrow('right'));
 prevBtn.addEventListener('click', () => changeProjectByArrow('left'));
-
-
 
 
 // }());
