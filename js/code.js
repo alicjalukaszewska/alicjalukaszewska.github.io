@@ -1,4 +1,4 @@
-// (function (){
+(function (){
 'use strict';
 
 
@@ -12,7 +12,8 @@ const scroll = new SmoothScroll( 'a[href*="#"]', {
 	} 
 });
 
-/* add logo item and background to menu */
+
+/* add logo item and background to menu on scroll*/
 const menu = document.querySelector('.fixed-menu');
 const links = document.querySelectorAll('.dropdown a');
 const line = document.querySelector('.line');
@@ -32,22 +33,7 @@ function changeMenu () {
 window.addEventListener('scroll', changeMenu);
 window.addEventListener('load', changeMenu);
 
-/* move line above active link and change its width */
-function addLine () {
-	const linksCoords = this.getBoundingClientRect();
-	line.style.width = `${linksCoords.width}px`;
-	line.style.transform = `translate(${linksCoords.left}px, ${linksCoords.top}px)`;
-	line.style.opacity = 1;
-}
-
-
-function changeActive () {
-	links.forEach(link => link.classList.remove('active'));
-	this.classList.add('active');
-	if (window.innerWidth >= 920) {
-		addLine.call(this);
-	}	
-}
+/* Show active section link in menu */
 
 const anchors = {
 	start: document.querySelector('#start').offsetTop,
@@ -57,6 +43,24 @@ const anchors = {
 	kontakt: document.querySelector('#kontakt').offsetTop - 250,
 }
 
+// move line above active link and change its width 
+function addLine () {
+	const linksCoords = this.getBoundingClientRect();
+	line.style.width = `${linksCoords.width}px`;
+	line.style.transform = `translate(${linksCoords.left}px, ${linksCoords.top}px)`;
+	line.style.opacity = 1;
+}
+
+//add active class to current link
+function changeActive () {
+	links.forEach(link => link.classList.remove('active'));
+	this.classList.add('active');
+	if (window.innerWidth >= 920) {
+		addLine.call(this);
+	}	
+}
+
+//find current section
 function getPosition () {
 	Object.entries( anchors ).forEach(([name, topValue]) => {
 		if(window.scrollY >= topValue) {
@@ -76,7 +80,6 @@ window.addEventListener('scroll', getPosition);
 const dropdownBtn = document.querySelector('#nav-icon');
 const dropdown = document.querySelector('.dropdown');
 
-
 dropdownBtn.addEventListener('click', () => dropdown.classList.toggle('dropped'));
 dropdownBtn.addEventListener('click', () => dropdownBtn.classList.toggle('open'));
 links.forEach(link => link.addEventListener('click', (e) => {
@@ -84,7 +87,6 @@ links.forEach(link => link.addEventListener('click', (e) => {
 		dropdownBtn.classList.remove('open');
 	})
 )
-
 
 /* show/hide zoomed project */
 
@@ -102,6 +104,7 @@ const backBtn = document.querySelector('#back');
 const nextBtn = document.querySelector('#next');
 const prevBtn = document.querySelector('#prev');
 
+
 function hideZoomImage () {
 	zoomedImage.classList.remove('clicked');
 	backBtn.style.display = "none";
@@ -117,6 +120,7 @@ function zoomImage () {
 	zoomedImage.addEventListener('click', hideZoomImage);
 }
 
+//show clicked or called project 
 function changeContent () {
 	//reset content
 	zoomedContent.innerHTML = "";
@@ -160,6 +164,8 @@ projects.forEach(project => {
 zoomedImage.addEventListener('click', zoomImage);
 backBtn.addEventListener('click', hideZoomImage);
 closeBtn.addEventListener('click', () => zoom.style.display = "none");
+
+//hide zoomed project with click outside it
 zoomWindow.addEventListener('click', function(e) {
 	if (e.target == this) {
  		zoom.style.display = "none";
@@ -169,4 +175,4 @@ nextBtn.addEventListener('click', () => changeProjectByArrow('right'));
 prevBtn.addEventListener('click', () => changeProjectByArrow('left'));
 
 
-// }());
+}());
