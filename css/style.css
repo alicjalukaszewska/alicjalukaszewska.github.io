@@ -146,8 +146,8 @@ h2 {
         padding-left: 15px;
         transition: all 1s;
         -webkit-transition: all 1s; }
-        .fixed-menu .container .mobile-menu .mobile-logo a {
-          color: inherit; }
+        .fixed-menu .container .mobile-menu .mobile-logo a:focus {
+          outline: 1px solid #e63946; }
         .fixed-menu .container .mobile-menu .mobile-logo h1 {
           transition: all 0.3s;
           -webkit-transition: all 0.3s; }
@@ -451,7 +451,7 @@ header {
   header .thanks {
     position: relative;
     text-align: center;
-    z-index: 15; }
+    z-index: 10; }
     header .thanks h2 {
       font-size: 60px;
       color: #f1faee;
@@ -597,7 +597,8 @@ header {
           background-color: #003366;
           color: #f1faee;
           transition: all 0.5s;
-          -webkit-transition: all 0.5s; }
+          -webkit-transition: all 0.5s;
+          outline: 2px solid #e63946; }
       .about section footer a:last-child {
         background-color: #e63946;
         color: #f1faee; }
@@ -605,7 +606,8 @@ header {
           background-color: #7c010a;
           color: #f1faee;
           transition: all 0.5s;
-          -webkit-transition: all 0.5s; }
+          -webkit-transition: all 0.5s;
+          outline: 2px solid #003366; }
 
 .skills {
   padding-bottom: 3.2rem;

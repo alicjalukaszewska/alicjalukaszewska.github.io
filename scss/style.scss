@@ -119,9 +119,9 @@ h2 {
 				padding-left: 15px;
 				transition: all 1s;
 		    	-webkit-transition: all 1s;
-		    	
-		    	a {
-		    		color: inherit;
+
+		    	a:focus {
+		    		outline: 1px solid $accentColor;
 		    	}
 
 		    	h1 {
@@ -529,7 +529,7 @@ header {
 	.thanks {
 		position: relative;
 		text-align: center;
-		z-index: 15;
+		z-index: 10;
 
 		h2 {
 			font-size: 60px;
@@ -709,6 +709,7 @@ header {
 					color: $backgroundColor;
 						transition: all 0.5s;
 			   		 -webkit-transition: all 0.5s;
+		    		outline: 2px solid $accentColor;
 				}
 			}
 
@@ -721,6 +722,7 @@ header {
 					color: $backgroundColor;
 						transition: all 0.5s;
 			   		 -webkit-transition: all 0.5s;
+			   		 outline: 2px solid $mainColor;
 				}
 			}
 		}

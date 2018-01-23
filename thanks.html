@@ -45,7 +45,19 @@
 		</div>
 	</header>
 	<script src="js/canvas.js"></script>
-	<script src="js/smooth-scroll.js"></script>
-	<script src="js/code.js"></script>
+	<script>
+		const menu = document.querySelector('.fixed-menu');
+		const links = document.querySelectorAll('.dropdown a');
+		const dropdownBtn = document.querySelector('#nav-icon');
+		const dropdown = document.querySelector('.dropdown');
+
+		dropdownBtn.addEventListener('click', () => dropdown.classList.toggle('dropped'));
+		dropdownBtn.addEventListener('click', () => dropdownBtn.classList.toggle('open'));
+		links.forEach(link => link.addEventListener('click', (e) => {
+				dropdown.classList.remove('dropped');
+				dropdownBtn.classList.remove('open');
+			})
+		)
+	</script>
 </body>
 </html>
