@@ -14,7 +14,7 @@
 
 body {
 	color: $defaultTextColor;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: $bodyFont;
     font-size: 20px;
     line-height: 1.5;
 
@@ -35,8 +35,8 @@ body {
 }
 
 h1 {
-	color: $backgroundColor;
-    font-family: 'Lora', serif;
+	color: $whites;
+    font-family: $headingsFont;
     font-size: 60px;
 	
 	a {
@@ -54,7 +54,7 @@ h1 {
 h2 {
 	padding: 3.2rem 0;
 	color: $mainColor;
-    font-family: 'Lora', serif;
+    font-family: $headingsFont;
     font-size: 48px;
 
     @media #{$down1200} {
@@ -86,10 +86,75 @@ h2 {
 	}
 }
 
+ .loaderWrapper {
+	position: fixed;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	opacity: 1;
+	height: 100vh;
+	width: 100%;
+	background-color: $mediumColor;
+	z-index: 1000;
+	 -webkit-transition: all 1.8s;
+	 -webkit-transition: all 1.8s;	 transition: all 1.8s;
+}
+
+
+.loader,
+.loader:before,
+.loader:after {
+	border-radius: 50%;
+	width: 2.5em;
+	height: 2.5em;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation: load 2.2s infinite ease-in-out;
+	animation: load 2.2s infinite ease-in-out;
+}
+
+.loader {
+	color: $accentColor;
+	font-size: 10px;
+	margin: 80px auto;
+	position: relative;
+	text-indent: -9999em;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-animation-delay: -0.16s;
+	animation-delay: -0.16s;
+}
+
+.loader:before,
+.loader:after {
+	content: '';
+	position: absolute;
+	top: 0;
+}
+
+.loader:before {
+	left: -3.5em;
+	-webkit-animation-delay: -0.32s;
+	animation-delay: -0.32s;
+	color: $whites; 
+}
+
+.loader:after {
+	left: 3.5em;
+	color: $mainColor;
+}
+
 .canvas {
 	width: 100%;
 	height: 100vh;
 }
+
 
 .fixed-menu {
 	position: fixed;
@@ -120,15 +185,15 @@ h2 {
 				transition: all 1s;
 		    	-webkit-transition: all 1s;
 
-		    	a:focus {
-		    		outline: 1px solid $accentColor;
-		    	}
+				a:focus {
+					display: block;
+					outline: 1px solid $whites;
+				}
 
 		    	h1 {
 		    		transition: all 0.3s;
 				    -webkit-transition: all 0.3s;
 		    	}
-
 
     			p {
 					margin-left: 10px;
@@ -283,7 +348,7 @@ h2 {
 						        align-items: center;
 						width: 100%;
 						height: 100%;
-						color: $backgroundColor;
+						color: $whites;
 						transition: all 0.3s;
 			    		-webkit-transition: all 0.3s;
 
@@ -298,7 +363,7 @@ h2 {
 						}
 
 						&:hover, &:focus {
-							color: $linksColor;
+							color: $lightColor;
 							text-decoration: underline;
 							transition: all 0.3s;
 			    			-webkit-transition: all 0.3s;
@@ -423,8 +488,8 @@ header {
 		        align-items: center;
 		height: 60px;
 		width: 200px;
-		border: 3px solid $backgroundColor;
-		color: $backgroundColor;
+		border: 3px solid $whites;
+		color: $whites;
 		transition: all 0.3s;
 	    -webkit-transition: all 0.3s;
 	    z-index: 10;
@@ -474,7 +539,7 @@ header {
 		height: 40px;
 		width: 24px;
 		display: block;
-		border-color: $backgroundColor;
+		border-color: $whites;
 		z-index: 10;
 		opacity: 0.7;
 		background: transparent;
@@ -518,7 +583,7 @@ header {
 	.mouse-icon .wheel {
 		position: relative;
 		border-radius: 10px;
-		background-color: $backgroundColor;
+		background-color: $whites;
 		width: 3px;
 		height: 8px;
 		top: 4px;
@@ -533,7 +598,7 @@ header {
 
 		h2 {
 			font-size: 60px;
-			color: $backgroundColor;
+			color: $whites;
 			padding: 10px;
 
 			@media #{$down768} {
@@ -592,10 +657,11 @@ header {
 		width: 470px;
 		background-color: $mainColor;
 		background: {
-			image: url('../img/placeholder.jpg');
+			image: url('http://via.placeholder.com/650x960');
 			size: cover;
 			position: center center;
 		}
+
 		@media #{$down665} {
 			height: 350px;
 			width: 100%;
@@ -701,12 +767,13 @@ header {
 			}
 
 			a:first-child {
-				background-color: $linksColor;
+				background-color: $lightColor;
 				color: $mainColor;
+				outline: 2px solid $lightColor;
 
 				&:hover, &:focus {
 					background-color: $mainColor;
-					color: $backgroundColor;
+					color: $whites;
 						transition: all 0.5s;
 			   		 -webkit-transition: all 0.5s;
 		    		outline: 2px solid $accentColor;
@@ -715,14 +782,14 @@ header {
 
 			a:last-child {
 				background-color: $accentColor;
-				color: $backgroundColor;
+				color: $whites;
+				outline: 2px solid $accentColor;
 
 				&:hover, &:focus {
 					background-color: $accentHover;
-					color: $backgroundColor;
+					color: $whites;
 						transition: all 0.5s;
 			   		 -webkit-transition: all 0.5s;
-			   		 outline: 2px solid $mainColor;
 				}
 			}
 		}
@@ -1024,7 +1091,7 @@ header {
 		cursor: pointer;
 		transition: all 0.2s;
 	    -webkit-transition: all 0.2s;
-		color: $backgroundColor;
+		color: $whites;
 		background-color: $mainColor;			
 		z-index: 40;
 
@@ -1113,7 +1180,7 @@ header {
 
 		    &.close {			
 			   	right: 0;
-				color: $backgroundColor;
+				color: $whites;
 				background-color: $mainColor;
 		    	&:hover, &:focus {
 					background-color: $accentHover;
@@ -1125,7 +1192,7 @@ header {
 		    &.back {
 		    	display: none;
 		    	left: 0;
-				color: $backgroundColor;
+				color: $whites;
 				background-color: $accentColor;
 						transition: all 0.2s;
 			    -webkit-transition: all 0.2s;
@@ -1312,7 +1379,7 @@ header {
 
 					&:hover, &:focus {
 						background-color: $mainColor;
-						color: $backgroundColor;
+						color: $whites;
 						transition: all 0.3s;
 					    -webkit-transition: all 0.3s;
 					}
@@ -1325,7 +1392,7 @@ header {
 
 					&:hover, &:focus {
 						background-color: $accentColor;
-						color: $backgroundColor;
+						color: $whites;
 						transition: all 0.3s;
 			    		-webkit-transition: all 0.3s;
 					}
@@ -1445,8 +1512,8 @@ header {
 			margin-left: 15px;
 			padding: 15px;
 			width: 500px;	
-			background-color: $linksColor;
-			outline: 1px solid $linksColor;
+			background-color: $lightColor;
+			outline: 2px solid $lightColor;
 			transition: all 0.5s;
 		    -webkit-transition: all 0.5s;
 
@@ -1461,7 +1528,7 @@ header {
 			}
 		
 			&:hover, &:focus {
-				outline: 1px solid $mainColor;
+				outline: 2px solid $mainColor;
 				transition: all 0.5s;
 			    -webkit-transition: all 0.5s;
 			}
@@ -1489,16 +1556,17 @@ header {
 			height: 60px;
 			width: 230px;
 			background-color: $accentColor;
-			color: $backgroundColor;
+			color: $whites;
 			font-weight: bold;
 			text-transform: uppercase;
 			cursor: pointer;
 			transition: all 0.3s;
 		    -webkit-transition: all 0.3s;
+		    outline: 2px solid $accentColor;	
 
 			&:hover, &:focus {
 				background-color: $accentHover;
-				color: $backgroundColor;
+				color: $whites;
 				transition: all 0.3s;
 			    -webkit-transition: all 0.3s;
 			}
@@ -1615,7 +1683,7 @@ body > footer {
 	height: 60px;
 	text-align: center;
 	font-size: 18px;
-	color: $backgroundColor;
+	color: $whites;
 	background-color: $mainColor;
 
 	@media #{$down665} {

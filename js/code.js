@@ -1,6 +1,13 @@
 (function (){
 'use strict';
 
+const loader = document.querySelector('#load');
+
+window.addEventListener('load', () => {
+	loader.style.opacity = 0;
+	loader.style.zIndex = -500;
+});
+
 
 /* initiate smooth-scroll plugin */
 const scroll = new SmoothScroll( 'a[href*="#"]', { 
@@ -8,12 +15,12 @@ const scroll = new SmoothScroll( 'a[href*="#"]', {
 		window.removeEventListener('scroll', getPosition);
 	}, 
 	after: function() { 
-				window.addEventListener('scroll', getPosition);
+		window.addEventListener('scroll', getPosition);
 	} 
 });
 
 
-/* add logo item and background to menu on scroll*/
+/* add logo and background to menu on scroll*/
 const menu = document.querySelector('.fixed-menu');
 const links = document.querySelectorAll('.dropdown a');
 const line = document.querySelector('.line');
@@ -43,7 +50,7 @@ const anchors = {
 	kontakt: document.querySelector('#kontakt').offsetTop - 250,
 }
 
-// move line above active link and change its width 
+// move line above active link and change line's width 
 function addLine () {
 	const linksCoords = this.getBoundingClientRect();
 	line.style.width = `${linksCoords.width}px`;
@@ -105,7 +112,7 @@ const nextBtn = document.querySelector('#next');
 const prevBtn = document.querySelector('#prev');
 
 
-function hideZoomImage () {
+function hideZoomedImage () {
 	zoomedImage.classList.remove('clicked');
 	backBtn.style.display = "none";
 	zoomedContent.classList.remove('visuallyhidden');
@@ -117,19 +124,19 @@ function zoomImage () {
 	backBtn.style.display = "block";
 	zoomedContent.classList.add('visuallyhidden');
 	zoomedImage.removeEventListener('click', zoomImage);
-	zoomedImage.addEventListener('click', hideZoomImage);
+	zoomedImage.addEventListener('click', hideZoomedImage);
 }
 
 //show clicked or called project 
 function changeContent () {
 	//reset content
 	zoomedContent.innerHTML = "";
-	hideZoomImage();
+	hideZoomedImage();
 	//change image
 	let image = this.querySelector('img').src;
 	zoomedImage.src = image;
-	let content = this.querySelector('.content').innerHTML;
 	//set new content
+	let content = this.querySelector('.content').innerHTML;
 	zoomedProject.id = this.id;
 	zoomedContent.innerHTML = content;
 	//show window
@@ -162,10 +169,10 @@ projects.forEach(project => {
 })
 
 zoomedImage.addEventListener('click', zoomImage);
-backBtn.addEventListener('click', hideZoomImage);
+backBtn.addEventListener('click', hideZoomedImage);
 closeBtn.addEventListener('click', () => zoom.style.display = "none");
 
-//hide zoomed project with click outside it
+//hide zoomed project by clicking outside of it
 zoomWindow.addEventListener('click', function(e) {
 	if (e.target == this) {
  		zoom.style.display = "none";

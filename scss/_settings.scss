@@ -1,14 +1,16 @@
 
 $defaultTextColor: #363636;
-$alternativeTextColor: #5d5d5d;
 $mainColor: #003366;
 $mediumColor: #457b9d;
-$linksColor: #a8dadc;
-$backgroundColor: #f1faee;
+$lightColor: #a8dadc;
+$whites: #f1faee;
 $accentColor: #e63946;
 $accentHover: #7c010a;
 
 $gradientOverlay: rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.4);
+
+$bodyFont: 'Source Sans Pro', sans-serif;
+$headingsFont: 'Lora', serif;
 
 $down320: "only screen and (max-width: 320px)";
 $down520: "only screen and (max-width: 520px)";
@@ -34,7 +36,10 @@ $ratio3-2: "screen and (min-aspect-ratio: 3/2)";
     position: absolute;
     width: 1px;
     white-space: nowrap; /* 1 */
+}
 
+.hidden {
+  display: none;
 }
 
 @-webkit-keyframes drop {
@@ -57,6 +62,32 @@ $ratio3-2: "screen and (min-aspect-ratio: 3/2)";
   }
   100% {
     top: 5px;
+  }
+}
+
+
+@-webkit-keyframes load {
+  0%,
+  80%,
+  100% {
+    -webkit-box-shadow: 0 2.5em 0 -1.3em;
+            box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    -webkit-box-shadow: 0 2.5em 0 0;
+            box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes load {
+  0%,
+  80%,
+  100% {
+    -webkit-box-shadow: 0 2.5em 0 -1.3em;
+            box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    -webkit-box-shadow: 0 2.5em 0 0;
+            box-shadow: 0 2.5em 0 0;
   }
 }
 
