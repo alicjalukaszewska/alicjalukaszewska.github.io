@@ -1,13 +1,6 @@
 (function (){
 'use strict';
 
-const loader = document.querySelector('#load');
-
-window.addEventListener('load', () => {
-	loader.style.opacity = 0;
-	loader.style.zIndex = -500;
-});
-
 
 /* initiate smooth-scroll plugin */
 const scroll = new SmoothScroll( 'a[href*="#"]', { 
@@ -44,7 +37,7 @@ window.addEventListener('load', changeMenu);
 
 const anchors = {
 	start: document.querySelector('#start').offsetTop,
-	omnie: document.querySelector('#omnie').offsetTop - 250,
+	omnie: document.querySelector('#o-mnie').offsetTop - 250,
 	technologie: document.querySelector('#technologie').offsetTop - 250,
 	realizacje: document.querySelector('#realizacje').offsetTop - 250,
 	kontakt: document.querySelector('#kontakt').offsetTop - 250,
@@ -71,6 +64,7 @@ function changeActive () {
 function getPosition () {
 	Object.entries( anchors ).forEach(([name, topValue]) => {
 		if(window.scrollY >= topValue) {
+			if (name === 'omnie') name = 'o-mnie';
 			let currentSection = menu.querySelector(`a[href='#${name}']`);
 			changeActive.call(currentSection);
 		} 

@@ -6,12 +6,8 @@
 	<title>Alicja Łukaszewska - Front-End Developer</title>
 	<link href="https://fonts.googleapis.com/css?family=Lora:700|Source+Sans+Pro:300,400,600" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
-	<div id="load" class="loaderWrapper">
-		<div class="loader">Loading...</div>
-	</div>
 	<div class="line"></div>
 	<div class="zoomed" id="zoom">
 		<button class="prev" id="prev">&#10094;</button>
@@ -27,7 +23,7 @@
 		<div class="container">
 			<div class="mobile-menu">
 				<div id="logo" class="mobile-logo">	
-					<a href="index.html" >
+					<a href="index.html" tabindex="1">
 						<div>
 							<h1>Alicja Łukaszewska</h1>
 							<p>Front-End Developer</p>
@@ -43,8 +39,8 @@
 			</div>
 			<nav id="menu" class="dropdown">
 				<ul>
-					<li><a class="active" href="#start">Start</a></li>
-					<li><a href="#omnie">O mnie</a></li>
+					<li ><a class="active" href="#start" tabindex="3">Start</a></li>
+					<li><a href="#o-mnie">O mnie</a></li>
 					<li><a href="#technologie">Technologie</a></li>
 					<li><a href="#realizacje">Realizacje</a></li>
 					<li><a class="scroll special" href="#kontakt">Kontakt</a></li>
@@ -55,14 +51,13 @@
 	<div id="particle-canvas" class="canvas"></div>
 	<header id="start" >
 		<div class="welcome">
-
-			<a href="#realizacje" class="projects scroll">Zobacz projekty</a>
+			<a href="#realizacje" class="projects scroll" tabindex="2">Zobacz projekty</a>
 		</div>			
-		<a class="mouse-icon scroll" href="#omnie" aria-label="zjedź niżej" title="zjedź niżej">
+		<a class="mouse-icon scroll" href="#o-mnie" aria-label="zjedź niżej" title="zjedź niżej">
 				<div class="wheel"></div>
 		</a>
 	</header>
-	<article class="about container" role="main" id="omnie">
+	<article class="about container" role="main" id="o-mnie">
 		<figure>
 		</figure>
 		<section>
@@ -327,7 +322,7 @@
 							<dt class="visuallyhidden">Data wykonania projektu:</dt>
 							<dd>Sierpień 2016 - Październik 2016</dd>
 						</dl>
-						<p>Strona stworzona na CMS Wordpress bazująca na szablonie zaprojektowanym i wdrożonym przeze mnie. Pozornie statyczna strona główna posiada wtyczkę wyświetlającą karuzelę z podglądem treści bloga.</p>
+						<p>Strona stworzona na CMS Wordpress, bazująca na szablonie zaprojektowanym i wdrożonym przeze mnie. Pozornie statyczna strona główna posiada wtyczkę wyświetlającą karuzelę z podglądem treści bloga.</p>
 					</div>
 					<ul>
 						<h4>Technologie:</h4>
@@ -355,15 +350,15 @@
 			<form id="contact" action="https://formspree.io/alicja.x.lukaszewska@gmail.com" method="post">
 				<p>
 					<label for="name">imię</label>
-					<input type="text" name="name" required>
+					<input type="text" name="name" id="name" required>
 				</p>
 				<p>
 					<label for="email">email</label>
-					<input type="email" name="email" required pattern="^(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}$">
+					<input type="email" name="email" id="email" required pattern="^(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}$">
 				</p>
 				<p>
 					<label for="message">treść</label>
-					<textarea name="message" id="" required></textarea>
+					<textarea id="message" name="message" id="" required></textarea>
 				</p>
 				<p>
 					<button type="submit">Wyślij</button>
@@ -385,9 +380,6 @@
 				</li>
 				<li>
 					<a class="linkedin" href="https://www.linkedin.com/in/alicja-%C5%82ukaszewska-3792b4121/" target="_blank">LinkedIn</a>
-				</li>
-				<li>
-					<a class="fb" href="https://www.facebook.com/alicja.xenya" target="_blank">Facebook</a>
 				</li>
 			</ul>
 		</section>

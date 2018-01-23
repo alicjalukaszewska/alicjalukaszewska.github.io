@@ -139,64 +139,6 @@ h2 {
     .line {
       display: none; } }
 
-.loaderWrapper {
-  position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  opacity: 1;
-  height: 100vh;
-  width: 100%;
-  background-color: #457b9d;
-  z-index: 1000;
-  -webkit-transition: all 1.8s;
-  -webkit-transition: all 1.8s;
-  transition: all 1.8s; }
-
-.loader,
-.loader:before,
-.loader:after {
-  border-radius: 50%;
-  width: 2.5em;
-  height: 2.5em;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation: load 2.2s infinite ease-in-out;
-  animation: load 2.2s infinite ease-in-out; }
-
-.loader {
-  color: #e63946;
-  font-size: 10px;
-  margin: 80px auto;
-  position: relative;
-  text-indent: -9999em;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation-delay: -0.16s;
-  animation-delay: -0.16s; }
-
-.loader:before,
-.loader:after {
-  content: '';
-  position: absolute;
-  top: 0; }
-
-.loader:before {
-  left: -3.5em;
-  -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s;
-  color: #f1faee; }
-
-.loader:after {
-  left: 3.5em;
-  color: #003366; }
-
 .canvas {
   width: 100%;
   height: 100vh; }
@@ -225,8 +167,9 @@ h2 {
       .fixed-menu .container .mobile-menu .mobile-logo {
         margin-top: calc(100vh - 170px);
         padding-left: 15px;
+        -webkit-transition: all 1s;
         transition: all 1s;
-        -webkit-transition: all 1s; }
+        -webkit-transition: all 0.7s; }
         .fixed-menu .container .mobile-menu .mobile-logo a:focus {
           display: block;
           outline: 1px solid #f1faee; }
@@ -249,8 +192,9 @@ h2 {
         .fixed-menu .container .mobile-menu .mobile-logo.fixed {
           top: 10px;
           margin-top: 0;
+          -webkit-transition: all 1s;
           transition: all 1s;
-          -webkit-transition: all 1s; }
+          -webkit-transition: all 0.5s; }
           .fixed-menu .container .mobile-menu .mobile-logo.fixed h1 {
             font-size: 34px;
             transition: all 0.3s;
@@ -1308,7 +1252,7 @@ header {
       grid-template-columns: 1fr 1fr;
       text-align: left; } }
   .links li {
-    margin: 30px 0; }
+    margin: 40px 0; }
     @media only screen and (max-width: 805px) {
       .links li {
         display: inline-block;
