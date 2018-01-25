@@ -55,6 +55,7 @@ function addLine () {
 function changeActive () {
 	links.forEach(link => link.classList.remove('active'));
 	this.classList.add('active');
+	this.setAttribute('aria-current', 'page');
 	if (window.innerWidth >= 920) {
 		addLine.call(this);
 	}	

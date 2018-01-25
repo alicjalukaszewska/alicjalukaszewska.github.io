@@ -517,18 +517,16 @@ header {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column; } }
-  .about figure {
-    height: inherit;
+  .about img {
+    height: 500px;
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    width: 470px;
     background-color: #003366;
-    background-image: url("http://via.placeholder.com/650x960");
-    background-size: cover;
-    background-position: center center; }
+    -o-object-fit: cover;
+    object-fit: cover; }
     @media only screen and (max-width: 665px) {
-      .about figure {
+      .about img {
         height: 350px;
         width: 100%;
         -webkit-box-flex: 1;
@@ -995,7 +993,7 @@ header {
           width: 100%;
           font-size: 100%;
           white-space: break-word; }
-    .zoomed .zoomed-project ul {
+    .zoomed .zoomed-project .technologies {
       padding: 0 30px;
       margin-bottom: 30px;
       -webkit-box-flex: 1;
@@ -1003,40 +1001,41 @@ header {
       flex: 1;
       border-left: 3px solid #003366; }
       @media only screen and (max-width: 665px) {
-        .zoomed .zoomed-project ul {
+        .zoomed .zoomed-project .technologies {
           margin: 15px 0;
           -webkit-box-pack: justify;
           -ms-flex-pack: justify;
           justify-content: space-between;
           border: 0;
-          width: 60%;
-          display: -ms-grid;
-          display: grid;
-          -ms-grid-row: 1;
-          -ms-grid-column: 1;
-          -ms-grid-columns: auto auto;
-          grid-template-columns: auto auto; } }
+          width: 60%; }
+          .zoomed .zoomed-project .technologies ul {
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+            -ms-grid-columns: auto auto;
+            grid-template-columns: auto auto; } }
       @media only screen and (max-width: 520px) {
-        .zoomed .zoomed-project ul {
+        .zoomed .zoomed-project .technologies {
           display: none; } }
-      .zoomed .zoomed-project ul h4 {
+      .zoomed .zoomed-project .technologies h4 {
         color: #003366;
         font-weight: light;
         font-size: 22px; }
         @media only screen and (max-width: 665px) {
-          .zoomed .zoomed-project ul h4 {
+          .zoomed .zoomed-project .technologies h4 {
             font-size: 18px;
             grid-column: 1 / -1; } }
-      .zoomed .zoomed-project ul li {
+      .zoomed .zoomed-project .technologies li {
         color: #363636;
         font-weight: normal;
         font-size: 16px;
         white-space: nowrap; }
         @media only screen and (max-width: 665px) {
-          .zoomed .zoomed-project ul li {
+          .zoomed .zoomed-project .technologies li {
             font-size: 14px;
             padding-right: 15px; } }
-        .zoomed .zoomed-project ul li:before {
+        .zoomed .zoomed-project .technologies li:before {
           content: '\2015';
           color: #e63946;
           font-size: 20px;

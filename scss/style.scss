@@ -587,18 +587,14 @@ header {
 		    -ms-flex-direction: column;
 		        flex-direction: column;
 	}
-	figure {
-		height: inherit;
+	img {
+		height: 500px;
 		-webkit-box-flex: 1;
 		    -ms-flex: 1;
 		        flex: 1;
-		width: 470px;
 		background-color: $mainColor;
-		background: {
-			image: url('http://via.placeholder.com/650x960');
-			size: cover;
-			position: center center;
-		}
+			-o-object-fit: cover;
+		   	object-fit: cover;
 
 		@media #{$down665} {
 			height: 350px;
@@ -1211,7 +1207,7 @@ header {
 			}
 		}
 
-		ul {
+		.technologies {
 			padding: 0 30px;
 			margin-bottom: 30px;
 			-webkit-box-flex: 1;
@@ -1226,13 +1222,17 @@ header {
 				        justify-content: space-between;
 				border: 0;
 				width: 60%;
-				display: -ms-grid;
-				display: grid;
-				-ms-grid-row: 1;
-				-ms-grid-column: 1;
-				-ms-grid-columns: auto auto;
-				    grid-template-columns: auto auto;
+
+				ul {
+					display: -ms-grid;
+					display: grid;
+					-ms-grid-row: 1;
+					-ms-grid-column: 1;
+					-ms-grid-columns: auto auto;
+					    grid-template-columns: auto auto;					
+				}
 			}
+
 			@media #{$down520} {
 				display: none;
 			}

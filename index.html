@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Alicja Łukaszewska - Front-End Developer</title>
 	<link href="https://fonts.googleapis.com/css?family=Lora:700|Source+Sans+Pro:300,400,600" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
@@ -10,14 +10,14 @@
 <body>
 	<div class="line"></div>
 	<div class="zoomed" id="zoom">
-		<button class="prev" id="prev">&#10094;</button>
+		<button class="prev" id="prev" aria-label="Poprzedni projekt" title="Poprzedni projekt">&#10094;</button>
 		<div class="zoomed-project">
-			<button class="close" id="close">&#10006;</button>
-			<button class="back" id="back">&#10094;</button>
-			<img src="img/projects/brand.jpg" alt="">
+			<button class="close" id="close" aria-label="Zamknij projekt" title="Zamknij projekt">&#10006;</button>
+			<button class="back" id="back" aria-label="Wyłącz podgląd" title="Wyłącz podgląd">&#10094;</button>
+			<img  aria-label="Przybliż podgląd" title="Przybliż podgląd" src="img/projects/brand.jpg" alt="">
 			<div class="content"></div>
 		</div>
-		<button class="next" id="next">&#10095;</button>
+		<button class="next" id="next" aria-label="Następny projekt" title="Następny projekt">&#10095;</button>
 	</div>
 	<nav class="fixed-menu" aria-label="Main navigation">
 		<div class="container">
@@ -57,7 +57,8 @@
 				<div class="wheel"></div>
 		</a>
 	</header>
-	<article class="about container" role="main" id="o-mnie">
+	<main class="about container" id="o-mnie">
+		<img src="http://via.placeholder.com/650x960" alt="">
 		<figure>
 		</figure>
 		<section>
@@ -71,9 +72,9 @@
 				<a href="#kontakt">Skontaktuj się</a>
 			</footer>
 		</section>
-	</article>
+	</main>
 	<article class="skills" id="technologie">
-		<h2 class="skills__h2">Technologie</h2>
+		<h2>Technologie</h2>
 		<div class="container">
 			<section class="column">
 				<h3>Web Development</h3>
@@ -148,17 +149,19 @@
 						<h3>Strona Brand LY</h3>
 						<dl class="date">
 							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd>Styczeń 2018</dd>
+							<dd><time datetime="2018-01">Styczeń 2018</time></dd>
 						</dl>
 						<p>Projekt wykonany w ramach wyzwania „Weekly Web Dev Challenge”, stworzony na podstawie szablonu PSD. Posiada dwie karuzele (slidery), z czego jedna automatycznie zmienia produkty.</p>
 					</div>
-					<ul>
+					<div class="technologies">
 						<h4>Technologie:</h4>
-						<li>PSD to HTML</li>
-						<li>SCSS</li>
-						<li>JavaScript</li>
-						<li>Gulp.js</li>
-					</ul>		
+						<ul>
+							<li>PSD to HTML</li>
+							<li>SCSS</li>
+							<li>JavaScript</li>
+							<li>Gulp.js</li>
+						</ul>	
+					</div>	
 				</div>
 				<div class="view">
 					<a class="live" href="https://alicjalukaszewska.github.io/weeklywebdev24/" target="_blank">Live</a>
@@ -177,17 +180,19 @@
 						<h3>Aplikacja Simple Alarm</h3>
 						<dl class="date">
 							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd>Lipiec 2017 - Styczeń 2018</dd>
+							<dd><time datetime="2017-07">Lipiec 2017</time> - <time datetime="2018-01">Styczeń 2018</time></dd>
 						</dl>
 						<p>Aplikacja webowa, będąca moim pierwszym samodzielnym projektem w JavaScipcie. Jest to budzik posiadający opcję wyboru dni, w których ma zadzwonić oraz opcję wyboru długości drzemki. Docelowo planuję przerobić go na aplikację mobilną.</p>
 					</div>
-					<ul>
+					<div class="technologies">
 						<h4>Technologie:</h4>
-						<li>JavaScript</li>
-						<li>HTML5</li>
-						<li>SCSS</li>
-						<li>Gulp.js</li>
-					</ul>		
+						<ul>
+							<li>JavaScript</li>
+							<li>HTML5</li>
+							<li>SCSS</li>
+							<li>Gulp.js</li>
+						</ul>	
+					</div>	
 				</div>
 				<div class="view">
 					<a class="live" href="https://alicjalukaszewska.github.io/simpleAlarm/" target="_blank">Live</a>
@@ -205,17 +210,19 @@
 						<h3>Strona Potestas Canti</h3>
 						<dl class="date">
 							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd>Wrzesień 2017 - W trakcie</dd>
+							<dd><time datetime="2017-10">Wrzesień 2017</time> - W trakcie</dd>
 						</dl>
 						<p>Strona zaprojektowania i wdrożona dla zespołu muzycznego. Szablon na prośbę klienta, różni się od popularnych stron typu one-page. Posiada boczne menu oraz podstrony, między którymi można się przełączać poprzez skrolowanie.</p>
 					</div>
-					<ul>
+					<div class="technologies">
 						<h4>Technologie:</h4>
-						<li>PSD to HTML</li>
-						<li>SCSS</li>
-						<li>JavaScript</li>
-						<li>Gulp.js</li>
-					</ul>		
+						<ul>
+							<li>PSD to HTML</li>
+							<li>SCSS</li>
+							<li>JavaScript</li>
+							<li>Gulp.js</li>
+						</ul>	
+					</div>	
 				</div>
 				<div class="view">
 					<a class="live" href="https://alicjalukaszewska.github.io/PotestasCanti/" target="_blank">Live</a>
@@ -233,17 +240,19 @@
 							<h3>Aplikacja Tamagotchi</h3>
 							<dl class="date">
 								<dt class="visuallyhidden">Data wykonania projektu:</dt>
-								<dd>Listopad 2017 - Styczeń 2018</dd>
+								<dd><time datetime="2017-11">Listopad 2017</time> - <time datetime="2018-01">Styczeń 2018</time></dd>
 							</dl>
-							<p>Aplikacja symulująca popularną w latach 90-tych zabawkę. Zwierzak regularnie traci statystyki głodu, zdrowia i szczęścia. Zadaniem gracza jest uzupełnianie ich zanim którekolwiek spadnie do zera. O konieczności reakcji, informują notyfikacje i grafiki.</p>
+							<p>Aplikacja symulująca popularną w latach 90-tych zabawkę. Zwierzak regularnie traci statystyki głodu, zdrowia i szczęścia. Zadaniem gracza jest uzupełnianie ich zanim którekolwiek spadnie do zera. O konieczności reakcji informują notyfikacje i grafiki.</p>
 						</div>
-						<ul>
+						<div class="technologies">
 							<h4>Technologie:</h4>
-							<li>JavaScript</li>
-							<li>HTML5</li>
-							<li>Touch-Emulator.js</li>
-							<li>Gulp.js</li>
-						</ul>
+							<ul>
+								<li>JavaScript</li>
+								<li>HTML5</li>
+								<li>Touch-Emulator.js</li>
+								<li>Gulp.js</li>
+							</ul>
+						</div>
 					</div>
 					<div class="view">
 						<a class="live" href="https://alicjalukaszewska.github.io/tamagotchi/" target="_blank">Live</a>
@@ -262,17 +271,19 @@
 						<h3>Strona Bykonu</h3>
 						<dl class="date">
 							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd>Listopad 2016 - Grudzień 2016</dd>
+							<dd><time datetime="2016-11">Listopad 2016</time> - <time datetime="2016-12">Grudzień 2016</time></dd>
 						</dl>
 						<p>Strona stworzona na CMS Wordpress, bazująca na szablonie zaprojektowanym i wdrożonym przeze mnie. Za pomocą kodu PHP dostosowałam stronę HTML do dynamicznie zmienianych treści oraz pluginów.</p>
 					</div>
-					<ul>
-						<h4>Technologie:</h4>
-						<li>Wordpress</li>
-						<li>PSD to HTML5</li>
-						<li>Bootstrap 3</li>
-						<li>jQuery</li>
-					</ul>		
+					<div class="technologies">
+					<h4>Technologie:</h4>
+						<ul>
+							<li>Wordpress</li>
+							<li>PSD to HTML5</li>
+							<li>Bootstrap 3</li>
+							<li>jQuery</li>
+						</ul>		
+					</div>
 				</div>
 				<div class="view">
 					<a class="live" href="https://www.bykon.pl" target="_blank">Live</a>
@@ -291,18 +302,20 @@
 						<h3>Aplikacja Gra w Kości</h3>
 						<dl class="date">
 							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd>Październik 2017 - Grudzień 2017</dd>
+							<dd><time datetime="2017-10">Październik 2017</time> - <time datetime="2017-12">Grudzień 2017</dd>
 						</dl>
 						<p>Aplikacja symulująca grę w kości. Przeciwnikiem gracza jest komputer. Po pierwszym rzucie kośćmi, aktywny gracz musi obstawić, czy wartość kolejnego rzutu będzie większa lub mniejsza od pierwszego. 
 						</p>
 					</div>
-					<ul>
+					<div class="technologies">
 						<h4>Technologie:</h4>
-						<li>JavaSript</li>
-						<li>HTML5</li>
-						<li>SCSS</li>
-						<li>Gulp.js</li>
-					</ul>		
+						<ul>
+							<li>JavaSript</li>
+							<li>HTML5</li>
+							<li>SCSS</li>
+							<li>Gulp.js</li>
+						</ul>
+					</div>		
 				</div>
 				<div class="view">
 					<a class="live" href="https://alicjalukaszewska.github.io/DiceGame/" target="_blank">Live</a>
@@ -320,17 +333,19 @@
 						<h3>Strona Vet-Bicom</h3>
 						<dl class="date">
 							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd>Sierpień 2016 - Październik 2016</dd>
+							<dd><time datetime="2016-07">Sierpień 2016</time> - <time datetime="2016-10">Październik 2016</time></dd>
 						</dl>
 						<p>Strona stworzona na CMS Wordpress, bazująca na szablonie zaprojektowanym i wdrożonym przeze mnie. Pozornie statyczna strona główna posiada wtyczkę wyświetlającą karuzelę z podglądem treści bloga.</p>
 					</div>
-					<ul>
-						<h4>Technologie:</h4>
-						<li>Wordpress</li>
-						<li>PSD to HTML5</li>
-						<li>Bootstrap 3</li>
-						<li>jQuery</li>
-					</ul>		
+					<div class="technologies">
+					<h4>Technologie:</h4>
+						<ul>
+							<li>Wordpress</li>
+							<li>PSD to HTML5</li>
+							<li>Bootstrap 3</li>
+							<li>jQuery</li>
+						</ul>	
+					</div>	
 				</div>
 				<div class="view">
 					<a class="live" href="http://www.weterynarzraszyn.com/" target="_blank">Live</a>
@@ -339,7 +354,7 @@
 			</div>
 		</button>
 	</article>
-	<article class="contact container" id="kontakt">
+	<div class="contact container" id="kontakt">
 		<section class="contact-form">
 			<h2>Kontakt</h2>
 			<p class="lead">Jestem otwarta na propozycje współpracy!</p>
@@ -383,7 +398,7 @@
 				</li>
 			</ul>
 		</section>
-	</article>
+	</div>
 	<footer>
 		Copyright <span class="special">&#169;</span> by Alicja Łukaszewska 2018
 	</footer>
@@ -392,10 +407,6 @@
 	<script src="js/code.js"></script>
 	<noscript>
 		<style>
-			.loadWrapper {
-				display: none;
-				opacity: 0;
-			}
 			.canvas {
 				display: none;
 			}
