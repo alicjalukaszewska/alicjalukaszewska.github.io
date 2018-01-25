@@ -10,9 +10,14 @@
 <body>
 	<noscript>
 		<style>
-			.canvas {
+			.canvas, .welcome-logo {
 				display: none;
 			}
+
+			.fixed-logo {
+				display: block;
+			}
+
 		</style>
 	</noscript>
 	<div class="line"></div>
@@ -26,51 +31,56 @@
 		</div>
 		<button class="next" id="next" aria-label="Następny projekt" title="Następny projekt">&#10095;</button>
 	</div>
-	<nav class="fixed-menu" aria-label="Main navigation">
-		<div class="container">
-			<div class="mobile-menu">
-				<div id="logo" class="mobile-logo">	
-					<a href="index.html" tabindex="1">
-						<div>
-							<h1>Alicja Łukaszewska</h1>
-							<p>Front-End Developer</p>
-						</div>
-					</a>
-				</div>
-				<button id="nav-icon" type="button" class="toggler" aria-expanded="false" aria-label="Otwórz/Zamknij menu" title="Otwórz/Zamknij menu">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
+	<div class="fixed-menu">
+		<nav id="menu">
+			<div id="logo" class="fixed-logo" >
+				<a href="/">
+					<div>
+					<h1>Alicja Łukaszewska </h1>
+					<p>Front-End Developer </p>
+					</div>
+				</a>
 			</div>
-			<nav id="menu" class="dropdown">
-				<ul>
-					<li ><a class="active" href="#start" tabindex="3">Start</a></li>
-					<li><a href="#o-mnie">O mnie</a></li>
-					<li><a href="#technologie">Technologie</a></li>
-					<li><a href="#realizacje">Realizacje</a></li>
-					<li><a class="scroll special" href="#kontakt">Kontakt</a></li>
-				</ul>
-			</nav>
-		</div>
-	</nav>
+			<button id="nav-icon" type="button" class="toggler" ariaexpanded="true" aria-label ="Otwórz/Zamknij menu" title="Otwórz/Zamknij menu">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<ul class="dropdown">
+				<li ><a class="active" href="#start">Start</a></li>
+				<li><a href="#o-mnie">O mnie</a></li>
+				<li><a href="#technologie">Technologie </a></li>
+				<li><a href="#realizacje">Realizacje </a></li>
+				<li><a class="scroll special" href="#kontakt">Kontakt</a></li>
+			</ul>
+		</nav>
+	</div>
 	<div id="particle-canvas" class="canvas"></div>
 	<header id="start" >
 		<div class="welcome">
-			<a href="#realizacje" class="projects scroll" tabindex="2">Zobacz projekty</a>
-		</div>			
-		<a class="mouse-icon scroll" href="#o-mnie" aria-label="zjedź niżej" title="zjedź niżej">
-				<div class="wheel"></div>
+			<div class="welcome-logo" >
+				<a href="/">
+					<div>
+					<h1>Alicja Łukaszewska </h1>
+					<p>Front-End Developer </p>
+					</div>
+				</a>
+			</div>
+			<a href="#realizacje" class="projects scroll">Zobacz projekty</a>
+		</div>
+		<a class="mouse-icon scroll" href="#o-mnie" aria-label ="zjedź niżej"
+		title="zjedź niżej" >
+			<div class="wheel"></div>
 		</a>
 	</header>
 	<main class="about container" id="o-mnie">
-		<img src="http://via.placeholder.com/650x960" alt="">
+		<div class="photo"></div>
 		<figure>
 		</figure>
 		<section>
 			<h2>O mnie</h2>
-			<p>Cześć, jestem Ala. Dwa lata temu spróbowałam darmowego kursu tworzenia stron www i zrozumiałam, że to jest to, co chcę robić w życiu. Od tamtej pory samodzielnie uczę się technologii, takich jak HTML5, CSS3, JavaScript, jQuery, Wordpress i wiele, wiele innych! </p> 
+			<p>Cześć, jestem Ala. Dwa lata temu spróbowałam darmowego kursu tworzenia stron WWW i zrozumiałam, że to jest to, co chcę robić w życiu. Od tamtej pory samodzielnie uczę się technologii, takich jak HTML5, CSS3, JavaScript, jQuery, Wordpress i wiele, wiele innych! </p> 
 			<p>Każdy projekt jest dla mnie nowym wyzwaniem, do którego ukończenia wkładam dużo serca.</p> 
 			<p>Poszukuję pierwszej pracy jako Front-End Developer w Bydgoszczy, aby móc wykorzystywać swoje umiejętności w praktyce i zdobywać nowe.</p> 
 			<p>W wolnym czasie gram w gry komputerowe i organizuję zloty fanów popkultury.</p>
@@ -85,59 +95,42 @@
 		<div class="container">
 			<section class="column">
 				<h3>Web Development</h3>
-				<ul>
-					<li>HTML5
-						<ul>
-							<li>PSD do HTML</li>
-						</ul>
-					</li>
-					<li>CSS3
-						<ul>
-							<li>SCSS</li>
-							<li>Bootstrap 3</li>
-							<li>Responsive Web Design</li>
-						</ul>
-					</li>
-					<li>JavaScript
-						<ul>
-							<li>ES6</li>
-							<li>jQuery</li>
-						</ul>
-					</li>
-					<li>Wordpress
-						<ul>
-							<li>tworzenie szablonów</li>
-							<li>dostosowywanie szablonów</li>
-							<li>zarządzanie stroną</li>
-						</ul>
-					</li>
-					<li>
-						Angular, React<span> - nauka</span>
-					</li>
-				</ul>
+				<dl>
+					<dt>HTML5</dt>
+						<dd>PSD do HTML </dd>
+					<dt>CSS3</dt>
+						<dd>SCSS</dd>
+						<dd>Bootstrap 3 </dd>
+						<dd>Responsive Web Design </dd>
+					<dt>JavaScript </dt>
+						<dd>ES6</dd>
+						<dd>jQuery</dd>
+					<dt>Wordpress</dt>
+						<dd>tworzenie szablonów </dd>
+						<dd>dostosowywanie szablonów </dd>
+						<dd>zarządzanie stroną </dd>
+					<dt>Angular, React <span> - nauka</span> </dt>
+				</dl>
 			</section>
 			<section class="column">
 				<h3>Web Design</h3>
-				<ul>
-					<li>Adobe Photoshop</li>
-					<li>CorelDraw</li>
-					<li>Adobe InDesign</li>
-					<li>UI & UX Design</li>
-				</ul>
+				<dl>
+					<dt>Adobe Photoshop</dt>
+					<dt>CorelDraw</dt>
+					<dt>Adobe InDesign</dt>
+					<dt>UI & UX Design</dt>
+				</dl>
 			</section>
 			<section class="column">
 				<h3>Inne</h3>
-				<ul>
-					<li>Git
-						<ul>
-							<li>GitHub</li>
-							<li>GitLab</li>
-						</ul>
-					</li>
-					<li>Gulp.js</li>
-					<li>PHP<span> - podstawy</span></li>
-					<li>MySQL<span> - podstawy</span></li>
-				</ul>
+				<dl>
+					<dt>Git</dt>
+						<dd>GitHub</dd>
+						<dd>składnia Markdown</dd>
+					<dt>Gulp.js</dt>
+					<dt>PHP<span> - podstawy</span></dt>
+					<dt>MySQL<span> - podstawy</span></dt>
+				</dl>
 			</section>
 		</div>
 	</article>
@@ -391,7 +384,7 @@
 				<input type="hidden" name="_next" value="thanks.html" />
 			</form>
 		</section>
-		<section class="links">
+		<nav aria-label="Zewnętrzne odnośniki" class="links">
 			<h2>Linki</h2>
 			<ul>
 				<li>
@@ -404,7 +397,7 @@
 					<a class="linkedin" href="https://www.linkedin.com/in/alicja-%C5%82ukaszewska-3792b4121/" target="_blank">LinkedIn</a>
 				</li>
 			</ul>
-		</section>
+		</nav>
 	</div>
 	<footer>
 		Copyright <span class="special">&#169;</span> by Alicja Łukaszewska 2018

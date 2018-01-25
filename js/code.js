@@ -1,4 +1,4 @@
-(function (){
+// (function (){
 'use strict';
 
 
@@ -21,11 +21,13 @@ const line = document.querySelector('.line');
 function changeMenu () {
 	const logo = document.querySelector('#logo');
 	if (window.scrollY <= 50) {
-		logo.classList.remove('fixed');
+		logo.style.opacity = "0";
+		logo.style.display = "none";
 		menu.classList.remove('scrolled');		
 
 	} else  {
-		logo.classList.add('fixed');
+		logo.style.display = "block";
+		logo.style.opacity = "1";
 		menu.classList.add('scrolled');
 	}
 }
@@ -36,7 +38,7 @@ window.addEventListener('load', changeMenu);
 /* Show active section link in menu */
 
 const anchors = {
-	start: document.querySelector('#start').offsetTop,
+	start: document.querySelector('#start').offsetTop - 50,
 	omnie: document.querySelector('#o-mnie').offsetTop - 250,
 	technologie: document.querySelector('#technologie').offsetTop - 250,
 	realizacje: document.querySelector('#realizacje').offsetTop - 250,
@@ -50,6 +52,10 @@ function addLine () {
 	line.style.transform = `translate(${linksCoords.left}px, ${linksCoords.top}px)`;
 	line.style.opacity = 1;
 }
+
+window.addEventListener('click', function (e) {
+	console.log(e.target);
+})
 
 //add active class to current link
 function changeActive () {
@@ -177,4 +183,4 @@ nextBtn.addEventListener('click', () => changeProjectByArrow('right'));
 prevBtn.addEventListener('click', () => changeProjectByArrow('left'));
 
 
-}());
+// }());
