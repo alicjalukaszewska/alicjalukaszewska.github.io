@@ -53,10 +53,6 @@ function addLine () {
 	line.style.opacity = 1;
 }
 
-window.addEventListener('click', function (e) {
-	console.log(e.target);
-})
-
 //add active class to current link
 function changeActive () {
 	links.forEach(link => link.classList.remove('active'));
@@ -105,6 +101,9 @@ const zoomWindow = document.querySelector('#zoom');
 const zoomedProject = document.querySelector('.zoomed-project');
 const zoomedContent = document.querySelector('.zoomed-project .content');
 const zoomedImage = zoomedProject.querySelector('img');
+const portfolio = document.querySelector('.portfolio');
+let currentId;
+let currentContent;
 
 //buttons
 const closeBtn = document.querySelector('#close');
@@ -128,6 +127,14 @@ function zoomImage () {
 	zoomedImage.addEventListener('click', hideZoomedImage);
 }
 
+function focusInside () {
+	if (document.activeElement === nextBtn || document.activeElement === prevBtn) {
+		return;
+	} else {
+		zoomedContent.querySelector('a').focus();
+	}
+}
+
 //show clicked or called project 
 function changeContent () {
 	//reset content
@@ -139,16 +146,18 @@ function changeContent () {
 	//set new content
 	let content = this.querySelector('.content').innerHTML;
 	zoomedProject.id = this.id;
+	zoomedProject.setAttribute('aria-label', this.querySelector('.content h3').innerText)
 	zoomedContent.innerHTML = content;
 	//show window
 	zoomWindow.style.display = "flex";
+	//define variables
+	currentId = zoomedProject.id;
+	currentContent = portfolio.querySelector(`#${currentId}`);
+	focusInside();
 }
 
 function changeProjectByArrow (direction) {
-	const portfolio = document.querySelector('.portfolio');
-	const currentId = zoomedProject.id;
-	const currentContent = portfolio.querySelector(`#${currentId}`);
-	const firstProject = portfolio.querySelector(`#project1`);
+	const firstProject = portfolio.querySelector(`.project`);
 	let nextItem;
 	if (direction == 'right') {
 		nextItem = currentContent.nextElementSibling;
@@ -171,7 +180,10 @@ projects.forEach(project => {
 
 zoomedImage.addEventListener('click', zoomImage);
 backBtn.addEventListener('click', hideZoomedImage);
-closeBtn.addEventListener('click', () => zoom.style.display = "none");
+closeBtn.addEventListener('click', () => {
+	zoom.style.display = "none";
+	currentContent.focus();
+});
 
 //hide zoomed project by clicking outside of it
 zoomWindow.addEventListener('click', function(e) {

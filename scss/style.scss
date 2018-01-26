@@ -708,27 +708,28 @@ header {
 			a:first-child {
 				background-color: $lightColor;
 				color: $mainColor;
-				outline: 2px solid $lightColor;
+				outline: 3px solid $lightColor;
 
 				&:hover, &:focus {
 					background-color: $mainColor;
 					color: $whites;
 						transition: all 0.5s;
 			   		 -webkit-transition: all 0.5s;
-		    		outline: 2px solid $accentColor;
+		    		outline: 3px dotted $mediumColor;
 				}
 			}
 
 			a:last-child {
 				background-color: $accentColor;
 				color: $whites;
-				outline: 2px solid $accentColor;
+				outline: 3px solid $accentColor;
 
 				&:hover, &:focus {
 					background-color: $accentHover;
 					color: $whites;
 						transition: all 0.5s;
 			   		 -webkit-transition: all 0.5s;
+			   		 outline: 3px dotted $accentColor;
 				}
 			}
 		}
@@ -1031,6 +1032,7 @@ header {
 		color: $whites;
 		background-color: $mainColor;			
 		z-index: 40;
+		border: 2px solid $mainColor;
 
 		@media #{$down805} {
 			height: 60px;
@@ -1053,6 +1055,7 @@ header {
 			background-color: $accentHover;
 			transition: all 0.2s;
 		    -webkit-transition: all 0.2s;
+		    border: 2px dotted $accentColor;
 		}
     }
 
@@ -1316,10 +1319,11 @@ header {
 
 				&.live {
 					color: $mainColor;
-					border: 1px solid $mainColor;
+					outline: 1px solid $mainColor;
 
 					&:hover, &:focus {
 						background-color: $mainColor;
+						outline: 2px dotted $mediumColor;
 						color: $whites;
 						transition: all 0.3s;
 					    -webkit-transition: all 0.3s;
@@ -1329,10 +1333,11 @@ header {
 				&.code {
 					margin-left: 30px;
 					color: $accentColor;
-					border: 1px solid $accentColor;
+					outline: 1px solid $accentColor;
 
 					&:hover, &:focus {
 						background-color: $accentColor;
+						outline: 2px dotted $accentColor;
 						color: $whites;
 						transition: all 0.3s;
 			    		-webkit-transition: all 0.3s;
@@ -1503,10 +1508,11 @@ header {
 			cursor: pointer;
 			transition: all 0.3s;
 		    -webkit-transition: all 0.3s;
-		    outline: 2px solid $accentColor;	
+		    outline: 3px solid $accentColor;	
 
 			&:hover, &:focus {
 				background-color: $accentHover;
+				outline: 3px dotted $accentColor;	
 				color: $whites;
 				transition: all 0.3s;
 			    -webkit-transition: all 0.3s;

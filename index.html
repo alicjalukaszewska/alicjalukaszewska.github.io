@@ -6,8 +6,6 @@
 	<title>Alicja Łukaszewska - Front-End Developer</title>
 	<link href="https://fonts.googleapis.com/css?family=Lora:700|Source+Sans+Pro:300,400,600" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
 	<noscript>
 		<style>
 			.canvas, .welcome-logo {
@@ -17,13 +15,14 @@
 			.fixed-logo {
 				display: block;
 			}
-
 		</style>
 	</noscript>
+</head>
+<body>
 	<div class="line"></div>
-	<div class="zoomed" id="zoom">
+	<div class="zoomed" id="zoom" aria-hidden="true">
 		<button class="prev" id="prev" aria-label="Poprzedni projekt" title="Poprzedni projekt">&#10094;</button>
-		<div class="zoomed-project">
+		<div class="zoomed-project" role="dialog" aria-label="">
 			<button class="close" id="close" aria-label="Zamknij projekt" title="Zamknij projekt">&#10006;</button>
 			<button class="back" id="back" aria-label="Wyłącz podgląd" title="Wyłącz podgląd">&#10094;</button>
 			<img  aria-label="Przybliż podgląd" title="Przybliż podgląd" src="img/projects/brand.jpg" alt="">
@@ -139,7 +138,7 @@
 			<h2>Realizacje</h2>
 			<p>W swoich projektach staram się dopracowywać każdy szczegół. Potrafię poświęcić wiele godzin na naukę nowych technologii, by później wykorzystać je na moich stronach i aplikacjach. Wszystkie moje projekty są responsywne i zaprojektowane tak, żeby korzystanie z nich było jak najbardziej proste i intuicyjne. W moich realizacjach nie zapominam też o osobach niepełnosprawnych - zapewniam im dostęp to wszystkich treści i opcji.</p>
 		</div>
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project1">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu strony 'BrandLY'" title="Kliknij by przeczytać szczegóły projektu strony 'BrandLY'" id="project1">
 			<div class="image-wrapper">
 				<img src="img/projects/brand.jpg" alt="">
 			</div>	
@@ -170,7 +169,7 @@
 			</div>	
 		</button>	
 	
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project2">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu aplikacji 'Simple Alarm'" title="Kliknij by przeczytać szczegóły projektu aplikacji 'Simple Alarm'" id="project2">
 			<div class="image-wrapper">
 				<img src="img/projects/alarm.jpg" alt="">
 			</div>
@@ -200,7 +199,7 @@
 				</div>
 			</div>
 		</button>	
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project3">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu strony 'Potestas Canti'" title="Kliknij by przeczytać szczegóły projektu strony 'Potestas Canti'" id="project3">
 			<div class="image-wrapper">
 				<img src="img/projects/potestas.jpg" alt="">
 			</div>		
@@ -230,7 +229,7 @@
 				</div>
 			</div>
 		</button>	
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project4">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu aplikacji 'Tamagotchi'" title="Kliknij by przeczytać szczegóły projektu aplikacji 'Tamagotchi'" id="project4">
 			<div class="image-wrapper">
 				<img src="img/projects/tamagotchi.jpg" alt="">
 			</div>
@@ -261,7 +260,7 @@
 				</div>
 			</div>			
 		</button>	
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project5">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu strony www.bykon.pl" title="Kliknij by przeczytać szczegóły projektu strony www.bykon.pl" id="project5">
 			<div class="image-wrapper">
 				<img src="img/projects/bykon.jpg" alt="">
 			</div>	
@@ -292,7 +291,7 @@
 			</div>
 		</button>	
 		
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project6">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu aplikacji 'Kości'" title="Kliknij by przeczytać szczegóły projektu aplikacji 'Kości'" id="project6">
 			<div class="image-wrapper">
 				<img src="img/projects/kosci.jpg" alt="">
 			</div>		
@@ -323,7 +322,7 @@
 				</div>
 			</div>
 		</button>	
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu" title="Kliknij by przeczytać szczegóły projektu" id="project7">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu strony 'Vet-Bicom'" title="Kliknij by przeczytać szczegóły projektu strony 'Vet-Bicom'" id="project7">
 			<div class="image-wrapper">
 				<img src="img/projects/wet.jpg" alt="">
 			</div>

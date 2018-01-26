@@ -625,22 +625,23 @@ header {
       .about section footer a:first-child {
         background-color: #a8dadc;
         color: #003366;
-        outline: 2px solid #a8dadc; }
+        outline: 3px solid #a8dadc; }
         .about section footer a:first-child:hover, .about section footer a:first-child:focus {
           background-color: #003366;
           color: #f1faee;
           transition: all 0.5s;
           -webkit-transition: all 0.5s;
-          outline: 2px solid #e63946; }
+          outline: 3px dotted #457b9d; }
       .about section footer a:last-child {
         background-color: #e63946;
         color: #f1faee;
-        outline: 2px solid #e63946; }
+        outline: 3px solid #e63946; }
         .about section footer a:last-child:hover, .about section footer a:last-child:focus {
           background-color: #7c010a;
           color: #f1faee;
           transition: all 0.5s;
-          -webkit-transition: all 0.5s; }
+          -webkit-transition: all 0.5s;
+          outline: 3px dotted #e63946; }
 
 .skills {
   padding-bottom: 3.2rem;
@@ -862,7 +863,8 @@ header {
     -webkit-transition: all 0.2s;
     color: #f1faee;
     background-color: #003366;
-    z-index: 40; }
+    z-index: 40;
+    border: 2px solid #003366; }
     @media only screen and (max-width: 805px) {
       .zoomed button {
         height: 60px;
@@ -877,7 +879,8 @@ header {
     .zoomed button:hover, .zoomed button:focus {
       background-color: #7c010a;
       transition: all 0.2s;
-      -webkit-transition: all 0.2s; }
+      -webkit-transition: all 0.2s;
+      border: 2px dotted #e63946; }
   .zoomed .zoomed-project {
     padding: 20px;
     position: relative;
@@ -1088,18 +1091,20 @@ header {
             width: 80px; } }
         .zoomed .zoomed-project .view a.live {
           color: #003366;
-          border: 1px solid #003366; }
+          outline: 1px solid #003366; }
           .zoomed .zoomed-project .view a.live:hover, .zoomed .zoomed-project .view a.live:focus {
             background-color: #003366;
+            outline: 2px dotted #457b9d;
             color: #f1faee;
             transition: all 0.3s;
             -webkit-transition: all 0.3s; }
         .zoomed .zoomed-project .view a.code {
           margin-left: 30px;
           color: #e63946;
-          border: 1px solid #e63946; }
+          outline: 1px solid #e63946; }
           .zoomed .zoomed-project .view a.code:hover, .zoomed .zoomed-project .view a.code:focus {
             background-color: #e63946;
+            outline: 2px dotted #e63946;
             color: #f1faee;
             transition: all 0.3s;
             -webkit-transition: all 0.3s; }
@@ -1228,9 +1233,10 @@ header {
       cursor: pointer;
       transition: all 0.3s;
       -webkit-transition: all 0.3s;
-      outline: 2px solid #e63946; }
+      outline: 3px solid #e63946; }
       .contact form button:hover, .contact form button:focus {
         background-color: #7c010a;
+        outline: 3px dotted #e63946;
         color: #f1faee;
         transition: all 0.3s;
         -webkit-transition: all 0.3s; }
