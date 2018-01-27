@@ -9,33 +9,31 @@
 </head>
 <body class="sidepage">	
 	<div class="line"></div>
-	<nav class="fixed-menu" aria-label="Main navigation">
-		<div class="container">
-			<div class="mobile-menu">
-				<div id="logo" class="mobile-logo fixed">	
-					<a href="index.html" >
-						<h1>Alicja Łukaszewska</h1>
-						<p>Front-End Developer</p>
-					</a>
-				</div>
-				<button id="nav-icon" type="button" class="toggler" aria-expanded="false" aria-label="Otwórz/Zamknij menu" title="Otwórz/Zamknij menu">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
+	<div class="fixed-menu">
+		<nav id="menu">
+			<div id="logo" class="fixed-logo" >
+				<a href="/">
+					<div>
+					<h1>Alicja Łukaszewska </h1>
+					<p>Front-End Developer </p>
+					</div>
+				</a>
 			</div>
-			<nav id="menu" class="dropdown">
-				<ul>
-					<li><a class="active" href="index.html#start">Start</a></li>
-					<li><a href="index.html#omnie">O mnie</a></li>
-					<li><a href="index.html#technologie">Technologie</a></li>
-					<li><a href="index.html#realizacje">Realizacje</a></li>
-					<li><a class="scroll special" href="index.html#kontakt">Kontakt</a></li>
-				</ul>
-			</nav>
-		</div>
-	</nav>
+			<button id="nav-icon" type="button" class="toggler" ariaexpanded="true" aria-label ="Otwórz/Zamknij menu" title="Otwórz/Zamknij menu">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<ul class="dropdown">
+				<li><a class="active" href="index.html#start">Start</a></li>
+				<li><a href="index.html#omnie">O mnie</a></li>
+				<li><a href="index.html#technologie">Technologie</a></li>
+				<li><a href="index.html#realizacje">Realizacje</a></li>
+				<li><a class="scroll special" href="index.html#kontakt">Kontakt</a></li>
+			</ul>
+		</nav>
+	</div>
 	<div id="particle-canvas" class="canvas"></div>
 	<header id="start">
 		<div class="thanks">
@@ -46,17 +44,17 @@
 	</header>
 	<script src="js/canvas.js"></script>
 	<script>
-		const links = document.querySelectorAll('.dropdown a');
-		const dropdownBtn = document.querySelector('#nav-icon');
-		const dropdown = document.querySelector('.dropdown');
+	const links = document.querySelectorAll('.dropdown a');
+	const dropdownBtn = document.querySelector('#nav-icon');
+	const dropdown = document.querySelector('.dropdown');
 
-		dropdownBtn.addEventListener('click', () => dropdown.classList.toggle('dropped'));
-		dropdownBtn.addEventListener('click', () => dropdownBtn.classList.toggle('open'));
-		links.forEach(link => link.addEventListener('click', (e) => {
-				dropdown.classList.remove('dropped');
-				dropdownBtn.classList.remove('open');
-			})
-		)
+	dropdownBtn.addEventListener('click', () => dropdown.classList.toggle('dropped'));
+	dropdownBtn.addEventListener('click', () => dropdownBtn.classList.toggle('open'));
+	links.forEach(link => link.addEventListener('click', (e) => {
+			dropdown.classList.remove('dropped');
+			dropdownBtn.classList.remove('open');
+		})
+	)
 	</script>
 </body>
 </html>
