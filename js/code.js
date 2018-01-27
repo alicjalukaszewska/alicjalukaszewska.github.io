@@ -1,4 +1,4 @@
-// (function (){
+(function (){
 'use strict';
 
 
@@ -21,13 +21,13 @@ const line = document.querySelector('.line');
 function changeMenu () {
 	const logo = document.querySelector('#logo');
 	if (window.scrollY <= 50) {
-		logo.style.opacity = "0";
+		logo.style.opacity = 0;
 		logo.style.display = "none";
 		menu.classList.remove('scrolled');		
 
 	} else  {
 		logo.style.display = "block";
-		logo.style.opacity = "1";
+		logo.style.opacity = 1;
 		menu.classList.add('scrolled');
 	}
 }
@@ -127,6 +127,7 @@ function zoomImage () {
 	zoomedImage.addEventListener('click', hideZoomedImage);
 }
 
+
 function focusInside () {
 	if (document.activeElement === nextBtn || document.activeElement === prevBtn) {
 		return;
@@ -154,9 +155,10 @@ function changeContent () {
 	currentId = zoomedProject.id;
 	currentContent = portfolio.querySelector(`#${currentId}`);
 	focusInside();
+	allowKeysNavigation();
 }
 
-function changeProjectByArrow (direction) {
+function showNextProject (direction) {
 	const firstProject = portfolio.querySelector(`.project`);
 	let nextItem;
 	if (direction == 'right') {
@@ -191,8 +193,17 @@ zoomWindow.addEventListener('click', function(e) {
  		zoom.style.display = "none";
 	}
 })
-nextBtn.addEventListener('click', () => changeProjectByArrow('right'));
-prevBtn.addEventListener('click', () => changeProjectByArrow('left'));
+nextBtn.addEventListener('click', () => showNextProject('right'));
+prevBtn.addEventListener('click', () => showNextProject('left'));
+document.addEventListener('keydown', (e) => {
+	if (e.keyCode == '37') {
+       // left arrow
+       showNextProject('left');
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+       showNextProject('right');
+    }
+})
 
-
-// }());
+}());

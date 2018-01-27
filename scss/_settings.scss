@@ -124,3 +124,30 @@ $ratio3-2: "screen and (min-aspect-ratio: 3/2)";
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
 }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    top: -800px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@mixin fadeIn {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+}

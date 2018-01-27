@@ -131,13 +131,8 @@ nav {
 		position: absolute;
 		left: 30px;
 		height: inherit;
-		-webkit-transition: all 1s;
-		transition: all 1s;
-    	-webkit-transition: all 0.5s;
-    	 display: none;
     	opacity: 0;
-    	-webkit-transition: opacity 2s;
-    	transition: opacity 2s;
+    	@include fadeIn;	
 
     	a {
     		height: inherit;

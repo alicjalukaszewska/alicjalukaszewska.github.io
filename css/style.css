@@ -69,6 +69,20 @@
   100% {
     right: 0; } }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    top: -800px; }
+  100% {
+    opacity: 1;
+    top: 0; } }
+
 * {
   margin: 0;
   padding: 0;
@@ -175,13 +189,11 @@ h2 {
       position: absolute;
       left: 30px;
       height: inherit;
-      -webkit-transition: all 1s;
-      transition: all 1s;
-      -webkit-transition: all 0.5s;
-      display: none;
       opacity: 0;
-      -webkit-transition: opacity 2s;
-      transition: opacity 2s; }
+      -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s; }
       .fixed-menu nav .fixed-logo a {
         height: inherit;
         display: -webkit-box;
