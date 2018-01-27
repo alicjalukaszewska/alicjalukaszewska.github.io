@@ -130,6 +130,7 @@ nav {
 	.fixed-logo {
 		position: absolute;
 		left: 30px;
+		display: none;
 		height: inherit;
     	opacity: 0;
     	@include fadeIn;	
