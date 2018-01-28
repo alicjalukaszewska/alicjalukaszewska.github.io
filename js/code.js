@@ -138,6 +138,7 @@ function focusInside () {
 
 //show clicked or called project 
 function changeContent () {
+	console.log(this);
 	//reset content
 	zoomedContent.innerHTML = "";
 	hideZoomedImage();
@@ -155,7 +156,6 @@ function changeContent () {
 	currentId = zoomedProject.id;
 	currentContent = portfolio.querySelector(`#${currentId}`);
 	focusInside();
-	allowKeysNavigation();
 }
 
 function showNextProject (direction) {
