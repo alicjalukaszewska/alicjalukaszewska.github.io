@@ -209,17 +209,19 @@ h2 {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center; }
-      .fixed-menu nav .fixed-logo h2 {
+      .fixed-menu nav .fixed-logo p.name {
         padding: 0;
         color: #f1faee;
+        font-family: "Lora", serif;
         font-size: 34px;
+        text-transform: none;
         transition: all 0.3s;
         -webkit-transition: all 0.3s; }
         @media only screen and (max-width: 520px) {
-          .fixed-menu nav .fixed-logo h2 {
+          .fixed-menu nav .fixed-logo p.name {
             font-size: 24px; } }
         @media only screen and (max-width: 370px) {
-          .fixed-menu nav .fixed-logo h2 {
+          .fixed-menu nav .fixed-logo p.name {
             font-size: 20px; } }
       .fixed-menu nav .fixed-logo p {
         color: #e63946;
@@ -764,13 +766,13 @@ header {
       @media only screen and (max-width: 320px) {
         .skills .column h3 {
           font-size: 22px; } }
-    .skills .column dl {
+    .skills .column dl, .skills .column ul {
       margin-left: 100px; }
       @media only screen and (max-width: 920px) {
-        .skills .column dl {
+        .skills .column dl, .skills .column ul {
           margin-left: 60px; } }
       @media only screen and (max-width: 768px) {
-        .skills .column dl {
+        .skills .column dl, .skills .column ul {
           margin-left: 15px; } }
     .skills .column dt {
       color: #003366;
@@ -1017,7 +1019,8 @@ header {
         .zoomed .zoomed-project button.back:hover, .zoomed .zoomed-project button.back:focus {
           background-color: #003366;
           transition: all 0.2s;
-          -webkit-transition: all 0.2s; }
+          -webkit-transition: all 0.2s;
+          border: 2px dotted #457b9d; }
     .zoomed .zoomed-project .details {
       margin-top: 10px;
       display: -webkit-box;

@@ -37,12 +37,12 @@
 			<div id="logo" class="fixed-logo" >
 				<a href="/">
 					<div>
-						<h2>Alicja Łukaszewska</h2>
+						<p class="name">Alicja Łukaszewska</p>
 						<p>Front-End Developer</p>
 					</div>
 				</a>
 			</div>
-			<button id="nav-icon" type="button" class="toggler" ariaexpanded="true" aria-label ="Otwórz/Zamknij menu" title="Otwórz/Zamknij menu">
+			<button id="nav-icon" type="button" class="toggler" aria-expanded="false" aria-label ="Otwórz/Zamknij menu" title="Otwórz/Zamknij menu">
 				<span></span>
 				<span></span>
 				<span></span>
@@ -115,12 +115,12 @@
 			</section>
 			<section class="column">
 				<h3>Web Design</h3>
-				<dl>
-					<dt>Adobe Photoshop</dt>
-					<dt>CorelDraw</dt>
-					<dt>Adobe InDesign</dt>
-					<dt>UI & UX Design</dt>
-				</dl>
+				<ul>
+					<li>Adobe Photoshop</li>
+					<li>CorelDraw</li>
+					<li>Adobe InDesign</li>
+					<li>UI & UX Design</li>
+				</ul>
 			</section>
 			<section class="column">
 				<h3>Inne</h3>
@@ -140,218 +140,40 @@
 			<h2>Realizacje</h2>
 			<p>W swoich projektach staram się dopracowywać każdy szczegół. Potrafię poświęcić wiele godzin na naukę nowych technologii, by później wykorzystać je na moich stronach i aplikacjach. Wszystkie moje projekty są responsywne i zaprojektowane tak, żeby korzystanie z nich było jak najbardziej proste i intuicyjne. W moich realizacjach nie zapominam też o osobach niepełnosprawnych - zapewniam im dostęp do wszystkich treści i opcji.</p>
 		</div>
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu strony 'BrandLY'" title="Kliknij by przeczytać szczegóły projektu strony 'BrandLY'" id="project1">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu strony 'BrandLY'" title="Kliknij by przeczytać szczegóły projektu strony 'BrandLY'" id="brand-ly">
 			<div class="image-wrapper">
 				<img src="img/projects/brand.jpg" alt="">
 			</div>	
-			<div class="hidden content">
-				<div class="details container">
-					<div class="description">
-						<h3>Strona Brand LY</h3>
-						<dl class="date">
-							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd><time datetime="2018-01">Styczeń 2018</time></dd>
-						</dl>
-						<p>Projekt wykonany w ramach wyzwania „Weekly Web Dev Challenge”, stworzony na podstawie szablonu PSD. Posiada dwie karuzele (slidery), z czego jedna automatycznie zmienia produkty.</p>
-					</div>
-					<div class="technologies">
-						<h4>Technologie:</h4>
-						<ul>
-							<li>PSD to HTML</li>
-							<li>SCSS</li>
-							<li>JavaScript</li>
-							<li>Gulp.js</li>
-						</ul>	
-					</div>	
-				</div>
-				<div class="view">
-					<a class="live" href="https://alicjalukaszewska.github.io/weeklywebdev24/" target="_blank">Live</a>
-					<a class="code" href="https://github.com/alicjalukaszewska/weeklywebdev24" target="_blank">Kod</a>
-				</div>
-			</div>	
 		</button>	
-	
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu aplikacji 'Simple Alarm'" title="Kliknij by przeczytać szczegóły projektu aplikacji 'Simple Alarm'" id="project2">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu aplikacji 'Simple Alarm'" title="Kliknij by przeczytać szczegóły projektu aplikacji 'Simple Alarm'" id="simple-alarm">
 			<div class="image-wrapper">
 				<img src="img/projects/alarm.jpg" alt="">
 			</div>
-			<div class="hidden content">
-				<div class="details container">
-					<div class="description">
-						<h3>Aplikacja Simple Alarm</h3>
-						<dl class="date">
-							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd><time datetime="2017-07">Lipiec 2017</time> - <time datetime="2018-01">Styczeń 2018</time></dd>
-						</dl>
-						<p>Aplikacja webowa, będąca moim pierwszym samodzielnym projektem w JavaScipcie. Jest to budzik posiadający opcję wyboru dni, w których ma zadzwonić oraz opcję wyboru długości drzemki. Docelowo planuję przerobić go na aplikację mobilną.</p>
-					</div>
-					<div class="technologies">
-						<h4>Technologie:</h4>
-						<ul>
-							<li>JavaScript</li>
-							<li>HTML5</li>
-							<li>SCSS</li>
-							<li>Gulp.js</li>
-						</ul>	
-					</div>	
-				</div>
-				<div class="view">
-					<a class="live" href="https://alicjalukaszewska.github.io/simpleAlarm/" target="_blank">Live</a>
-					<a class="code" href="https://github.com/alicjalukaszewska/simpleAlarm" target="_blank">Kod</a>
-				</div>
-			</div>
 		</button>	
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu strony 'Potestas Canti'" title="Kliknij by przeczytać szczegóły projektu strony 'Potestas Canti'" id="project3">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu strony 'Potestas Canti'" title="Kliknij by przeczytać szczegóły projektu strony 'Potestas Canti'" id="potestas">
 			<div class="image-wrapper">
 				<img src="img/projects/potestas.jpg" alt="">
 			</div>		
-			<div class="hidden content">
-				<div class="details container">
-					<div class="description">
-						<h3>Strona Potestas Canti</h3>
-						<dl class="date">
-							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd><time datetime="2017-10">Wrzesień 2017</time> - W trakcie</dd>
-						</dl>
-						<p>Strona zaprojektowania i wdrożona dla zespołu muzycznego. Szablon na prośbę klienta, różni się od popularnych stron typu one-page. Posiada boczne menu oraz podstrony, między którymi można się przełączać poprzez skrolowanie.</p>
-					</div>
-					<div class="technologies">
-						<h4>Technologie:</h4>
-						<ul>
-							<li>PSD to HTML</li>
-							<li>SCSS</li>
-							<li>JavaScript</li>
-							<li>Gulp.js</li>
-						</ul>	
-					</div>	
-				</div>
-				<div class="view">
-					<a class="live" href="https://alicjalukaszewska.github.io/PotestasCanti/" target="_blank">Live</a>
-					<a class="code" href="https://github.com/alicjalukaszewska/PotestasCanti" target="_blank">Kod</a>
-				</div>
-			</div>
 		</button>	
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu aplikacji 'Tamagotchi'" title="Kliknij by przeczytać szczegóły projektu aplikacji 'Tamagotchi'" id="project4">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu aplikacji 'Tamagotchi'" title="Kliknij by przeczytać szczegóły projektu aplikacji 'Tamagotchi'" id="tamagotchi">
 			<div class="image-wrapper">
 				<img src="img/projects/tamagotchi.jpg" alt="">
-			</div>
-				<div class="hidden content">
-					<div class="details container">
-						<div class="description">
-							<h3>Aplikacja Tamagotchi</h3>
-							<dl class="date">
-								<dt class="visuallyhidden">Data wykonania projektu:</dt>
-								<dd><time datetime="2017-11">Listopad 2017</time> - <time datetime="2018-01">Styczeń 2018</time></dd>
-							</dl>
-							<p>Aplikacja symulująca popularną w latach 90-tych zabawkę. Zwierzak regularnie traci statystyki głodu, zdrowia i szczęścia. Zadaniem gracza jest uzupełnianie ich zanim którekolwiek spadnie do zera. O konieczności reakcji informują notyfikacje i grafiki.</p>
-						</div>
-						<div class="technologies">
-							<h4>Technologie:</h4>
-							<ul>
-								<li>JavaScript</li>
-								<li>HTML5</li>
-								<li>Touch-Emulator.js</li>
-								<li>Gulp.js</li>
-							</ul>
-						</div>
-					</div>
-					<div class="view">
-						<a class="live" href="https://alicjalukaszewska.github.io/tamagotchi/" target="_blank">Live</a>
-						<a class="code" href="https://github.com/alicjalukaszewska/tamagotchi" target="_blank">Kod</a>
-					</div>
-				</div>
-			</div>			
+			</div>		
 		</button>	
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu strony www.bykon.pl" title="Kliknij by przeczytać szczegóły projektu strony www.bykon.pl" id="project5">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu strony www.bykon.pl" title="Kliknij by przeczytać szczegóły projektu strony www.bykon.pl" id="bykon">
 			<div class="image-wrapper">
 				<img src="img/projects/bykon.jpg" alt="">
 			</div>	
-			<div class="hidden content">
-				<div class="details container">
-					<div class="description">
-						<h3>Strona Bykonu</h3>
-						<dl class="date">
-							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd><time datetime="2016-11">Listopad 2016</time> - <time datetime="2016-12">Grudzień 2016</time></dd>
-						</dl>
-						<p>Strona stworzona na CMS Wordpress, bazująca na szablonie zaprojektowanym i wdrożonym przeze mnie. Za pomocą kodu PHP dostosowałam stronę HTML do dynamicznie zmienianych treści oraz pluginów.</p>
-					</div>
-					<div class="technologies">
-					<h4>Technologie:</h4>
-						<ul>
-							<li>Wordpress</li>
-							<li>PSD to HTML5</li>
-							<li>Bootstrap 3</li>
-							<li>jQuery</li>
-						</ul>		
-					</div>
-				</div>
-				<div class="view">
-					<a class="live" href="http://www.bykon.pl/" target="_blank">Live</a>
-					<a class="code" href="https://github.com/alicjalukaszewska/bykon2017" target="_blank">Kod</a>
-				</div>
-			</div>
 		</button>	
 		
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu aplikacji 'Kości'" title="Kliknij by przeczytać szczegóły projektu aplikacji 'Kości'" id="project6">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu aplikacji 'Kości'" title="Kliknij by przeczytać szczegóły projektu aplikacji 'Kości'" id="kosci">
 			<div class="image-wrapper">
 				<img src="img/projects/kosci.jpg" alt="">
 			</div>		
-			<div class="hidden content">
-				<div class="details container">
-					<div class="description">
-						<h3>Aplikacja Gra w Kości</h3>
-						<dl class="date">
-							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd><time datetime="2017-10">Październik 2017</time> - <time datetime="2017-12">Grudzień 2017</time></dd>
-						</dl>
-						<p>Aplikacja symulująca grę w kości. Przeciwnikiem gracza jest komputer. Po pierwszym rzucie kośćmi, aktywny gracz musi obstawić, czy wartość kolejnego rzutu będzie większa lub mniejsza od pierwszego. 
-						</p>
-					</div>
-					<div class="technologies">
-						<h4>Technologie:</h4>
-						<ul>
-							<li>JavaSript</li>
-							<li>HTML5</li>
-							<li>SCSS</li>
-							<li>Gulp.js</li>
-						</ul>
-					</div>		
-				</div>
-				<div class="view">
-					<a class="live" href="https://alicjalukaszewska.github.io/DiceGame/" target="_blank">Live</a>
-					<a class="code" href="https://github.com/alicjalukaszewska/DiceGame" target="_blank">Kod</a>
-				</div>
-			</div>
 		</button>	
-		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu strony 'Vet-Bicom'" title="Kliknij by przeczytać szczegóły projektu strony 'Vet-Bicom'" id="project7">
+		<button class="project" aria-label="Kliknij by przeczytać szczegóły projektu strony 'Vet-Bicom'" title="Kliknij by przeczytać szczegóły projektu strony 'Vet-Bicom'" id="vet">
 			<div class="image-wrapper">
 				<img src="img/projects/wet.jpg" alt="">
-			</div>
-			<div class="hidden content">
-				<div class="details container">
-					<div class="description">
-						<h3>Strona Vet-Bicom</h3>
-						<dl class="date">
-							<dt class="visuallyhidden">Data wykonania projektu:</dt>
-							<dd><time datetime="2016-07">Sierpień 2016</time> - <time datetime="2016-10">Październik 2016</time></dd>
-						</dl>
-						<p>Strona stworzona na CMS Wordpress, bazująca na szablonie zaprojektowanym i wdrożonym przeze mnie. Pozornie statyczna strona główna posiada wtyczkę wyświetlającą karuzelę z podglądem treści bloga.</p>
-					</div>
-					<div class="technologies">
-					<h4>Technologie:</h4>
-						<ul>
-							<li>Wordpress</li>
-							<li>PSD to HTML5</li>
-							<li>Bootstrap 3</li>
-							<li>jQuery</li>
-						</ul>	
-					</div>	
-				</div>
-				<div class="view">
-					<a class="live" href="http://www.weterynarzraszyn.com/" target="_blank">Live</a>
-					<a class="code" href="https://github.com/alicjalukaszewska/vet-bicom" target="_blank">Kod</a>
-				</div>
 			</div>
 		</button>
 	</article>
@@ -406,6 +228,7 @@
 	</footer>
 	<script src="js/canvas.js"></script>
 	<script src="js/smooth-scroll.js"></script>
+	<script src="js/ajax.js"></script>
 	<script src="js/code.js"></script>
 </body>
 </html>

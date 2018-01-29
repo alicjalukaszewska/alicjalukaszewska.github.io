@@ -1,0 +1,124 @@
+[
+	{
+		"name": "BrandLY",
+		"title": "Strona Brand LY",
+		"id": "brand-ly",
+		"image": "img/projects/brand.jpg",
+		"dates": {
+			"end": "Styczeń 2018",
+			"endDateTime": "2018-01"
+		},
+		"description": "Projekt wykonany w ramach wyzwania „Weekly Web Dev Challenge”, stworzony na podstawie szablonu PSD. Posiada dwie karuzele (slidery), z czego jedna automatycznie zmienia produkty.",
+		"technologies": ["PSD to HTML", "SCSS", "JavaScript", "Gulp.js"],
+		"links": {
+			"live":  "https://alicjalukaszewska.github.io/weeklywebdev24/",
+			"code": "https://github.com/alicjalukaszewska/weeklywebdev24"
+		}
+	},
+	{
+		"name": "Simple Alarm",
+		"title": "Aplikacja Simple Alarm",
+		"id": "simple-alarm",
+		"image": "img/projects/alarm.jpg",
+		"dates": {
+			"start": "Lipiec 2017",
+			"startDateTime": "2017-07",
+			"end": "Styczeń 2018",
+			"endDateTime": "2018-01"
+		},
+		"description": "Aplikacja webowa, będąca moim pierwszym samodzielnym projektem w JavaScipcie. Jest to budzik posiadający opcję wyboru dni, w których ma zadzwonić oraz opcję wyboru długości drzemki. Docelowo planuję przerobić go na aplikację mobilną.",
+		"technologies": ["JavaScript", "HTML5", "SCSS", "Gulp.js"],
+		"links": {
+			"live":  "https://alicjalukaszewska.github.io/simpleAlarm/",
+			"code": "https://github.com/alicjalukaszewska/simpleAlarm"
+		}
+	},
+	{
+		"name": "Potestas Canti",
+		"title": "Strona Potestas Canti",
+		"id": "potestas",
+		"image": "img/projects/potestas.jpg",
+		"dates": {
+			"start": "Wrzesień 2017",
+			"startDateTime": "2017-10"
+		},
+		"description": "Strona zaprojektowania i wdrożona dla zespołu muzycznego. Szablon na prośbę klienta, różni się od popularnych stron typu one-page. Posiada boczne menu oraz podstrony, między którymi można się przełączać poprzez skrolowanie.",
+		"technologies": ["PSD to HTML", "SCSS", "JavaScript", "Gulp.js"],
+		"links": {
+			"live":  "https://alicjalukaszewska.github.io/PotestasCanti/",
+			"code": "https://github.com/alicjalukaszewska/PotestasCanti"
+		}
+	},
+	{
+		"name": "Tamagotchi",
+		"title": "Aplikacja Tamagotchi",
+		"id": "tamagotchi",
+		"image": "img/projects/tamagotchi.jpg",
+		"dates": {
+			"start": "Listopad 2017",
+			"startDateTime": "2017-11",
+			"end": "Styczeń 2018",
+			"endDateTime": "2018-01"
+		},
+		"description": "Aplikacja symulująca popularną w latach 90-tych zabawkę. Zwierzak regularnie traci statystyki głodu, zdrowia i szczęścia. Zadaniem gracza jest uzupełnianie ich zanim którekolwiek spadnie do zera. O konieczności reakcji informują notyfikacje i grafiki.",
+		"technologies": ["JavaScript", "HTML5", "Touch-Emulator.js", "Gulp.js"],
+		"links": {
+			"live":  "https://alicjalukaszewska.github.io/tamagotchi/",
+			"code": "https://github.com/alicjalukaszewska/tamagotchi"
+		}
+	},
+	{
+		"name": "Bykon",
+		"title": "Strona Bykon",
+		"id": "bykon",
+		"image": "img/projects/bykon.jpg",
+		"dates": {
+			"start": "Listopad 2016",
+			"startDateTime": "2016-11",
+			"end": "Grudzień 2016",
+			"endDateTime": "2016-12"
+		},
+		"description": "Strona stworzona na CMS Wordpress, bazująca na szablonie zaprojektowanym i wdrożonym przeze mnie. Za pomocą kodu PHP dostosowałam stronę HTML do dynamicznie zmienianych treści oraz pluginów.",
+		"technologies": ["Wordpress", "PSD to HTML", "Bootstrap 3", "jQuery"],
+		"links": {
+			"live":  "http://www.bykon.pl/",
+			"code": "https://github.com/alicjalukaszewska/bykon2017"
+		}
+	},
+	{
+		"name": "Kości",
+		"title": "Aplikacja Gra w Kości",
+		"id": "kosci",
+		"image": "img/projects/kosci.jpg",
+		"dates": {
+			"start": "Październik 2017",
+			"startDateTime": "2017-10",
+			"end": "Grudzień 2017",
+			"endDateTime": "2017-12"
+		},
+		"description": 	"Aplikacja symulująca grę w kości. Przeciwnikiem gracza jest komputer. Po pierwszym rzucie kośćmi, aktywny gracz musi obstawić, czy wartość kolejnego rzutu będzie większa lub mniejsza od pierwszego.",
+		"technologies": ["JavaScript", "HTML5", "SCSS", "Gulp.js"],
+		"links": {
+			"live": "https://alicjalukaszewska.github.io/DiceGame/",
+			"code": "https://github.com/alicjalukaszewska/DiceGame"
+		}
+	},
+	{
+		"name": "Vet-Bicom",
+		"title": "Strona Vet-Bicom",
+		"id": "vet",
+		"image": "img/projects/wet.jpg",
+		"dates": {
+			"start": "Sierpień 2016",
+			"startDateTime": "2016-07",
+			"end": "Październik 2016",
+			"endDateTime": "2016-10"
+		},
+		"description": "Strona stworzona na CMS Wordpress, bazująca na szablonie zaprojektowanym i wdrożonym przeze mnie. Pozornie statyczna strona główna posiada wtyczkę wyświetlającą karuzelę z podglądem treści bloga.",
+		"technologies": ["Wordpress", "PSD to HTML", "Bootstrap 3", "jQuery"],
+		"links": {
+			"live":  "http://www.weterynarzraszyn.com/",
+			"code": "https://github.com/alicjalukaszewska/vet-bicom"
+		}
+	}
+]

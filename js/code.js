@@ -84,126 +84,19 @@ window.addEventListener('scroll', getPosition);
 const dropdownBtn = document.querySelector('#nav-icon');
 const dropdown = document.querySelector('.dropdown');
 
-dropdownBtn.addEventListener('click', () => dropdown.classList.toggle('dropped'));
+dropdownBtn.addEventListener('click', () => {
+	dropdown.classList.toggle('dropped');
+	if (dropdown.classList.contains('dropped')){
+		dropdownBtn.setAttribute('aria-expanded', 'true');
+	} else {
+		dropdownBtn.setAttribute('aria-expanded', 'false');
+	}
+});
 dropdownBtn.addEventListener('click', () => dropdownBtn.classList.toggle('open'));
 links.forEach(link => link.addEventListener('click', (e) => {
 		dropdown.classList.remove('dropped');
 		dropdownBtn.classList.remove('open');
 	})
 )
-
-/* show/hide zoomed project */
-
-const projects = document.querySelectorAll('.project');
-
-//zoomed elements
-const zoomWindow = document.querySelector('#zoom');
-const zoomedProject = document.querySelector('.zoomed-project');
-const zoomedContent = document.querySelector('.zoomed-project .content');
-const zoomedImage = zoomedProject.querySelector('img');
-const portfolio = document.querySelector('.portfolio');
-let currentId;
-let currentContent;
-
-//buttons
-const closeBtn = document.querySelector('#close');
-const backBtn = document.querySelector('#back');
-const nextBtn = document.querySelector('#next');
-const prevBtn = document.querySelector('#prev');
-
-
-function hideZoomedImage () {
-	zoomedImage.classList.remove('clicked');
-	backBtn.style.display = "none";
-	zoomedContent.classList.remove('visuallyhidden');
-	zoomedImage.addEventListener('click', zoomImage);
-}
-
-function zoomImage () {
-	zoomedImage.classList.add('clicked');
-	backBtn.style.display = "block";
-	zoomedContent.classList.add('visuallyhidden');
-	zoomedImage.removeEventListener('click', zoomImage);
-	zoomedImage.addEventListener('click', hideZoomedImage);
-}
-
-
-function focusInside () {
-	if (document.activeElement === nextBtn || document.activeElement === prevBtn) {
-		return;
-	} else {
-		zoomedContent.querySelector('a').focus();
-	}
-}
-
-//show clicked or called project 
-function changeContent () {
-	console.log(this);
-	//reset content
-	zoomedContent.innerHTML = "";
-	hideZoomedImage();
-	//change image
-	let image = this.querySelector('img').src;
-	zoomedImage.src = image;
-	//set new content
-	let content = this.querySelector('.content').innerHTML;
-	zoomedProject.id = this.id;
-	zoomedProject.setAttribute('aria-label', this.querySelector('.content h3').innerText)
-	zoomedContent.innerHTML = content;
-	//show window
-	zoomWindow.style.display = "flex";
-	//define variables
-	currentId = zoomedProject.id;
-	currentContent = portfolio.querySelector(`#${currentId}`);
-	focusInside();
-}
-
-function showNextProject (direction) {
-	const firstProject = portfolio.querySelector(`.project`);
-	let nextItem;
-	if (direction == 'right') {
-		nextItem = currentContent.nextElementSibling;
-		if (nextItem === null) {
-			nextItem = firstProject;
-		}
-	} else {		
-		if (currentContent === firstProject || nextItem === firstProject) {
-			nextItem = document.querySelector(`#project${projects.length}`)
-		} else {
-			nextItem = currentContent.previousElementSibling;
-		}
-	}
-	changeContent.call(nextItem);
-}
-
-projects.forEach(project => {
-	project.addEventListener('click', changeContent);
-})
-
-zoomedImage.addEventListener('click', zoomImage);
-backBtn.addEventListener('click', hideZoomedImage);
-closeBtn.addEventListener('click', () => {
-	zoom.style.display = "none";
-	currentContent.focus();
-});
-
-//hide zoomed project by clicking outside of it
-zoomWindow.addEventListener('click', function(e) {
-	if (e.target == this) {
- 		zoom.style.display = "none";
-	}
-})
-nextBtn.addEventListener('click', () => showNextProject('right'));
-prevBtn.addEventListener('click', () => showNextProject('left'));
-document.addEventListener('keydown', (e) => {
-	if (e.keyCode == '37') {
-       // left arrow
-       showNextProject('left');
-    }
-    else if (e.keyCode == '39') {
-       // right arrow
-       showNextProject('right');
-    }
-})
 
 }());
