@@ -7,8 +7,8 @@ projectsBtns.forEach(button => {
 	button.addEventListener('click', loadProject);
 })
 
-function loadProject (e) {
-	let chosenProject = e.target;
+function loadProject () {
+	let chosenProject = this;
 	var requestXhr = new XMLHttpRequest();
 
 	requestXhr.open('GET', 'https://api.myjson.com/bins/o1qyl', true);
@@ -113,21 +113,22 @@ function showProject (chosenProject, data) {
 
 
 function showNextProject (direction) {
-	// const firstProject = portfolio.querySelector(`.project`);
-	// let nextItem;
-	// if (direction == 'right') {
-	// 	nextItem = currentContent.nextElementSibling;
-	// 	if (nextItem === null) {
-	// 		nextItem = firstProject;
-	// 	}
-	// } else {		
-	// 	if (currentContent === firstProject || nextItem === firstProject) {
-	// 		nextItem = document.querySelector(`#projectBtns${projectsBtns.length}`)
-	// 	} else {
-	// 		nextItem = currentContent.previousElementSibling;
-	// 	}
-	// }
-	// showProject(nextItem);
+	const firstProject = portfolio.querySelector(`.project`);
+	console.log(firstProject);
+	let nextItem;
+	if (direction == 'right') {
+		nextItem = currentContent.nextElementSibling;
+		if (nextItem === null) {
+			nextItem = firstProject;
+		}
+	} else {		
+		if (currentContent === firstProject || nextItem === firstProject) {
+			nextItem = portfolio.lastElementChild;
+		} else {
+			nextItem = currentContent.previousElementSibling;
+		}
+	}
+	loadProject.call(nextItem);
 }
 
 

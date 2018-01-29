@@ -57,19 +57,31 @@ function addLine () {
 function changeActive () {
 	links.forEach(link => link.classList.remove('active'));
 	this.classList.add('active');
-	this.setAttribute('aria-current', 'page');
+	// this.setAttribute('aria-current', 'page');
 	if (window.innerWidth >= 920) {
 		addLine.call(this);
 	}	
 }
 
+function getItem (key, i) {
+  var keys = Object.keys(anchors).sort(function(a,b){return a-b;});
+  var index = keys.indexOf(key);
+  if ((i==-1 && index>0) || (i==1 && index<keys.length-1)) {index = index+i;}
+  return anchors[keys[index]];
+}
+
+
 //find current section
 function getPosition () {
 	Object.entries( anchors ).forEach(([name, topValue]) => {
 		if(window.scrollY >= topValue) {
-			if (name === 'omnie') name = 'o-mnie';
-			let currentSection = menu.querySelector(`a[href='#${name}']`);
-			changeActive.call(currentSection);
+			let nextAnchorValue = getItem(name, -1);
+			if (window.scrollY < nextAnchorValue || name === 'kontakt') {
+				if (name === 'omnie') name = 'o-mnie';
+				console.log(name);
+				let currentSection = menu.querySelector(`a[href='#${name}']`);
+				changeActive.call(currentSection);
+			}
 		} 
 	})
 }

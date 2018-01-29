@@ -139,7 +139,8 @@ nav {
     	@include fadeIn;	
 
     	@media #{$down370} {
-    		left: 5px;
+    		left: 0;
+    		margin-left: 15px;
     	}
 
     	a {
@@ -168,7 +169,7 @@ nav {
 	    		font-size: 20px;
 	    	}
 		}
-		p {
+		p.profession {
 			color: $accentColor;
 			text-transform: uppercase;
 			margin: -5px 2px;
@@ -206,10 +207,10 @@ nav {
 			display: none;
 		}
 
-		@media #{$down320} {
+		@media #{$down370} {
 			-webkit-transform: scale(0.6);
 			        transform: scale(0.6);
-			margin-right: 0;
+			margin-right: 15px;
 		}
 
 		&:hover > *, &:focus > * {
@@ -880,7 +881,7 @@ header {
 			}
 		}
 
-		dt {
+		dt, li {
 			color: $mainColor;
 			font-weight: bold;
 
