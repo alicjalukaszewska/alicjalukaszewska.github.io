@@ -543,15 +543,15 @@ header {
 
 	.mouse-icon .wheel {
 		-webkit-animation-name: drop;
-		-webkit-animation-duration: 2s;
+		-webkit-animation-duration: 1.2s;
 		-webkit-animation-timing-function: linear;
 		-webkit-animation-delay: 0s;
 		-webkit-animation-iteration-count: infinite;
 		-webkit-animation-play-state: running;
 		-webkit-animation-name: drop;
 		      animation-name: drop;
-		-webkit-animation-duration: 2s;
-		      animation-duration: 2s;
+		-webkit-animation-duration: 1.2s;
+		      animation-duration: 1.2s;
 		-webkit-animation-timing-function: linear;
 		      animation-timing-function: linear;
 		-webkit-animation-delay: 0s;
@@ -945,6 +945,14 @@ header {
 	-ms-grid-columns: auto auto auto;
 	grid-template-columns: 1fr 1fr 1fr;
 
+	button:first-child {
+		height: 310px;
+
+    	@media #{$down920} {
+    		height: 100%;
+    	}
+	}
+
 	@media #{$down920} {
 		width: 100%;	
 	  	-ms-grid-columns: (minmax(240px, 1fr))[auto-fill];
@@ -993,15 +1001,6 @@ header {
     	-webkit-transition: all 0.3s;
     	cursor: pointer;
 
-
-		.image-wrapper {
-			display: -webkit-box;
-			display: -ms-flexbox;
-			display: flex;
-				transition: all 0.3s;
-		    	-webkit-transition: all 0.3s;
-			overflow: hidden;
-		}
 
 		&:after {
 			background: {
@@ -1053,14 +1052,6 @@ header {
 
 
 		}
-	}
-
-	#project1 img {
-		height: 310px;
-
-    	@media #{$down920} {
-    		height: 100%;
-    	}
 	}
 }
 
@@ -1505,7 +1496,7 @@ header {
 				margin: 0;
 			}
 
-			@media #{$down520} {
+			@media #{$down560} {
 				display: block;
 			}
 		p {
@@ -1520,11 +1511,37 @@ header {
 				    -ms-grid-row-align: center;
 				    align-self: center;
 			}
+
+			&.alert {
+				display: none;
+				margin-top: -15px;
+				margin-bottom: 5px;
+				width: 500px;
+				color: $accentColor;
+				font-size: 18px;
+					@media #{$down920} {
+						width: 450px;
+					}
+				    @media #{$down805} {
+				    	margin-top: 0;
+				    	margin-bottom: -10px;
+				    	padding-left: 30px;
+				    }
+				    @media #{$down560} {
+				    	margin: 0 auto -20px;
+				    	padding-left: 0;
+				    	width: 100%;
+				    }
+			}
 		}
 
 		label {
 			display: inline-block;
 			text-align: right;
+
+			@media #{$down665} {
+				margin-left: 15px;
+			}
 			
 			span {
 				margin-top: -5px;
@@ -1541,10 +1558,10 @@ header {
 		    -webkit-transition: all 0.5s;
 
 			@media #{$down920} {
-				width: 450px;
+				width: 430px;
 			}
 
-			@media #{$down520} {
+			@media #{$down560} {
 				margin: 0;
 				padding: 0;
 				width: 100%;

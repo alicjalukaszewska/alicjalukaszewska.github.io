@@ -488,15 +488,15 @@ header {
       background-color: rgba(255, 255, 255, 0.3); }
   header .mouse-icon .wheel {
     -webkit-animation-name: drop;
-    -webkit-animation-duration: 2s;
+    -webkit-animation-duration: 1.2s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-delay: 0s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-play-state: running;
     -webkit-animation-name: drop;
     animation-name: drop;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
+    -webkit-animation-duration: 1.2s;
+    animation-duration: 1.2s;
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
     -webkit-animation-delay: 0s;
@@ -803,6 +803,11 @@ header {
   display: grid;
   -ms-grid-columns: auto auto auto;
   grid-template-columns: 1fr 1fr 1fr; }
+  .portfolio button:first-child {
+    height: 310px; }
+    @media only screen and (max-width: 920px) {
+      .portfolio button:first-child {
+        height: 100%; } }
   @media only screen and (max-width: 920px) {
     .portfolio {
       width: 100%;
@@ -837,13 +842,6 @@ header {
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
     cursor: pointer; }
-    .portfolio .project .image-wrapper {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      transition: all 0.3s;
-      -webkit-transition: all 0.3s;
-      overflow: hidden; }
     .portfolio .project:after {
       background-color: transparent;
       background-repeat: no-repeat;
@@ -879,11 +877,6 @@ header {
       object-fit: cover;
       transition: all 0.3s;
       -webkit-transition: all 0.3s; }
-  .portfolio #project1 img {
-    height: 310px; }
-    @media only screen and (max-width: 920px) {
-      .portfolio #project1 img {
-        height: 100%; } }
 
 .zoomed {
   position: fixed;
@@ -1236,7 +1229,7 @@ header {
     @media only screen and (max-width: 805px) {
       .contact form {
         margin: 0; } }
-    @media only screen and (max-width: 520px) {
+    @media only screen and (max-width: 560px) {
       .contact form {
         display: block; } }
     .contact form p {
@@ -1250,9 +1243,32 @@ header {
           -ms-flex-item-align: center;
           -ms-grid-row-align: center;
           align-self: center; } }
+      .contact form p.alert {
+        display: none;
+        margin-top: -15px;
+        margin-bottom: 5px;
+        width: 500px;
+        color: #e63946;
+        font-size: 18px; }
+        @media only screen and (max-width: 920px) {
+          .contact form p.alert {
+            width: 450px; } }
+        @media only screen and (max-width: 805px) {
+          .contact form p.alert {
+            margin-top: 0;
+            margin-bottom: -10px;
+            padding-left: 30px; } }
+        @media only screen and (max-width: 560px) {
+          .contact form p.alert {
+            margin: 0 auto -20px;
+            padding-left: 0;
+            width: 100%; } }
     .contact form label {
       display: inline-block;
       text-align: right; }
+      @media only screen and (max-width: 665px) {
+        .contact form label {
+          margin-left: 15px; } }
       .contact form label span {
         margin-top: -5px; }
     .contact form input, .contact form textarea {
@@ -1265,8 +1281,8 @@ header {
       -webkit-transition: all 0.5s; }
       @media only screen and (max-width: 920px) {
         .contact form input, .contact form textarea {
-          width: 450px; } }
-      @media only screen and (max-width: 520px) {
+          width: 430px; } }
+      @media only screen and (max-width: 560px) {
         .contact form input, .contact form textarea {
           margin: 0;
           padding: 0;

@@ -1,11 +1,7 @@
-// (function(){
+(function(){
 'use strict';
+const projects = document.querySelectorAll('.project');
 
-const projectsBtns = document.querySelectorAll('.project');
-
-projectsBtns.forEach(button => {
-	button.addEventListener('click', loadProject);
-})
 
 function loadProject () {
 	let chosenProject = this;
@@ -15,8 +11,12 @@ function loadProject () {
 
 	requestXhr.onload = function () {
 		if (this.status == 200) {
-			const projects = JSON.parse(this.responseText);
-			showProject(chosenProject, projects);
+			const projectsData = JSON.parse(this.responseText);
+			for (let project in projectsData) {
+				if (projectsData[project].id == chosenProject.id){
+					showProject(chosenProject, projectsData[project]);
+				}
+			}
 		}
 	}
 	requestXhr.send();
@@ -66,49 +66,45 @@ function focusInside () {
 
 function showProject (chosenProject, data) {
 	hideZoomedImage();
-	for (let project in data) {
-		if (data[project].id == chosenProject.id){
-			let startDateTime = data[project].dates.startDateTime;
-			let endDateTime = data[project].dates.endDateTime;
-			let start = data[project].dates.start;
-			let end = data[project].dates.end;
-			let technologies = data[project].technologies;
-			document.querySelector('.zoomed-project img').src = `${data[project].image}`;
+	let startDateTime = data.dates.startDateTime;
+	let endDateTime = data.dates.endDateTime;
+	let start = data.dates.start;
+	let end = data.dates.end;
+	let technologies = data.technologies;
+	document.querySelector('.zoomed-project img').src = `${data.image}`;
 
-			zoomedContent.innerHTML = 
-			`<div class="details container">
-				<div class="description">
-					<h3>${data[project].title}</h3>
-					<dl class="date">
-						<dt class="visuallyhidden">Data wykonania projektu:</dt>
-						<dd>
-							${startDateTime ? `<time datetime="${startDateTime}">` : ""}
-							${start ? `${start} - ` : ""}</time>
-							${endDateTime ? `<time datetime="${endDateTime}">` : ""}
-							${end ? `${end}` : "W trakcie"}</time>
-						</dd>
-					</dl>
-					<p>${data[project].description}</p>
-				</div>
-				<div class="technologies">
-					<h4>Technologie:</h4>
-					<ul>
-						${technologies.join(0).split(0).map((item, i) => `
-						<li> ${item}</li>
-						`).join('')}
-					</ul>	
-				</div>	
-			</div>
-			<div class="view">
-				<a class="live" href="${data[project].links.live}" target="_blank">Live</a>
-				<a class="code" href="${data[project].links.code}" target="_blank">Kod</a>
-			</div>`
-			zoomWindow.style.display = "flex";
-			currentId = chosenProject.id;
-			currentContent = portfolio.querySelector(`#${currentId}`);
-			focusInside();
-		}
-	}
+	zoomedContent.innerHTML = 
+	`<div class="details container">
+		<div class="description">
+			<h3>${data.title}</h3>
+			<dl class="date">
+				<dt class="visuallyhidden">Data wykonania projektu:</dt>
+				<dd>
+					${startDateTime ? `<time datetime="${startDateTime}">` : ""}
+					${start ? `${start} - ` : ""}</time>
+					${endDateTime ? `<time datetime="${endDateTime}">` : ""}
+					${end ? `${end}` : "W trakcie"}</time>
+				</dd>
+			</dl>
+			<p>${data.description}</p>
+		</div>
+		<div class="technologies">
+			<h4>Technologie:</h4>
+			<ul>
+				${technologies.join(0).split(0).map((item, i) => `
+				<li> ${item}</li>
+				`).join('')}
+			</ul>	
+		</div>	
+	</div>
+	<div class="view">
+		<a class="live" href="${data.links.live}" target="_blank">Live</a>
+		<a class="code" href="${data.links.code}" target="_blank">Kod</a>
+	</div>`
+	zoomWindow.style.display = "flex";
+	currentId = chosenProject.id;
+	currentContent = portfolio.querySelector(`#${currentId}`);
+	focusInside();
 }
 
 
@@ -163,5 +159,8 @@ document.addEventListener('keydown', (e) => {
     }
 })
 
+projects.forEach(button => {
+	button.addEventListener('click', loadProject);
+})
 
-// })();
+})();

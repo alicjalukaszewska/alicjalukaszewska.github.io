@@ -37,14 +37,6 @@ window.addEventListener('load', changeMenu);
 
 /* Show active section link in menu */
 
-const anchors = {
-	start: document.querySelector('#start').offsetTop - 50,
-	omnie: document.querySelector('#o-mnie').offsetTop - 250,
-	technologie: document.querySelector('#technologie').offsetTop - 250,
-	realizacje: document.querySelector('#realizacje').offsetTop - 250,
-	kontakt: document.querySelector('#kontakt').offsetTop - 250,
-}
-
 // move line above active link and change line's width 
 function addLine () {
 	const linksCoords = this.getBoundingClientRect();
@@ -57,31 +49,24 @@ function addLine () {
 function changeActive () {
 	links.forEach(link => link.classList.remove('active'));
 	this.classList.add('active');
-	// this.setAttribute('aria-current', 'page');
+	this.setAttribute('aria-current', 'page');
 	if (window.innerWidth >= 920) {
 		addLine.call(this);
 	}	
 }
 
-function getItem (key, i) {
-  var keys = Object.keys(anchors).sort(function(a,b){return a-b;});
-  var index = keys.indexOf(key);
-  if ((i==-1 && index>0) || (i==1 && index<keys.length-1)) {index = index+i;}
-  return anchors[keys[index]];
-}
-
-
-//find current section
+// find current section
 function getPosition () {
-	Object.entries( anchors ).forEach(([name, topValue]) => {
-		if(window.scrollY >= topValue) {
-			let nextAnchorValue = getItem(name, -1);
-			if (window.scrollY < nextAnchorValue || name === 'kontakt') {
-				if (name === 'omnie') name = 'o-mnie';
-				console.log(name);
-				let currentSection = menu.querySelector(`a[href='#${name}']`);
-				changeActive.call(currentSection);
-			}
+	const anchors = ['start', 'o-mnie', 'technologie', 'realizacje', 'kontakt'];
+	anchors.forEach (anchor => {
+		const marginValue = 200;
+		let currentElementOffset = document.querySelector(`#${anchor}`).offsetTop;
+		let nextElementOffset = document.querySelector(`#${anchor}`).nextElementSibling.offsetTop;
+		currentElementOffset -= marginValue;
+		nextElementOffset -= marginValue;
+		if (window.scrollY >= currentElementOffset && (window.scrollY < nextElementOffset)) {
+			let currentSection = menu.querySelector(`a[href='#${anchor}']`);
+			changeActive.call(currentSection);					
 		} 
 	})
 }
@@ -110,5 +95,23 @@ links.forEach(link => link.addEventListener('click', (e) => {
 		dropdownBtn.classList.remove('open');
 	})
 )
+
+function validateEmail (email) {
+  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+function validate () {
+	const alert = document.querySelector('.alert');
+	let emailValue = email.value;
+	if (email.value === "" || validateEmail(emailValue)) {
+		alert.style.display = "none";
+	} else {
+		alert.style.display = "inline-block";
+	}
+}
+
+const email = document.querySelector('#email');
+email.addEventListener('change', validate);
 
 }());
