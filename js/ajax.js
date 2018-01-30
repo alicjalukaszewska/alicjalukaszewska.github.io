@@ -7,7 +7,7 @@ function loadProject () {
 	let chosenProject = this;
 	var requestXhr = new XMLHttpRequest();
 
-	requestXhr.open('GET', 'https://api.myjson.com/bins/o1qyl', true);
+	requestXhr.open('GET', 'https://alicjalukaszewska.github.io/js/projects.json', true);
 
 	requestXhr.onload = function () {
 		if (this.status == 200) {

@@ -551,16 +551,37 @@ header {
       -ms-flex-direction: column;
       flex-direction: column; } }
   .about .photo {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
     height: inherit;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    width: 470px;
-    background-color: #003366;
-    background-image: url("../img/photo.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat; }
+    overflow: hidden; }
+    .about .photo img {
+      display: block;
+      height: 100%;
+      width: 380px;
+      -o-object-fit: cover;
+      object-fit: cover; }
+      @media only screen and (max-width: 920px) {
+        .about .photo img {
+          width: 280px; } }
+      @media only screen and (max-width: 768px) {
+        .about .photo img {
+          width: 200px; } }
+      @media only screen and (max-width: 665px) {
+        .about .photo img {
+          width: 100%;
+          height: 450px; } }
     @media only screen and (max-width: 665px) {
       .about .photo {
         height: 350px;
@@ -568,17 +589,9 @@ header {
         -webkit-box-flex: 1;
         -ms-flex: auto;
         flex: auto;
-        background-position: center -170px;
         -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
         order: 5; } }
-    @media only screen and (max-width: 520px) {
-      .about .photo {
-        background-position: center -75px; } }
-    @media only screen and (max-width: 320px) {
-      .about .photo {
-        background-position: center center;
-        height: 320px; } }
   .about section {
     margin: 0 10px 0 30px;
     -webkit-box-flex: 2;
@@ -747,53 +760,53 @@ header {
       @media only screen and (max-width: 320px) {
         .skills .column h3 {
           font-size: 22px; } }
-    .skills .column dl, .skills .column ul {
+    .skills .column > ul {
       margin-left: 100px; }
       @media only screen and (max-width: 920px) {
-        .skills .column dl, .skills .column ul {
+        .skills .column > ul {
           margin-left: 60px; } }
       @media only screen and (max-width: 768px) {
-        .skills .column dl, .skills .column ul {
+        .skills .column > ul {
           margin-left: 15px; } }
-    .skills .column dt, .skills .column li {
+    .skills .column > ul > li {
       color: #003366;
       font-weight: bold; }
       @media only screen and (max-width: 665px) {
-        .skills .column dt, .skills .column li {
+        .skills .column > ul > li {
           font-size: 20px; } }
       @media only screen and (max-width: 320px) {
-        .skills .column dt, .skills .column li {
+        .skills .column > ul > li {
           font-size: 18px; } }
-      .skills .column dt:before, .skills .column li:before {
+      .skills .column > ul > li:before {
         content: '\2015';
         color: #e63946;
         font-size: 30px;
         margin-right: 7px; }
         @media only screen and (max-width: 665px) {
-          .skills .column dt:before, .skills .column li:before {
+          .skills .column > ul > li:before {
             font-size: 24px; } }
         @media only screen and (max-width: 320px) {
-          .skills .column dt:before, .skills .column li:before {
+          .skills .column > ul > li:before {
             font-size: 16px; } }
-      .skills .column dt span, .skills .column li span {
+      .skills .column > ul > li span {
         color: #363636;
         font-size: 18px;
         font-weight: normal; }
-    .skills .column dd {
+    .skills .column ul > li > ul {
       color: #363636;
       font-size: 18px;
       font-weight: normal;
       margin-left: 60px;
       padding-bottom: 10px; }
       @media only screen and (max-width: 920px) {
-        .skills .column dd {
+        .skills .column ul > li > ul {
           margin-left: 40px;
           word-wrap: break-word; } }
       @media only screen and (max-width: 768px) {
-        .skills .column dd {
+        .skills .column ul > li > ul {
           margin-left: 25px;
           padding-bottom: 5px; } }
-      .skills .column dd:before {
+      .skills .column ul > li > ul li:before {
         content: " - "; }
 
 .portfolio {
